@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenue — Appart cosy 77m²</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --birch:   #E8E0D4;
+    --linen:   #F4F0EA;
+    --ink:     #1C1C1B;
+    --moss:    #3D5A4C;
+    --clay:    #8B6F5E;
+    --mist:    #A8B5AD;
+    --white:   #FAFAF8;
+    --warn:    #C0392B;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--linen);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--birch);
+    padding: 72px 32px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 48px,
+      rgba(255,255,255,.03) 48px, rgba(255,255,255,.03) 49px
+    );
+  }
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--mist);
+  }
+  .hero-sub {
+    font-size: .95rem;
+    color: var(--mist);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--birch);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 14px 16px;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s, color .2s;
+  }
+  nav a:hover { border-bottom-color: var(--moss); color: var(--moss); }
+  nav a .icon { font-size: 1rem; }
+
+  /* ── LAYOUT ── */
+  main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; }
+
+  section {
+    margin-top: 64px;
+    scroll-margin-top: 56px;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  p { margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--birch);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-weight: 500;
+    font-size: .9rem;
+    letter-spacing: .03em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--moss);
+    flex-shrink: 0;
+  }
+
+  /* ── WIFI BLOCK ── */
+  .wifi-block {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .wifi-block .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 4px;
+  }
+  .wifi-block .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    color: var(--white);
+    word-break: break-all;
+  }
+  @media (max-width: 480px) {
+    .wifi-block { grid-template-columns: 1fr; }
+  }
+
+  /* ── STEPS ── */
+  .steps { list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--moss);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  /* ── GRID ÉQUIPEMENTS ── */
+  .equip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .equip-item {
+    background: var(--white);
+    border: 1px solid var(--birch);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: .88rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .equip-icon { font-size: 1.2rem; }
+
+  /* ── RULES ── */
+  .rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--birch);
+    font-size: .92rem;
+  }
+  .rule:last-child { border-bottom: none; }
+  .rule-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  /* ── URGENCES ── */
+  .urgence-card {
+    background: var(--white);
+    border: 1.5px solid var(--warn);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .urgence-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .urgence-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--warn);
+  }
+  .urgence-label { font-size: .82rem; color: #666; margin-top: 2px; }
+
+  /* ── PLACES ── */
+  .place {
+    background: var(--white);
+    border: 1px solid var(--birch);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+    gap: 12px;
+  }
+  .place-name { font-weight: 500; }
+  .place-dist { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: var(--mist); }
+  .place-tag {
+    font-size: .7rem;
+    background: var(--birch);
+    border-radius: 4px;
+    padding: 2px 8px;
+    color: var(--clay);
+    white-space: nowrap;
+  }
+
+  /* ── HOST ── */
+  .host-block {
+    background: var(--moss);
+    color: var(--white);
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .host-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--birch);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .host-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 4px; }
+  .host-meta { font-size: .85rem; opacity: .8; margin-bottom: 12px; }
+  .host-contact {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .88rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 48px 24px;
+    font-size: .8rem;
+    color: var(--mist);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  footer strong { color: var(--ink); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--moss);
+    margin: 0 0 28px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Haguenau · Alsace</p>
+  <h1>Bienvenue dans<br><em>votre chez-vous</em></h1>
+  <p class="hero-sub">Appart cosy 77 m² · WiFi 7 · Parking privé<br>Tout ce qu'il faut savoir pour un séjour parfait.</p>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#checkin"><span class="icon">🔑</span> Arrivée</a>
+  <a href="#wifi"><span class="icon">📶</span> WiFi</a>
+  <a href="#equipements"><span class="icon">🏠</span> Équipements</a>
+  <a href="#regles"><span class="icon">📋</span> Règles</a>
+  <a href="#quartier"><span class="icon">📍</span> Quartier</a>
+  <a href="#urgences"><span class="icon">🚨</span> Urgences</a>
+  <a href="#hote"><span class="icon">👤</span> Hôte</a>
+</nav>
+
+<main>
+
+  <!-- CHECK-IN -->
+  <section id="checkin">
+    <p class="section-label">01 · Arrivée &amp; départ</p>
+    <h2>Check-in &amp; check-out</h2>
+    <div class="divider"></div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>Arrivée (check-in)</div>
+      <ul class="steps">
+        <li>Garez-vous sur la place de parking privée réservée à votre logement (voir panneau).</li>
+        <li>Dirigez-vous vers la porte d'entrée de l'appartement.</li>
+        <li>Saisissez votre <strong>code PIN</strong> sur la serrure connectée Nuki — le code vous a été communiqué par message avant votre arrivée.</li>
+        <li>La porte s'ouvre automatiquement. Bienvenue !</li>
+      </ul>
+      <p style="margin-top:16px; font-size:.88rem; color:#666;">Arrivée possible à partir de <strong>15h00</strong>. Arrivée tardive ? Pas de problème, la serrure Nuki fonctionne 24h/24.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>Départ (check-out)</div>
+      <ul class="steps">
+        <li>Déposez les draps et serviettes utilisés dans le bac prévu à cet effet.</li>
+        <li>Rincez la vaisselle et laissez le logement dans un état correct.</li>
+        <li>Vérifiez que toutes les fenêtres sont fermées.</li>
+        <li>Refermez simplement la porte derrière vous — elle se verrouille automatiquement.</li>
+      </ul>
+      <p style="margin-top:16px; font-size:.88rem; color:#666;">Départ avant <strong>11h00</strong>. Merci de laisser les clés (si remises) sur le comptoir de la cuisine.</p>
+    </div>
+  </section>
+
+  <!-- WIFI -->
+  <section id="wifi">
+    <p class="section-label">02 · Connexion</p>
+    <h2>WiFi</h2>
+    <div class="divider"></div>
+
+    <div class="wifi-block">
+      <div>
+        <div class="label">Réseau (5 GHz)</div>
+        <div class="value">VOTRE_SSID_5G</div>
+      </div>
+      <div>
+        <div class="label">Mot de passe</div>
+        <div class="value">VOTRE_MOT_DE_PASSE</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>WiFi 7 · Fibre optique</div>
+      <p>Connexion très haut débit (WiFi 7) disponible dans tout l'appartement. Idéal pour le télétravail ou le streaming 4K. Si le signal est faible dans une pièce, connectez-vous au réseau <strong>2.4 GHz</strong> (même mot de passe, meilleure portée).</p>
+    </div>
+  </section>
+
+  <!-- ÉQUIPEMENTS -->
+  <section id="equipements">
+    <p class="section-label">03 · L'appartement</p>
+    <h2>Équipements</h2>
+    <div class="divider"></div>
+
+    <div class="equip-grid">
+      <div class="equip-item"><span class="equip-icon">📶</span> WiFi 7 · Fibre</div>
+      <div class="equip-item"><span class="equip-icon">🅿️</span> Parking privé</div>
+      <div class="equip-item"><span class="equip-icon">🔑</span> Serrure Nuki</div>
+      <div class="equip-item"><span class="equip-icon">🍳</span> Cuisine équipée</div>
+      <div class="equip-item"><span class="equip-icon">☕</span> Machine à café</div>
+      <div class="equip-item"><span class="equip-icon">🫙</span> Lave-vaisselle</div>
+      <div class="equip-item"><span class="equip-icon">👕</span> Lave-linge</div>
+      <div class="equip-item"><span class="equip-icon">📺</span> TV connectée</div>
+      <div class="equip-item"><span class="equip-icon">🌡️</span> Chauffage central</div>
+      <div class="equip-item"><span class="equip-icon">🛁</span> Salle de bain</div>
+      <div class="equip-item"><span class="equip-icon">🛏️</span> Linge de maison</div>
+      <div class="equip-item"><span class="equip-icon">🪒</span> Sèche-cheveux</div>
+      <div class="equip-item"><span class="equip-icon">🧴</span> Produits d'accueil</div>
+      <div class="equip-item"><span class="equip-icon">🧹</span> Matériel ménager</div>
+      <div class="equip-item"><span class="equip-icon">🔒</span> Détecteur CO/fumée</div>
+      <div class="equip-item"><span class="equip-icon">🧯</span> Extincteur</div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title"><span class="dot"></span>Poubelles</div>
+      <p>Bacs de tri disponibles dans la cuisine. Sortie des poubelles le <strong>[JOUR]</strong> soir.</p>
+      <p style="font-size:.85rem; color:#666;">Jaune : plastique &amp; papier · Vert : verre · Gris : déchets résiduels</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>Chauffage &amp; eau chaude</div>
+      <p>Le thermostat se trouve dans le couloir. Température recommandée : <strong>20–21°C</strong>. Merci de ne pas ouvrir les fenêtres en grand avec le chauffage allumé.</p>
+    </div>
+  </section>
+
+  <!-- RÈGLES -->
+  <section id="regles">
+    <p class="section-label">04 · Vivre ensemble</p>
+    <h2>Règles de la maison</h2>
+    <div class="divider"></div>
+
+    <div class="card">
+      <div class="rule"><span class="rule-icon">🚭</span> <span>Il est <strong>strictement interdit de fumer</strong> à l'intérieur du logement. Merci d'utiliser l'espace extérieur et de jeter les mégots dans la poubelle prévue.</span></div>
+      <div class="rule"><span class="rule-icon">🐾</span> <span><strong>Animaux non autorisés</strong> sans accord préalable de l'hôte.</span></div>
+      <div class="rule"><span class="rule-icon">🔇</span> <span><strong>Calme entre 22h et 8h</strong> — des voisins habitent à proximité, merci de respecter les heures de repos.</span></div>
+      <div class="rule"><span class="rule-icon">🎉</span> <span><strong>Fêtes non autorisées.</strong> Le logement est prévu pour les personnes inscrites à la réservation.</span></div>
+      <div class="rule"><span class="rule-icon">🪟</span> <span>Merci de <strong>fermer fenêtres et volets</strong> en cas d'absence ou la nuit.</span></div>
+      <div class="rule"><span class="rule-icon">💧</span> <span>En cas de problème (fuite, panne), <strong>contactez l'hôte immédiatement</strong> plutôt qu'intervenir seul.</span></div>
+      <div class="rule"><span class="rule-icon">🔌</span> <span>Merci d'éteindre les lumières et appareils non utilisés pour préserver l'environnement.</span></div>
+    </div>
+  </section>
+
+  <!-- QUARTIER -->
+  <section id="quartier">
+    <p class="section-label">05 · Haguenau</p>
+    <h2>Quartier &amp; bonnes adresses</h2>
+    <div class="divider"></div>
+
+    <p>Haguenau, capitale de l'Alsace du Nord, offre un centre historique animé à quelques minutes à pied. Strasbourg est à <strong>30 min en voiture</strong> ou en TER.</p>
+
+    <p class="section-label" style="margin-top:24px;">À manger</p>
+    <div class="place">
+      <div><div class="place-name">Marché couvert de Haguenau</div><div class="place-dist">~1,2 km</div></div>
+      <span class="place-tag">Marché · Mardi &amp; Vendredi</span>
+    </div>
+    <div class="place">
+      <div><div class="place-name">À compléter avec vos coups de cœur</div><div class="place-dist"></div></div>
+      <span class="place-tag">Restaurant</span>
+    </div>
+
+    <p class="section-label" style="margin-top:24px;">Shopping &amp; services</p>
+    <div class="place">
+      <div><div class="place-name">Centre-ville piéton</div><div class="place-dist">~15 min à pied</div></div>
+      <span class="place-tag">Shopping</span>
+    </div>
+    <div class="place">
+      <div><div class="place-name">Intermarché / Leclerc</div><div class="place-dist">~5 min en voiture</div></div>
+      <span class="place-tag">Supermarché</span>
+    </div>
+
+    <p class="section-label" style="margin-top:24px;">Transports</p>
+    <div class="place">
+      <div><div class="place-name">Gare SNCF Haguenau</div><div class="place-dist">~10 min en voiture</div></div>
+      <span class="place-tag">TER → Strasbourg 30 min</span>
+    </div>
+    <div class="place">
+      <div><div class="place-name">Bus CTS ligne [X]</div><div class="place-dist">~5 min à pied</div></div>
+      <span class="place-tag">Transport en commun</span>
+    </div>
+  </section>
+
+  <!-- URGENCES -->
+  <section id="urgences">
+    <p class="section-label">06 · En cas de problème</p>
+    <h2>Urgences</h2>
+    <div class="divider"></div>
+
+    <div class="urgence-card">
+      <span class="urgence-icon">🚨</span>
+      <div>
+        <div class="urgence-num">15</div>
+        <div class="urgence-label">SAMU · Urgences médicales</div>
+      </div>
+    </div>
+    <div class="urgence-card">
+      <span class="urgence-icon">🚒</span>
+      <div>
+        <div class="urgence-num">18</div>
+        <div class="urgence-label">Pompiers</div>
+      </div>
+    </div>
+    <div class="urgence-card">
+      <span class="urgence-icon">👮</span>
+      <div>
+        <div class="urgence-num">17</div>
+        <div class="urgence-label">Police · Gendarmerie</div>
+      </div>
+    </div>
+    <div class="urgence-card">
+      <span class="urgence-icon">🆘</span>
+      <div>
+        <div class="urgence-num">112</div>
+        <div class="urgence-label">Numéro d'urgence européen</div>
+      </div>
+    </div>
+    <div class="urgence-card">
+      <span class="urgence-icon">🏠</span>
+      <div>
+        <div class="urgence-num">+33 6 XX XX XX XX</div>
+        <div class="urgence-label">Hubert · Votre hôte (disponible 7j/7)</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title"><span class="dot"></span>Disjoncteur &amp; eau</div>
+      <p>Le tableau électrique se trouve <strong>[emplacement]</strong>. Le robinet d'arrêt d'eau générale est situé <strong>[emplacement]</strong>. En cas de doute, appelez l'hôte avant d'intervenir.</p>
+    </div>
+  </section>
+
+  <!-- HÔTE -->
+  <section id="hote">
+    <p class="section-label">07 · Votre hôte</p>
+    <h2>Hubert</h2>
+    <div class="divider"></div>
+
+    <div class="host-block">
+      <div class="host-avatar">🏡</div>
+      <div>
+        <div class="host-name">Hubert Messmer</div>
+        <div class="host-meta">Hôte depuis plusieurs années · Haguenau, Alsace</div>
+        <div class="host-contact">
+          <span>📱 Via la messagerie Airbnb</span>
+          <span>📍 Sur place (appartement du dessus)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title"><span class="dot"></span>Un mot de votre hôte</div>
+      <p>Je suis ravi de vous accueillir dans cet appartement que j'ai aménagé avec soin. N'hésitez pas à me contacter via Airbnb pour toute question — je réponds rapidement et suis présent sur place si besoin.</p>
+      <p>J'espère que vous passerez un excellent séjour à Haguenau et en Alsace !</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Appart cosy 77 m²</strong> · Haguenau, Alsace<br>
+  Livret mis à jour en 2025 · Airbnb : <strong>Appart cosy 77m2 - WiFi 7 - Parking vs Strasbourg</strong>
+</footer>
+
+</body>
+</html>

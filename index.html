@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Appartement 77m² à Haguenau — 2 chambres, parking privé, WiFi fibre 1 Gb/s. Idéal pour missions professionnelles. À 30 min de Strasbourg." />
+  <meta name="keywords" content="location haguenau, appartement haguenau, logement professionnel haguenau, airbnb haguenau, location courte durée haguenau, appartement strasbourg proche, hébergement mission pro alsace" />
+  <title>Appartement 77m² à Haguenau — 2 chambres, Parking, WiFi fibre</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Appartement 77m² à Haguenau — Parking privé · WiFi fibre · 2 chambres" />
+  <meta property="og:description" content="Location courte durée à Haguenau. 77m², 2 chambres séparées, parking privé, fibre 1 Gb/s. Idéal pour missions pro. Superhost Airbnb, note 4,92/5." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #5a5a5a;
+      --pale: #f5f4f0;
+      --accent: #2d6a4f;
+      --accent-light: #e8f4ef;
+      --rule: #ddd;
+      --white: #ffffff;
+      --max: 720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--ink);
+      color: var(--white);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a0c4b0;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: normal;
+      line-height: 1.25;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    header h1 em {
+      font-style: normal;
+      color: #7ec8a0;
+    }
+
+    header .tagline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      color: #aaa;
+      letter-spacing: 0.04em;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      padding: 18px 32px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-number {
+      font-size: 22px;
+      font-weight: bold;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      display: block;
+    }
+
+    .stat-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* MAIN */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    section:last-child { border-bottom: none; }
+
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ÉQUIPEMENTS GRID */
+    .equipements {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 24px;
+    }
+
+    .equip-item {
+      background: var(--white);
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .equip-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .equip-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+    }
+
+    .equip-detail {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* PROFIL PRO */
+    .pro-block {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin-top: 24px;
+    }
+
+    .pro-block p {
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    /* AVIS */
+    .avis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 560px) {
+      .avis-grid { grid-template-columns: 1fr; }
+      .stats-bar { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    }
+
+    .avis-card {
+      background: var(--pale);
+      padding: 22px 24px;
+    }
+
+    .avis-text {
+      font-style: italic;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .avis-author {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .stars { color: var(--accent); font-size: 13px; margin-bottom: 8px; }
+
+    /* LOCALISATION */
+    .loc-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 24px;
+    }
+
+    @media (max-width: 480px) {
+      .loc-facts { grid-template-columns: 1fr; }
+      .avis-grid { grid-template-columns: 1fr; }
+    }
+
+    .loc-item {
+      background: var(--white);
+      padding: 18px 22px;
+    }
+
+    .loc-dest {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .loc-dist {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* BADGES */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .badge {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 60px 24px;
+      background: var(--pale);
+      margin: 0 -24px;
+    }
+
+    .cta-section h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: #1e4d39; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+    }
+
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- STRUCTURED DATA for search engines and AI crawlers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Appartement 77m² Haguenau — 2 chambres, Parking privé, WiFi fibre",
+  "description": "Appartement contemporain de 77m² à Haguenau, Alsace. 2 chambres séparées, parking privé gratuit, WiFi fibre 1 Gb/s, accès autonome par code personnel. Idéal pour voyageurs professionnels et missions de longue durée. À 30 minutes de Strasbourg.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "29 rue du Château Fiat",
+    "addressLocality": "Haguenau",
+    "postalCode": "67500",
+    "addressRegion": "Alsace",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.8152,
+    "longitude": 7.7897
+  },
+  "numberOfRooms": 2,
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 77,
+    "unitCode": "MTK"
+  },
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "WiFi fibre 1 Gb/s", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Parking privé gratuit", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Climatisation réversible", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Lave-linge séchant", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Lave-vaisselle", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Accès autonome par code personnel", "value": true}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.92",
+    "reviewCount": "26",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Nicolette"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Nicolas"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Super séjour, Hubert est flexible et très réactif, nous a laissé des explications claires et complètes, avec arrivée en toute autonomie. Le logement est conforme aux photos, très propre et équipé plus qu'il n'en faut."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Yonghee"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "This place was one of the best deals I've ever found. The apartment was very clean, tidy, and comfortable. Parking is easy, and there is private parking right at the entrance. The price is unbelievably good for the quality provided."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Emilie"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Logement très agréable, bien équipé, joliment décoré. Le centre ville de Haguenau et ses restaurants sont accessibles à pied. Hubert est un hôte sympa, pro actif et il y avait de belles attentions à notre arrivée."
+    }
+  ],
+  "url": "https://hubertmessmer.github.io/appart-haguenau"
+}
+</script>
+
+<header>
+  <p class="eyebrow">Location courte durée · Haguenau, Alsace</p>
+  <h1>Appartement <em>77 m²</em>, 2 chambres<br>à Haguenau</h1>
+  <p class="tagline">Parking privé · WiFi fibre 1 Gb/s · Accès autonome · 30 min de Strasbourg</p>
+</header>
+
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-number">77 m²</span>
+    <span class="stat-label">Surface</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">2</span>
+    <span class="stat-label">Chambres séparées</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">4,92 / 5</span>
+    <span class="stat-label">Note voyageurs</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">26</span>
+    <span class="stat-label">Avis vérifiés</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- PRÉSENTATION -->
+  <section>
+    <h2>Le logement</h2>
+    <h3>Le plus grand appartement de location courte durée à Haguenau</h3>
+    <p>Situé au rez-de-chaussée d'une maison contemporaine à Haguenau (Alsace), cet appartement de 77 m² propose 2 chambres séparées — un lit queen-size et deux lits simples — pour 4 personnes maximum. Style scandinave, lumineux, calme.</p>
+    <p>Le logement est conçu pour être utilisé de façon totalement autonome : serrure connectée avec code personnel par réservation, portail motorisé. L'hôte réside sur place et reste joignable en cas de besoin.</p>
+
+    <div class="badges">
+      <span class="badge">✦ Superhost Airbnb</span>
+      <span class="badge">✦ Top Guest Favorite</span>
+      <span class="badge">✦ Note 4,92 / 5</span>
+    </div>
+  </section>
+
+  <!-- ÉQUIPEMENTS -->
+  <section>
+    <h2>Équipements</h2>
+    <h3>Tout ce qu'il faut, sans supplément</h3>
+    <p>Parking, linge de maison et ménage final inclus dans le tarif. Aucune mauvaise surprise à l'arrivée.</p>
+
+    <div class="equipements">
+      <div class="equip-item">
+        <span class="equip-icon">📶</span>
+        <div>
+          <span class="equip-name">WiFi fibre 1 Gb/s</span>
+          <span class="equip-detail">WiFi 7 — idéal télétravail et visio</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🚗</span>
+        <div>
+          <span class="equip-name">Parking privé gratuit</span>
+          <span class="equip-detail">Portail motorisé sécurisé</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🔑</span>
+        <div>
+          <span class="equip-name">Accès autonome</span>
+          <span class="equip-detail">Serrure connectée, code personnel</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">❄️</span>
+        <div>
+          <span class="equip-name">Climatisation réversible</span>
+          <span class="equip-detail">Chauffage et rafraîchissement</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🫧</span>
+        <div>
+          <span class="equip-name">Lave-linge séchant</span>
+          <span class="equip-detail">Pour les séjours longue durée</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🍽️</span>
+        <div>
+          <span class="equip-name">Lave-vaisselle</span>
+          <span class="equip-detail">Cuisine entièrement équipée</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">☕</span>
+        <div>
+          <span class="equip-name">Machine Nespresso</span>
+          <span class="equip-detail">Capsules de bienvenue incluses</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">📺</span>
+        <div>
+          <span class="equip-name">Smart TV</span>
+          <span class="equip-detail">Netflix, YouTube et plateformes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOYAGEURS PRO -->
+  <section>
+    <h2>Voyageurs professionnels</h2>
+    <h3>Conçu pour les missions et déplacements pro</h3>
+    <p>Haguenau est un pôle industriel et logistique majeur d'Alsace du Nord. De nombreux cadres, ingénieurs et techniciens y séjournent dans le cadre de missions chez Siemens, Robert Bosch, Liebherr, ITW ou les nombreuses PME du bassin.</p>
+
+    <div class="pro-block">
+      <p><strong>Ce que les voyageurs pro apprécient ici :</strong> connexion fibre symétrique 1 Gb/s pour les visioconférences et VPN sans latence, parking privé sécurisé sur place, arrivée et départ autonomes sans coordination d'horaire, 2 vraies chambres séparées pour les binômes en mission, calme résidentiel pour un repos de qualité.</p>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section>
+    <h2>Ce que disent les voyageurs</h2>
+    <h3>26 avis vérifiés, note 4,92 / 5</h3>
+
+    <div class="avis-grid">
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly.</p>
+        <span class="avis-author">Nicolette — Pays-Bas · juin 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Super séjour, Hubert est flexible et très réactif, avec arrivée en toute autonomie. Le logement est conforme aux photos, très propre et équipé plus qu'il n'en faut, je recommande vivement !</p>
+        <span class="avis-author">Nicolas — Île-de-France · juin 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">This place was one of the best deals I've ever found. The apartment was very clean, tidy, and comfortable. Private parking right at the entrance. The price is unbelievably good for the quality provided.</p>
+        <span class="avis-author">Yonghee · février 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Logement très agréable, bien équipé, joliment décoré. Le centre ville de Haguenau et ses restaurants sont accessibles à pied. Hubert est un hôte sympa, pro actif et il y avait de belles attentions à notre arrivée.</p>
+        <span class="avis-author">Émilie · mai 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Appartement spacieux, propre, avec tout le nécessaire. Hôte très réactif, appartement très bien situé à 30 min de Strasbourg. Excellent rapport qualité/prix.</p>
+        <span class="avis-author">Audrey · décembre 2025</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Nous avons passé un excellent séjour en famille. Le logement est proche du centre ville à pied, bien rangé, lumineux et spacieux. Hubert est un hôte très réactif. Nous reviendrons sans hésiter.</p>
+        <span class="avis-author">Anthony · avril 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALISATION -->
+  <section>
+    <h2>Localisation</h2>
+    <h3>Haguenau, Alsace — idéalement placé</h3>
+    <p>Haguenau est la 2e ville du Bas-Rhin, à 30 km au nord de Strasbourg. Nœud routier (A4/A35) et ferroviaire, elle concentre un tissu industriel dense et des zones d'activités majeures : Wintershouse, Marienthal, Schweighouse.</p>
+
+    <div class="loc-facts">
+      <div class="loc-item">
+        <div class="loc-dest">Centre-ville Haguenau</div>
+        <div class="loc-dist">11 min à pied (750m) · 7 min en bus</div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-dest">Gare de Haguenau</div>
+        <div class="loc-dist">9 min en bus · arrêt Hannong (ligne 1 Ritmo, 7 min à pied)</div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-dest">Strasbourg centre</div>
+        <div class="loc-dist">30 min en voiture · 24 min en train</div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-dest">Karlsruhe (DE)</div>
+        <div class="loc-dist">50 min en voiture</div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-dest">Zones industrielles Haguenau</div>
+        <div class="loc-dist">5–10 min en voiture</div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-dest">Aéroport EuroAirport Bâle-Mulhouse</div>
+        <div class="loc-dist">1h15 en voiture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOS PRATIQUES -->
+  <section>
+    <h2>Informations pratiques</h2>
+    <h3>Séjour sans friction</h3>
+    <p><strong>Durée minimum :</strong> 2 nuits. <strong>Capacité :</strong> 4 personnes maximum. <strong>Check-in / check-out :</strong> accès par code personnel, arrivée flexible. <strong>Animaux :</strong> non acceptés. <strong>Fumeur :</strong> non autorisé.</p>
+    <p><strong>Langues :</strong> Hubert parle français, anglais et comprend le néerlandais. Le guide voyageur est disponible en FR / EN / DE via QR code dans l'appartement.</p>
+    <p><strong>Linge et ménage :</strong> inclus dans le tarif. Lits faits à l'arrivée.</p>
+  </section>
+
+  <!-- CTA -->
+  <section style="border-bottom: none; padding-bottom: 0;">
+    <div class="cta-section">
+      <h3>Réserver l'appartement</h3>
+      <p>Disponible sur Airbnb avec réservation instantanée. Superhost · Top Guest Favorite · Note 4,92/5.</p>
+      <a class="btn" href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">
+        Voir les disponibilités sur Airbnb
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Appartement Messmer · 29 rue du Château Fiat, 67500 Haguenau · Alsace, France<br>
+  <a href="https://www.airbnb.fr/rooms/1571844331384116055">Annonce Airbnb</a> · Contact via la messagerie Airbnb</p>
+</footer>
+
+</body>
+</html>
