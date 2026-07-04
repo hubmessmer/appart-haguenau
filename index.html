@@ -113,7 +113,7 @@
     .stat-popup {
       display: none;
       position: absolute;
-      bottom: calc(100% + 12px);
+      bottom: calc(100% + 4px);
       left: 50%;
       transform: translateX(-50%);
       background: var(--white);
@@ -124,7 +124,17 @@
       min-width: 220px;
       max-width: 280px;
       overflow: hidden;
-      pointer-events: none;
+      pointer-events: all;
+    }
+
+    /* Pont invisible entre stat et popup pour éviter la disparition */
+    .stat-popup::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 16px;
     }
 
     .stat-popup::after {
@@ -137,7 +147,8 @@
       border-top-color: var(--white);
     }
 
-    .stat:hover .stat-popup {
+    .stat:hover .stat-popup,
+    .stat-popup:hover {
       display: block;
     }
 
@@ -550,8 +561,8 @@
           <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/c3a209d8-d2f2-452b-8496-8cc968fff826.jpeg?im_w=720" alt="Chambre queen-size" />
           <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/66bdcf65-e60f-4a36-9c51-b6a2f9b3d4ae.jpeg?im_w=720" alt="Chambre lits simples" />
         </div>
-        <button class="carousel-btn carousel-prev" onclick="carouselMove(&quot;carousel-chambres&quot;, -1)">‹</button>
-        <button class="carousel-btn carousel-next" onclick="carouselMove(&quot;carousel-chambres&quot;, 1)">›</button>
+        <button class="carousel-btn carousel-prev" onclick="carouselMove(&quot;carousel-chambres&quot;, -1)" style="display:none">‹</button>
+        <button class="carousel-btn carousel-next" onclick="carouselMove(&quot;carousel-chambres&quot;, 1)" style="display:none">›</button>
         <div class="carousel-dots">
           <span class="dot active"></span>
           <span class="dot"></span>
@@ -820,21 +831,30 @@
 </footer>
 
 <script>
-  const carouselState = {};
-
-  function carouselMove(id, dir) {
+  // Autoplay carrousel — tourne tout seul toutes les 2.5 secondes
+  function initCarousel(id) {
     const carousel = document.getElementById(id);
+    if (!carousel) return;
     const track = carousel.querySelector('.carousel-track');
     const imgs = track.querySelectorAll('img');
     const dots = carousel.querySelectorAll('.dot');
     const total = imgs.length;
+    let current = 0;
 
-    if (!carouselState[id]) carouselState[id] = 0;
-    carouselState[id] = (carouselState[id] + dir + total) % total;
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
 
-    track.style.transform = `translateX(-${carouselState[id] * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === carouselState[id]));
+    // Autoplay
+    setInterval(function() { goTo(current + 1); }, 2500);
   }
+
+  // Initialiser tous les carrousels au chargement
+  window.addEventListener('load', function() {
+    initCarousel('carousel-chambres');
+  });
 </script>
 </body>
 </html>
