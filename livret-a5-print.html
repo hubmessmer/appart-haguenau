@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Livret A5 · Chez Hubert · Haguenau</title>
+  <style>
+    @page {
+      size: A5;
+      margin: 12mm 14mm;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif;
+      font-size: 9pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: white;
+    }
+
+    /* PAGES */
+    .page {
+      width: 148mm;
+      min-height: 210mm;
+      page-break-after: always;
+      padding: 0;
+      position: relative;
+    }
+    .page:last-child { page-break-after: avoid; }
+
+    /* PAGE 1 — COUVERTURE */
+    .cover {
+      background: #2d6a4f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 210mm;
+      padding: 20mm 14mm;
+    }
+
+    .cover-eyebrow {
+      font-size: 7pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 12mm;
+    }
+
+    .cover h1 {
+      font-family: Georgia, serif;
+      font-size: 22pt;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 6mm;
+    }
+
+    .cover .sub {
+      font-size: 8pt;
+      opacity: 0.8;
+      margin-bottom: 14mm;
+    }
+
+    .cover-sandhaas {
+      margin: 8mm 0;
+    }
+
+    .cover-qr {
+      margin-top: 10mm;
+      background: white;
+      border-radius: 8px;
+      padding: 6mm;
+      display: inline-block;
+    }
+
+    .cover-qr p {
+      color: #2d6a4f;
+      font-size: 7pt;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 3mm;
+    }
+
+    .cover-footer {
+      margin-top: 10mm;
+      font-size: 7pt;
+      opacity: 0.6;
+    }
+
+    /* PAGES INTÉRIEURES */
+    .inner { padding: 8mm 0; }
+
+    .page-title {
+      font-family: Georgia, serif;
+      font-size: 13pt;
+      font-weight: normal;
+      color: #2d6a4f;
+      border-bottom: 1.5pt solid #2d6a4f;
+      padding-bottom: 3mm;
+      margin-bottom: 6mm;
+    }
+
+    .section-title {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2d6a4f;
+      margin-top: 5mm;
+      margin-bottom: 2mm;
+    }
+
+    p { margin-bottom: 2mm; font-size: 9pt; }
+
+    /* CODE BOX */
+    .code-box {
+      background: #1a1a1a;
+      color: #7ec8a0;
+      font-family: &apos;Courier New&apos;, monospace;
+      font-size: 12pt;
+      font-weight: bold;
+      text-align: center;
+      padding: 3mm 4mm;
+      border-radius: 4px;
+      margin: 2mm 0;
+      letter-spacing: 0.15em;
+    }
+
+    /* INFO BOX */
+    .info { background: #eaf2ec; border-left: 2pt solid #2d6a4f; padding: 2mm 3mm; margin: 2mm 0; font-size: 8pt; }
+    .warn { background: #fff9ee; border-left: 2pt solid #f4a827; padding: 2mm 3mm; margin: 2mm 0; font-size: 8pt; }
+
+    /* STEPS */
+    .step { display: flex; gap: 3mm; margin-bottom: 2mm; font-size: 9pt; }
+    .step-num { background: #2d6a4f; color: white; width: 14pt; height: 14pt; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 7pt; font-weight: bold; flex-shrink: 0; margin-top: 1mm; }
+
+    /* URGENCES GRID */
+    .urg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin: 3mm 0; }
+    .urg-card { border: 0.5pt solid #ddd; border-radius: 4px; padding: 2mm 3mm; display: flex; align-items: center; gap: 2mm; }
+    .urg-num { font-family: &apos;Courier New&apos;, monospace; font-size: 13pt; font-weight: bold; color: #2d6a4f; min-width: 28pt; }
+    .urg-label { font-size: 8pt; font-weight: 600; }
+    .urg-sub { font-size: 7pt; color: #666; }
+
+    /* RÈGLES */
+    .rule { display: flex; gap: 2mm; margin-bottom: 1.5mm; font-size: 8.5pt; }
+
+    /* HÔTE */
+    .hote-box { border: 0.5pt solid #2d6a4f; border-radius: 6px; padding: 3mm 4mm; margin: 3mm 0; }
+    .hote-name { font-family: Georgia, serif; font-size: 12pt; color: #2d6a4f; }
+    .hote-tel { font-family: &apos;Courier New&apos;, monospace; font-size: 14pt; font-weight: bold; color: #1a1a1a; }
+
+    /* TIMINGS */
+    .timing-row { display: flex; gap: 4mm; margin: 3mm 0; }
+    .timing-card { flex: 1; border: 0.5pt solid #ddd; border-radius: 4px; padding: 2mm 3mm; text-align: center; }
+    .timing-val { font-family: &apos;Courier New&apos;, monospace; font-size: 14pt; font-weight: bold; color: #2d6a4f; }
+    .timing-lbl { font-size: 7pt; text-transform: uppercase; letter-spacing: 0.08em; color: #666; }
+
+    hr { border: none; border-top: 0.5pt solid #ddd; margin: 4mm 0; }
+
+    .footer-print { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; font-size: 7pt; color: #999; padding-top: 3mm; border-top: 0.5pt solid #eee; }
+
+    @media screen {
+      body { background: #eee; padding: 20px; }
+      .page { background: white; margin: 0 auto 20px; padding: 14mm; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+      .cover { padding: 20mm 14mm; }
+      .inner { padding: 0; }
+    }
+
+    @media print {
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BOUTON IMPRESSION (masqué à l'impression) -->
+<div class="no-print" style="text-align:center;padding:16px;background:#2d6a4f;color:white;font-family:Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer" onclick="window.print()">
+  🖨️ Imprimer le livret A5
+</div>
+
+<!-- ======================== -->
+<!-- PAGE 1 — COUVERTURE     -->
+<!-- ======================== -->
+<div class="page">
+  <div class="cover">
+    <p class="cover-eyebrow">Haguenau · Alsace</p>
+
+    <svg class="cover-sandhaas" viewBox="0 0 200 240" width="100" height="120" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="100" cy="185" rx="55" ry="45" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <ellipse cx="100" cy="128" rx="38" ry="34" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <ellipse cx="78" cy="72" rx="11" ry="36" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1" transform="rotate(-8 78 72)"/>
+      <ellipse cx="78" cy="72" rx="5" ry="27" fill="rgba(200,100,100,0.4)" transform="rotate(-8 78 72)"/>
+      <ellipse cx="122" cy="70" rx="11" ry="36" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1" transform="rotate(8 122 70)"/>
+      <ellipse cx="122" cy="70" rx="5" ry="27" fill="rgba(200,100,100,0.4)" transform="rotate(8 122 70)"/>
+      <circle cx="88" cy="120" r="5" fill="white" opacity="0.9"/>
+      <circle cx="112" cy="120" r="5" fill="white" opacity="0.9"/>
+      <polygon points="88,120 83,114 88,108 93,114" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+      <polygon points="112,120 107,114 112,108 117,114" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+      <line x1="93" y1="114" x2="107" y2="114" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+      <path d="M68 154 Q100 163 132 154 Q130 162 100 170 Q70 162 68 154Z" fill="#c0392b" opacity="0.8"/>
+      <text x="100" y="188" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="rgba(45,106,79,0.9)">Hawenauer</text>
+      <text x="100" y="200" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="rgba(45,106,79,0.9)">Sandhaas</text>
+    </svg>
+
+    <h1>Bienvenue<br>Chez Hubert</h1>
+    <p class="sub">Appartement 77 m² · Haguenau, Alsace<br>WiFi 7 · Parking privé · Accès autonome</p>
+
+    <div class="cover-qr">
+      <!-- Placeholder QR code — à remplacer par le vrai QR code une fois l'URL connue -->
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <rect width="80" height="80" fill="white"/>
+        <rect x="5" y="5" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+        <rect x="12" y="12" width="16" height="16" rx="1" fill="#2d6a4f"/>
+        <rect x="45" y="5" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+        <rect x="52" y="12" width="16" height="16" rx="1" fill="#2d6a4f"/>
+        <rect x="5" y="45" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+        <rect x="12" y="52" width="16" height="16" rx="1" fill="#2d6a4f"/>
+        <rect x="45" y="45" width="6" height="6" fill="#2d6a4f"/>
+        <rect x="55" y="45" width="6" height="6" fill="#2d6a4f"/>
+        <rect x="65" y="45" width="9" height="6" fill="#2d6a4f"/>
+        <rect x="45" y="55" width="9" height="6" fill="#2d6a4f"/>
+        <rect x="58" y="55" width="6" height="6" fill="#2d6a4f"/>
+        <rect x="45" y="65" width="6" height="9" fill="#2d6a4f"/>
+        <rect x="55" y="68" width="6" height="6" fill="#2d6a4f"/>
+        <rect x="65" y="62" width="9" height="12" fill="#2d6a4f"/>
+      </svg>
+      <p>Scannez pour le<br>guide numérique complet</p>
+    </div>
+
+    <p class="cover-footer">🐇 Les Sandhaas vous souhaitent un excellent séjour</p>
+  </div>
+</div>
+
+<!-- ======================== -->
+<!-- PAGE 2 — ARRIVÉE + WIFI -->
+<!-- ======================== -->
+<div class="page">
+  <div class="inner">
+    <p class="page-title">Arrivée & WiFi</p>
+
+    <div class="timing-row">
+      <div class="timing-card">
+        <div class="timing-lbl">Check-in</div>
+        <div class="timing-val">16h00</div>
+        <div class="timing-lbl">jusqu&apos;à 23h00</div>
+      </div>
+      <div class="timing-card">
+        <div class="timing-lbl">Check-out</div>
+        <div class="timing-val">11h00</div>
+        <div class="timing-lbl">au plus tard</div>
+      </div>
+    </div>
+
+    <p class="section-title">🔑 Serrure Nuki</p>
+    <div class="step"><span class="step-num">1</span><span>Garez-vous sur la place privée</span></div>
+    <div class="step"><span class="step-num">2</span><span>Approchez-vous de la porte d&apos;entrée</span></div>
+    <div class="step"><span class="step-num">3</span><span>Saisissez votre <strong>code PIN personnel</strong> + validation</span></div>
+    <div class="step"><span class="step-num">4</span><span>La porte s&apos;ouvre. Bienvenue !</span></div>
+
+    <div class="info">Télécommande portail : coupelle noire sur la console d&apos;entrée</div>
+
+    <hr/>
+
+    <p class="section-title">📶 WiFi</p>
+    <p style="font-size:8pt;color:#666;margin-bottom:1mm">Réseau 5 GHz :</p>
+    <div class="code-box">[SSID]</div>
+    <p style="font-size:8pt;color:#666;margin:2mm 0 1mm">Mot de passe :</p>
+    <div class="code-box">[MOT DE PASSE]</div>
+    <div class="info">WiFi 7 · Fibre 1 Gb/s — idéal pour le télétravail</div>
+
+    <hr/>
+
+    <p class="section-title">🚪 Départ</p>
+    <p>Draps et serviettes → bac prévu · Rincez la vaisselle · Fermez les fenêtres · Tirez la porte (verrouillage automatique). Votre code se désactive à 11h00.</p>
+    <div class="info">Le ménage final est inclus — pas besoin de nettoyer en profondeur.</div>
+  </div>
+  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+</div>
+
+<!-- ========================== -->
+<!-- PAGE 3 — ÉQUIPEMENTS       -->
+<!-- ========================== -->
+<div class="page">
+  <div class="inner">
+    <p class="page-title">Équipements essentiels</p>
+
+    <p class="section-title">🫧 Lave-linge séchant</p>
+    <p><strong>Laver :</strong> Chargez, ajoutez lessive (bac I), sélectionnez programme (Coton 40°), Start.</p>
+    <p><strong>Sécher :</strong> Sélectionnez programme séchage. Videz le bac à condensats après.</p>
+    <div class="warn">Max ¾ du tambour. Consultez les étiquettes.</div>
+
+    <hr/>
+
+    <p class="section-title">🍽️ Lave-vaisselle</p>
+    <p>Rincez grossièrement · Chargez · Pastille dans compartiment détergent · Vérifiez sel et brillant · Programme Eco ou Normal · Start.</p>
+    <div class="warn">Pas de couteaux de cuisine ni casseroles à revêtement.</div>
+
+    <hr/>
+
+    <p class="section-title">☕ Nespresso</p>
+    <p>Allumez (voyant fixe ~30s) · Insérez capsule · Tasse sous le bec · Espresso ou Lungo. Capsules de bienvenue dans le tiroir sous la machine.</p>
+
+    <hr/>
+
+    <p class="section-title">❄️ Climatisation mobile</p>
+    <p>Dans le salon — l&apos;air frais circule dans tout l&apos;appartement. Power → température 22-24°C → mode Cool. Fermez les fenêtres.</p>
+
+    <hr/>
+
+    <p class="section-title">📺 Smart TV</p>
+    <p>Netflix, YouTube, Amazon Prime préinstallés. Connectez-vous avec votre compte. <strong>Déconnectez-vous avant de partir.</strong></p>
+
+    <hr/>
+
+    <p class="section-title">💡 Éclairage (Shelly)</p>
+    <p>Interrupteurs près des lits : appui court = on/off · appui long = variation.</p>
+  </div>
+  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+</div>
+
+<!-- ========================== -->
+<!-- PAGE 4 — RÈGLES + URGENCES -->
+<!-- ========================== -->
+<div class="page">
+  <div class="inner">
+    <p class="page-title">Règles & Urgences</p>
+
+    <p class="section-title">📋 Règles de la maison</p>
+    <div class="rule"><span>🚭</span><span>Non-fumeur — intérieur ET extérieur de la résidence</span></div>
+    <div class="rule"><span>🐾</span><span>Animaux non autorisés</span></div>
+    <div class="rule"><span>🔇</span><span>Calme entre 22h et 7h</span></div>
+    <div class="rule"><span>🎉</span><span>Fêtes non autorisées</span></div>
+    <div class="rule"><span>🪟</span><span>Fermer fenêtres et volets la nuit ou en absence</span></div>
+    <div class="rule"><span>🔌</span><span>Éteindre lumières et appareils non utilisés</span></div>
+
+    <hr/>
+
+    <p class="section-title">🚨 Numéros d&apos;urgence</p>
+    <div class="urg-grid">
+      <div class="urg-card"><div class="urg-num">15</div><div><div class="urg-label">SAMU</div><div class="urg-sub">Urgences médicales</div></div></div>
+      <div class="urg-card"><div class="urg-num">18</div><div><div class="urg-label">Pompiers</div><div class="urg-sub">Incendie · secours</div></div></div>
+      <div class="urg-card"><div class="urg-num">17</div><div><div class="urg-label">Police</div><div class="urg-sub">Gendarmerie</div></div></div>
+      <div class="urg-card"><div class="urg-num">112</div><div><div class="urg-label">EU</div><div class="urg-sub">Numéro européen</div></div></div>
+    </div>
+
+    <hr/>
+
+    <p class="section-title">👤 Votre hôte</p>
+    <div class="hote-box">
+      <div class="hote-name">Hubert</div>
+      <p style="font-size:8pt;color:#666;margin:1mm 0">Sur place · appartement du dessus · FR / EN / DE</p>
+      <div class="hote-tel">06 95 42 64 15</div>
+      <p style="font-size:8pt;color:#666;margin-top:1mm">Je suis disponible 7j/7 pour toute question.</p>
+    </div>
+
+    <div class="info" style="margin-top:4mm;text-align:center">
+      🐇 <em>Sandhaas</em> — Les lièvres des sables vous souhaitent un excellent séjour à Haguenau !
+    </div>
+  </div>
+  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+</div>
+
+</body>
+</html>
