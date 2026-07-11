@@ -3,736 +3,393 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Livret d'accueil · Appart cosy 77m² · Haguenau</title>
+  <title>Livret d&apos;accueil · Chez Hubert · Haguenau</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --lin: #f7f5f0;
-      --white: #ffffff;
-      --ink: #1c1c1c;
-      --muted: #6b6b6b;
-      --moss: #3a6b4a;
-      --moss-light: #eaf2ec;
-      --moss-mid: #c2dcc9;
-      --rule: #e0dbd2;
-      --warn: #f4a827;
-      --radius: 12px;
-      --max: 680px;
+      --lin: #f7f5f0; --white: #ffffff; --ink: #1c1c1c; --muted: #6b6b6b;
+      --moss: #3a6b4a; --moss-light: #eaf2ec; --moss-mid: #c2dcc9;
+      --rule: #e0dbd2; --warn: #f4a827; --radius: 12px; --max: 680px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: &apos;Inter&apos;, sans-serif; background: var(--lin); color: var(--ink); font-size: 15px; line-height: 1.7; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--lin);
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.7;
-    }
+    /* LANG BAR */
+    .lang-bar { background: var(--ink); display: flex; justify-content: center; gap: 8px; padding: 10px 16px; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
+    .lang-btn { background: rgba(255,255,255,0.1); color: white; border: 1.5px solid rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 999px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .lang-btn.active { background: var(--moss); border-color: var(--moss); }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
 
-    /* HEADER */
-    header {
-      background: var(--moss);
-      color: var(--white);
-      text-align: center;
-      padding: 52px 24px 44px;
-    }
-
-    header .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 16px;
-    }
-
-    header h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(28px, 6vw, 42px);
-      font-weight: normal;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    header .sub {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 24px;
-    }
-
-    /* NAV PILLS */
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0 16px;
-    }
-
-    nav a {
-      background: rgba(255,255,255,0.15);
-      color: var(--white);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 6px 14px;
-      border-radius: 999px;
-      transition: background 0.2s;
-    }
-
+    header { background: var(--moss); color: var(--white); text-align: center; padding: 52px 24px 44px; }
+    header .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 16px; }
+    header h1 { font-family: &apos;DM Serif Display&apos;, serif; font-size: clamp(28px, 6vw, 42px); font-weight: normal; line-height: 1.2; margin-bottom: 12px; }
+    header .sub { font-size: 14px; opacity: 0.8; margin-bottom: 24px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 0 16px; }
+    nav a { background: rgba(255,255,255,0.15); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
     nav a:hover { background: rgba(255,255,255,0.3); }
-
-    /* MAIN */
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 32px 16px 64px;
-    }
-
-    /* SECTION */
-    .section {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 28px 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .section-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--moss);
-      background: var(--moss-light);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-weight: 500;
-    }
-
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      font-weight: normal;
-    }
-
-    /* STEPS */
+    main { max-width: var(--max); margin: 0 auto; padding: 32px 16px 64px; }
+    .section { background: var(--white); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+    .section-number { font-family: &apos;JetBrains Mono&apos;, monospace; font-size: 11px; color: var(--moss); background: var(--moss-light); padding: 3px 8px; border-radius: 4px; font-weight: 500; }
+    .section-title { font-family: &apos;DM Serif Display&apos;, serif; font-size: 20px; font-weight: normal; }
+    .timing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .timing-card { background: var(--lin); border-radius: 8px; padding: 16px 18px; text-align: center; }
+    .timing-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .timing-value { font-family: &apos;JetBrains Mono&apos;, monospace; font-size: 22px; font-weight: 500; color: var(--moss); }
+    .timing-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
     .steps { list-style: none; }
-
-    .steps li {
-      display: flex;
-      gap: 14px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    .steps li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
     .steps li:last-child { border-bottom: none; }
-
-    .step-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--moss);
-      background: var(--moss-light);
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
+    .step-num { font-family: &apos;JetBrains Mono&apos;, monospace; font-size: 12px; font-weight: 500; color: var(--moss); background: var(--moss-light); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .step-text { color: var(--ink); font-size: 14px; }
-    .step-text strong { color: var(--ink); }
-
-    /* INFO BOX */
-    .info-box {
-      background: var(--moss-light);
-      border-left: 3px solid var(--moss);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 18px;
-      margin: 16px 0;
-      font-size: 14px;
-      color: var(--ink);
-    }
-
-    .warn-box {
-      background: #fff9ee;
-      border-left: 3px solid var(--warn);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 18px;
-      margin: 16px 0;
-      font-size: 14px;
-      color: var(--ink);
-    }
-
-    /* TIMING GRID */
-    .timing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .timing-card {
-      background: var(--lin);
-      border-radius: 8px;
-      padding: 16px 18px;
-      text-align: center;
-    }
-
-    .timing-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .timing-value {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--moss);
-    }
-
-    .timing-sub {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* WIFI BOX */
-    .wifi-box {
-      background: var(--lin);
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 16px;
-    }
-
+    .info-box { background: var(--moss-light); border-left: 3px solid var(--moss); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink); }
+    .warn-box { background: #fff9ee; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink); }
+    .wifi-box { background: var(--lin); border-radius: 8px; padding: 20px; text-align: center; margin-top: 16px; }
     .wifi-icon { font-size: 32px; margin-bottom: 8px; }
-
-    .wifi-label {
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .wifi-note {
-      font-size: 14px;
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .wifi-sub {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    /* EQUIPMENT GRID */
-    .equip-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .equip-item {
-      background: var(--lin);
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* RULES */
+    .wifi-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .wifi-note { font-size: 14px; color: var(--ink); font-weight: 500; }
+    .wifi-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .equip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 16px; }
+    .equip-item { background: var(--lin); border-radius: 8px; padding: 12px 14px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
     .rules-list { list-style: none; }
-
-    .rules-list li {
-      display: flex;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 14px;
-    }
+    .rules-list li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
     .rules-list li:last-child { border-bottom: none; }
-
     .rule-icon { font-size: 18px; flex-shrink: 0; }
-
-    /* PLACES */
     .place-group { margin-bottom: 20px; }
-
-    .place-group-title {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .place-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 14px;
-      gap: 12px;
-    }
+    .place-group-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+    .place-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; gap: 12px; }
     .place-item:last-child { border-bottom: none; }
-
     .place-name { font-weight: 500; }
     .place-detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
-
-    .place-dist {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--moss);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    /* URGENCES */
-    .urgence-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .urgence-card {
-      background: var(--lin);
-      border-radius: 8px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .urgence-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--moss);
-      min-width: 40px;
-    }
-
+    .place-dist { font-family: &apos;JetBrains Mono&apos;, monospace; font-size: 12px; color: var(--moss); white-space: nowrap; flex-shrink: 0; }
+    .urgence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    .urgence-card { background: var(--lin); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    .urgence-number { font-family: &apos;JetBrains Mono&apos;, monospace; font-size: 20px; font-weight: 500; color: var(--moss); min-width: 40px; }
     .urgence-label { font-size: 13px; font-weight: 500; }
     .urgence-sub { font-size: 11px; color: var(--muted); }
-
-    /* HOTE */
-    .hote-card {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: var(--lin);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-
-    .hote-avatar {
-      width: 60px;
-      height: 60px;
-      background: var(--moss);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-      color: white;
-    }
-
-    .hote-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      font-weight: normal;
-    }
-
+    .hote-card { display: flex; align-items: center; gap: 20px; background: var(--lin); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+    .hote-avatar { width: 60px; height: 60px; background: var(--moss); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: white; }
+    .hote-name { font-family: &apos;DM Serif Display&apos;, serif; font-size: 20px; font-weight: normal; }
     .hote-detail { font-size: 13px; color: var(--muted); margin-top: 4px; }
-
-    .hote-contact {
-      background: var(--moss);
-      color: white;
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 14px;
-    }
-
+    .hote-contact { background: var(--moss); color: white; border-radius: 8px; padding: 14px 18px; font-size: 14px; }
     .hote-contact strong { display: block; margin-bottom: 4px; }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--rule);
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-
+    footer { text-align: center; padding: 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; }
     @media (max-width: 480px) {
       .timing-grid { grid-template-columns: 1fr 1fr; }
       .urgence-grid { grid-template-columns: 1fr; }
       .section { padding: 20px 18px; }
     }
-  </style>
+</style>
 </head>
 <body>
 
-  <div style="background: var(--moss); text-align: center; padding: 10px 24px;">
-    <a href="index.html" style="color: rgba(255,255,255,0.8); font-family: &apos;Inter&apos;, sans-serif; font-size: 13px; text-decoration: none;">← Retour à la présentation de l'appartement</a>
-  </div>
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang(&apos;fr&apos;)">🇫🇷 Français</button>
+  <button class="lang-btn" onclick="setLang(&apos;en&apos;)">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang(&apos;de&apos;)">🇩🇪 Deutsch</button>
+</div>
+
+<div class="lang-block" id="block-fr">
+
+<!-- RETOUR -->
+<div style="background:var(--moss);text-align:center;padding:10px 24px;">
+  <a href="index.html" style="color:rgba(255,255,255,0.8);font-family:Inter,sans-serif;font-size:13px;text-decoration:none;">← Retour à la présentation de l&apos;appartement</a>
+</div>
+
 <header>
   <p class="eyebrow">Haguenau · Alsace</p>
   <h1>Bienvenue dans<br>votre chez-vous</h1>
-  <p class="sub">Appart cosy 77 m² · WiFi 7 · Parking privé<br>Tout ce qu'il faut savoir pour un séjour parfait.</p>
-  <nav>
-    <a href="#arrivee">🔑 Arrivée</a>
-    <a href="#wifi">📶 WiFi</a>
-    <a href="#equipements">🏠 Équipements</a>
-    <a href="#regles">📋 Règles</a>
-    <a href="#quartier">📍 Quartier</a>
-    <a href="#urgences">🚨 Urgences</a>
-    <a href="#hote">👤 Hôte</a>
-  </nav>
+  <p class="sub">Appart cosy 77 m² · WiFi 7 · Parking privé<br>Tout ce qu&apos;il faut savoir pour un séjour parfait.</p>
+  <nav><a href="#arrivee" class="nav-pill">🔑 Arrivée</a>
+<a href="#wifi" class="nav-pill">📶 WiFi</a>
+<a href="#equipements" class="nav-pill">🏠 Équipements</a>
+<a href="#regles" class="nav-pill">📋 Règles</a>
+<a href="#quartier" class="nav-pill">📍 Quartier</a>
+<a href="#urgences" class="nav-pill">🚨 Urgences</a>
+<a href="#hote" class="nav-pill">👤 Hôte</a></nav>
 </header>
 
 <main>
 
-  <!-- 01 ARRIVÉE -->
   <div class="section" id="arrivee">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <span class="section-title">Arrivée & départ</span>
-    </div>
-
+    <div class="section-header"><span class="section-number">01</span><span class="section-title">Arrivée & départ</span></div>
     <div class="timing-grid">
-      <div class="timing-card">
-        <div class="timing-label">Check-in</div>
-        <div class="timing-value">16h00</div>
-        <div class="timing-sub">jusqu'à 23h00</div>
-      </div>
-      <div class="timing-card">
-        <div class="timing-label">Check-out</div>
-        <div class="timing-value">11h00</div>
-        <div class="timing-sub">au plus tard</div>
-      </div>
+      <div class="timing-card"><div class="timing-label">Check-in</div><div class="timing-value">16h00</div><div class="timing-sub">jusqu'à 23h00</div></div>
+      <div class="timing-card"><div class="timing-label">Check-out</div><div class="timing-value">11h00</div><div class="timing-sub">au plus tard</div></div>
     </div>
-
-    <div style="margin-top: 24px; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Arrivée</div>
-    <ul class="steps">
-      <li>
-        <span class="step-num">1</span>
-        <span class="step-text">Garez-vous sur la place de parking privée réservée à votre logement.</span>
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        <span class="step-text">Dirigez-vous vers la porte d'entrée de l'appartement.</span>
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        <span class="step-text">Saisissez votre <strong>code PIN personnel</strong> sur la serrure connectée Nuki — le code vous a été communiqué par message avant votre arrivée.</span>
-      </li>
-      <li>
-        <span class="step-num">4</span>
-        <span class="step-text">La porte s'ouvre automatiquement. Bienvenue !</span>
-      </li>
-    </ul>
-
-    <div style="margin-top: 24px; margin-bottom: 8px; font-weight: 600; font-size: 14px;">Départ</div>
-    <ul class="steps">
-      <li>
-        <span class="step-num">1</span>
-        <span class="step-text">Déposez les draps et serviettes utilisés dans le bac prévu à cet effet.</span>
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        <span class="step-text">Rincez la vaisselle et laissez le logement dans un état correct.</span>
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        <span class="step-text">Vérifiez que toutes les fenêtres sont fermées.</span>
-      </li>
-      <li>
-        <span class="step-num">4</span>
-        <span class="step-text">Refermez simplement la porte derrière vous — elle se verrouille automatiquement. Votre code est désactivé à l'heure de départ.</span>
-      </li>
-    </ul>
-
-    <div class="info-box" style="margin-top: 16px;">
-      💡 Le ménage final est inclus dans votre réservation — pas besoin de nettoyer en profondeur avant de partir.
-    </div>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Arrivée</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Garez-vous sur la place de parking privée réservée à votre logement.</span></li><li><span class="step-num">2</span><span class="step-text">Dirigez-vous vers la porte d&apos;entrée de l&apos;appartement.</span></li><li><span class="step-num">3</span><span class="step-text">Saisissez votre <strong>code PIN personnel</strong> sur la serrure connectée Nuki — le code vous a été communiqué par message avant votre arrivée.</span></li><li><span class="step-num">4</span><span class="step-text">La porte s&apos;ouvre automatiquement. Bienvenue !</span></li></ul>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Départ</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Déposez les draps et serviettes utilisés dans le bac prévu à cet effet.</span></li><li><span class="step-num">2</span><span class="step-text">Rincez la vaisselle et laissez le logement dans un état correct.</span></li><li><span class="step-num">3</span><span class="step-text">Vérifiez que toutes les fenêtres sont fermées.</span></li><li><span class="step-num">4</span><span class="step-text">Refermez simplement la porte derrière vous — elle se verrouille automatiquement. Votre code est désactivé à l&apos;heure de départ.</span></li></ul>
+    <div class="info-box" style="margin-top:16px;">💡 Le ménage final est inclus dans votre réservation — pas besoin de nettoyer en profondeur avant de partir.</div>
   </div>
 
-  <!-- 02 WIFI -->
   <div class="section" id="wifi">
-    <div class="section-header">
-      <span class="section-number">02</span>
-      <span class="section-title">Connexion WiFi</span>
-    </div>
-
+    <div class="section-header"><span class="section-number">02</span><span class="section-title">Connexion WiFi</span></div>
     <div class="wifi-box">
       <div class="wifi-icon">📶</div>
       <div class="wifi-label">Identifiants WiFi</div>
-      <div class="wifi-note">Voir le QR code affiché dans l'appartement</div>
-      <div class="wifi-sub">Cadre photo / console d'entrée</div>
+      <div class="wifi-note">Voir le QR code affiché dans l&apos;appartement</div>
+      <div class="wifi-sub">Cadre photo / console d&apos;entrée</div>
     </div>
-
-    <div class="info-box" style="margin-top: 16px;">
-      <strong>WiFi 7 · Fibre optique 1 Gb/s</strong><br>
-      Connexion très haut débit disponible dans tout l'appartement. Idéal pour le télétravail, les visioconférences et le streaming 4K.
-    </div>
+    <div class="info-box" style="margin-top:16px;"><strong>WiFi 7 · Fibre optique 1 Gb/s</strong><br>Connexion très haut débit disponible dans tout l&apos;appartement. Idéal pour le télétravail, les visioconférences et le streaming 4K.</div>
   </div>
 
-  <!-- 03 ÉQUIPEMENTS -->
   <div class="section" id="equipements">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <span class="section-title">L'appartement</span>
-    </div>
+    <div class="section-header"><span class="section-number">03</span><span class="section-title">L&apos;appartement</span></div>
+    <div class="equip-grid"><div class="equip-item">📶 WiFi 7 · Fibre</div><div class="equip-item">🅿️ Parking privé</div><div class="equip-item">🔑 Serrure Nuki</div><div class="equip-item">🍳 Cuisine équipée</div><div class="equip-item">☕ Machine Nespresso</div><div class="equip-item">🫙 Lave-vaisselle</div><div class="equip-item">👕 Lave-linge séchant</div><div class="equip-item">📺 Smart TV</div><div class="equip-item">❄️ Climatisation mobile</div><div class="equip-item">🛁 Douche italienne</div><div class="equip-item">🛏️ Linge de maison</div><div class="equip-item">🪒 Sèche-cheveux</div><div class="equip-item">🧴 Produits d&apos;accueil</div><div class="equip-item">💡 Interrupteurs lit</div><div class="equip-item">🔒 Détecteur fumée</div><div class="equip-item">🧯 Extincteur</div></div>
+  </div>
 
-    <div class="equip-grid">
-      <div class="equip-item">📶 WiFi 7 · Fibre</div>
-      <div class="equip-item">🅿️ Parking privé</div>
-      <div class="equip-item">🔑 Serrure Nuki</div>
-      <div class="equip-item">🍳 Cuisine équipée</div>
-      <div class="equip-item">☕ Machine Nespresso</div>
-      <div class="equip-item">🫙 Lave-vaisselle</div>
-      <div class="equip-item">👕 Lave-linge séchant</div>
-      <div class="equip-item">📺 Smart TV</div>
-      <div class="equip-item">❄️ Climatisation mobile</div>
-      <div class="equip-item">🛁 Douche italienne</div>
-      <div class="equip-item">🛏️ Linge de maison</div>
-      <div class="equip-item">🪒 Sèche-cheveux</div>
-      <div class="equip-item">🧴 Produits d'accueil</div>
-      <div class="equip-item">💡 Interrupteurs lit</div>
-      <div class="equip-item">🔒 Détecteur fumée</div>
-      <div class="equip-item">🧯 Extincteur</div>
-    </div>
-
-
-    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden;">
-      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/36e9ed6b-c5df-4e7b-838b-a40af7f5fd33.jpeg?im_w=1920" alt="Salon appartement Haguenau" style="width: 100%; height: 220px; object-fit: cover; display: block;" />
-    </div>
   <div class="section" id="regles">
-    <div class="section-header">
-      <span class="section-number">04</span>
-      <span class="section-title">Règles de la maison</span>
-    </div>
-
-    <ul class="rules-list">
-      <li>
-        <span class="rule-icon">🚭</span>
-        <span>Il est strictement interdit de fumer à l'intérieur du logement et dans l'ensemble de la résidence (extérieur compris).</span>
-      </li>
-      <li>
-        <span class="rule-icon">🐾</span>
-        <span>Animaux non autorisés.</span>
-      </li>
-      <li>
-        <span class="rule-icon">🔇</span>
-        <span>Calme entre 22h et 7h — des voisins habitent à proximité immédiate, merci de respecter les heures de repos.</span>
-      </li>
-      <li>
-        <span class="rule-icon">🎉</span>
-        <span>Fêtes non autorisées. Le logement est prévu pour les personnes inscrites à la réservation.</span>
-      </li>
-      <li>
-        <span class="rule-icon">🪟</span>
-        <span>Merci de fermer fenêtres et volets en cas d'absence ou la nuit.</span>
-      </li>
-      <li>
-        <span class="rule-icon">💧</span>
-        <span>En cas de problème (fuite, panne), contactez l'hôte immédiatement plutôt qu'intervenir seul.</span>
-      </li>
-      <li>
-        <span class="rule-icon">🔌</span>
-        <span>Merci d'éteindre les lumières et appareils non utilisés pour préserver l'environnement.</span>
-      </li>
-    </ul>
+    <div class="section-header"><span class="section-number">04</span><span class="section-title">Règles de la maison</span></div>
+    <ul class="rules-list"><li><span class="rule-icon">🚭</span><span>Il est strictement interdit de fumer à l&apos;intérieur du logement et dans l&apos;ensemble de la résidence (extérieur compris).</span></li><li><span class="rule-icon">🐾</span><span>Animaux non autorisés.</span></li><li><span class="rule-icon">🔇</span><span>Calme entre 22h et 7h — des voisins habitent à proximité immédiate.</span></li><li><span class="rule-icon">🎉</span><span>Fêtes non autorisées. Le logement est prévu pour les personnes inscrites à la réservation.</span></li><li><span class="rule-icon">🪟</span><span>Merci de fermer fenêtres et volets en cas d&apos;absence ou la nuit.</span></li><li><span class="rule-icon">💧</span><span>En cas de problème (fuite, panne), contactez l&apos;hôte immédiatement.</span></li><li><span class="rule-icon">🔌</span><span>Merci d&apos;éteindre les lumières et appareils non utilisés.</span></li></ul>
   </div>
 
-  <!-- 05 QUARTIER -->
   <div class="section" id="quartier">
-    <div class="section-header">
-      <span class="section-number">05</span>
-      <span class="section-title">Quartier & bonnes adresses</span>
-    </div>
-
-    <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">Haguenau, capitale de l'Alsace du Nord, offre un centre historique animé à quelques minutes. Strasbourg est à 30 min en voiture ou 24 min en TER. L'appartement est situé au rez-de-chaussée d'une maison rénovée des années 30 avec isolation thermique extérieure, alliant charme ancien et confort moderne.</p>
-
-    <div class="place-group">
-      <div class="place-group-title">🚌 Transports</div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Bus ligne 1 Ritmo</div>
-          <div class="place-detail">Arrêt Hannong · vers centre-ville et gare</div>
-        </div>
-        <div class="place-dist">7 min à pied</div>
-      </div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Centre-ville Haguenau</div>
-          <div class="place-detail">À pied ou en bus</div>
-        </div>
-        <div class="place-dist">11 min · 7 min bus</div>
-      </div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Gare SNCF Haguenau</div>
-          <div class="place-detail">TER → Strasbourg en 24 min</div>
-        </div>
-        <div class="place-dist">9 min bus</div>
-      </div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Strasbourg</div>
-          <div class="place-detail">En voiture ou en TER</div>
-        </div>
-        <div class="place-dist">30 min · 24 min TER</div>
-      </div>
-    </div>
-
-    <div class="place-group">
-      <div class="place-group-title">🛒 Courses</div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Centre-ville piéton</div>
-          <div class="place-detail">Commerces, boulangeries, pharmacies</div>
-        </div>
-        <div class="place-dist">11 min à pied</div>
-      </div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Intermarché / Leclerc</div>
-          <div class="place-detail">Grande surface</div>
-        </div>
-        <div class="place-dist">~5 min voiture</div>
-      </div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Marché couvert de Haguenau</div>
-          <div class="place-detail">Mardi & vendredi matin</div>
-        </div>
-        <div class="place-dist">~1,2 km</div>
-      </div>
-    </div>
-
-    <div class="place-group">
-      <div class="place-group-title">🍽️ À manger</div>
-      <div class="place-item">
-        <div>
-          <div class="place-name">Restaurants centre-ville</div>
-          <div class="place-detail">Cuisine alsacienne, pizzerias, brasseries</div>
-        </div>
-        <div class="place-dist">11 min à pied</div>
-      </div>
-    </div>
-
-    <div class="warn-box">
-      💡 Demandez à votre hôte ses adresses préférées — il connaît bien la ville et se fera un plaisir de vous recommander ses bonnes tables.
-    </div>
+    <div class="section-header"><span class="section-number">05</span><span class="section-title">Quartier & bonnes adresses</span></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Haguenau, capitale de l&apos;Alsace du Nord, offre un centre historique animé à quelques minutes. Strasbourg est à 30 min en voiture ou 24 min en TER. L&apos;appartement est situé au rez-de-chaussée d&apos;une maison rénovée des années 30 avec isolation thermique extérieure, alliant charme ancien et confort moderne.</p>
+    <div class="place-group"><div class="place-group-title">🚌 Transports</div><div class="place-item"><div><div class="place-name">Bus ligne 1 Ritmo</div><div class="place-detail">Arrêt Hannong · vers centre-ville et gare</div></div><div class="place-dist">7 min à pied</div></div><div class="place-item"><div><div class="place-name">Centre-ville Haguenau</div><div class="place-detail">À pied ou en bus</div></div><div class="place-dist">11 min · 7 min bus</div></div><div class="place-item"><div><div class="place-name">Gare SNCF Haguenau</div><div class="place-detail">TER → Strasbourg en 24 min</div></div><div class="place-dist">9 min bus</div></div><div class="place-item"><div><div class="place-name">Strasbourg</div><div class="place-detail">En voiture ou en TER</div></div><div class="place-dist">30 min · 24 min TER</div></div></div>
+    <div class="place-group"><div class="place-group-title">🛒 Courses</div><div class="place-item"><div><div class="place-name">Centre-ville piéton</div><div class="place-detail">Commerces, boulangeries, pharmacies</div></div><div class="place-dist">11 min à pied</div></div><div class="place-item"><div><div class="place-name">Intermarché / Leclerc</div><div class="place-detail">Grande surface</div></div><div class="place-dist">~5 min voiture</div></div><div class="place-item"><div><div class="place-name">Marché couvert de Haguenau</div><div class="place-detail">Mardi & vendredi matin</div></div><div class="place-dist">~1,2 km</div></div></div>
+    <div class="place-group"><div class="place-group-title">🍽️ À manger</div><div class="place-item"><div><div class="place-name">Restaurants centre-ville</div><div class="place-detail">Cuisine alsacienne, pizzerias, brasseries</div></div><div class="place-dist">11 min à pied</div></div></div>
+    <div class="warn-box">💡 Demandez à votre hôte ses adresses préférées — il connaît bien la ville.</div>
   </div>
 
-  <!-- 06 URGENCES -->
   <div class="section" id="urgences">
-    <div class="section-header">
-      <span class="section-number">06</span>
-      <span class="section-title">En cas de problème</span>
-    </div>
-
-    <div class="urgence-grid">
-      <div class="urgence-card">
-        <div class="urgence-number">15</div>
-        <div>
-          <div class="urgence-label">SAMU</div>
-          <div class="urgence-sub">Urgences médicales</div>
-        </div>
-      </div>
-      <div class="urgence-card">
-        <div class="urgence-number">18</div>
-        <div>
-          <div class="urgence-label">Pompiers</div>
-          <div class="urgence-sub">Incendie · secours</div>
-        </div>
-      </div>
-      <div class="urgence-card">
-        <div class="urgence-number">17</div>
-        <div>
-          <div class="urgence-label">Police</div>
-          <div class="urgence-sub">Gendarmerie</div>
-        </div>
-      </div>
-      <div class="urgence-card">
-        <div class="urgence-number">112</div>
-        <div>
-          <div class="urgence-label">Urgences EU</div>
-          <div class="urgence-sub">Numéro européen</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-box" style="margin-top: 16px;">
-      <strong>Pour tout problème dans le logement</strong><br>
-      Contactez Hubert via la messagerie Airbnb — il est sur place (appartement du dessus) et répond rapidement.
-    </div>
+    <div class="section-header"><span class="section-number">06</span><span class="section-title">En cas de problème</span></div>
+    <div class="urgence-grid"><div class="urgence-card"><div class="urgence-number">15</div><div><div class="urgence-label">SAMU</div><div class="urgence-sub">Urgences médicales</div></div></div><div class="urgence-card"><div class="urgence-number">18</div><div><div class="urgence-label">Pompiers</div><div class="urgence-sub">Incendie · secours</div></div></div><div class="urgence-card"><div class="urgence-number">17</div><div><div class="urgence-label">Police</div><div class="urgence-sub">Gendarmerie</div></div></div><div class="urgence-card"><div class="urgence-number">112</div><div><div class="urgence-label">Urgences EU</div><div class="urgence-sub">Numéro européen</div></div></div></div>
+    <div class="info-box" style="margin-top:16px;">Pour tout problème dans le logement, contactez Hubert via la messagerie Airbnb — il est sur place (appartement du dessus) et répond rapidement.</div>
   </div>
 
-  <!-- 07 HÔTE -->
   <div class="section" id="hote">
-    <div class="section-header">
-      <span class="section-number">07</span>
-      <span class="section-title">Votre hôte</span>
-    </div>
-
+    <div class="section-header"><span class="section-number">07</span><span class="section-title">Votre hôte</span></div>
     <div class="hote-card">
-      <div class="hote-avatar" style="background: none; overflow: hidden;">
-      <img src="https://a0.muscache.com/im/pictures/user/User/original/7c620a62-6bf3-4d09-b579-4ddc9886d5e1.jpeg?im_w=240" alt="Hubert, votre hôte" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;" />
-    </div>
+      <div class="hote-avatar" style="background:none;overflow:hidden;">
+        <img src="https://a0.muscache.com/im/pictures/user/User/original/7c620a62-6bf3-4d09-b579-4ddc9886d5e1.jpeg?im_w=240" alt="Hubert" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" />
+      </div>
       <div>
         <div class="hote-name">Hubert</div>
         <div class="hote-detail">Superhost Airbnb · Haguenau, Alsace</div>
-        <div class="hote-detail" style="margin-top: 4px;">📍 Sur place — appartement du dessus</div>
-      <div class="hote-detail" style="margin-top: 4px;">🗣️ Français · Anglais · Allemand</div>
+        <div class="hote-detail">📍 Sur place — appartement du dessus</div>
+        <div class="hote-detail">🗣️ Français · Anglais · Allemand</div>
       </div>
     </div>
-
     <div class="hote-contact">
       <strong>📱 Contact</strong>
       Via la messagerie Airbnb — réponse rapide, 7j/7.
     </div>
-
-    <div class="info-box" style="margin-top: 16px;">
-      Je suis ravi de vous accueillir dans cet appartement que j'ai aménagé avec soin. N'hésitez pas à me contacter pour toute question — je suis présent sur place et réponds rapidement.<br><br>
-      J'espère que vous passerez un excellent séjour à Haguenau et en Alsace !
-    </div>
+    <div class="info-box" style="margin-top:16px;">Je suis ravi de vous accueillir dans cet appartement que j&apos;ai aménagé avec soin. N&apos;hésitez pas à me contacter pour toute question — je suis présent sur place et réponds rapidement.<br><br>J&apos;espère que vous passerez un excellent séjour à Haguenau et en Alsace !</div>
   </div>
 
 </main>
 
-<footer>
-  Chez Hubert · Haguenau, Alsace · Livret mis à jour en juillet 2026<br>
-  Airbnb : <em>Appart cosy 77m2 - WiFi 7 - Parking vs Strasbourg</em><br>
-  <span style="font-size: 13px;">🐇 Bienvenue chez les <em>Sandhaas</em> — les lièvres des sables de Haguenau</span>
-</footer>
+<footer>Chez Hubert · Haguenau, Alsace · Livret mis à jour en juillet 2026<br>Airbnb : <em>Appart cosy 77m2 - WiFi 7 - Parking vs Strasbourg</em><br><span style="font-size:13px">🐇 Bienvenue chez les <em>Sandhaas</em> — les lièvres des sables de Haguenau</span></footer>
+
+</div>
+<div class="lang-block" id="block-en">
+
+<!-- RETOUR -->
+<div style="background:var(--moss);text-align:center;padding:10px 24px;">
+  <a href="index.html" style="color:rgba(255,255,255,0.8);font-family:Inter,sans-serif;font-size:13px;text-decoration:none;">← Back to the apartment presentation</a>
+</div>
+
+<header>
+  <p class="eyebrow">Haguenau · Alsace</p>
+  <h1>Welcome to<br>your home away from home</h1>
+  <p class="sub">Cosy apartment 77 m² · WiFi 7 · Private parking<br>Everything you need for a perfect stay.</p>
+  <nav><a href="#arrivee" class="nav-pill">🔑 Check-in</a>
+<a href="#wifi" class="nav-pill">📶 WiFi</a>
+<a href="#equipements" class="nav-pill">🏠 Amenities</a>
+<a href="#regles" class="nav-pill">📋 Rules</a>
+<a href="#quartier" class="nav-pill">📍 Area</a>
+<a href="#urgences" class="nav-pill">🚨 Emergency</a>
+<a href="#hote" class="nav-pill">👤 Host</a></nav>
+</header>
+
+<main>
+
+  <div class="section" id="arrivee">
+    <div class="section-header"><span class="section-number">01</span><span class="section-title">Check-in & check-out</span></div>
+    <div class="timing-grid">
+      <div class="timing-card"><div class="timing-label">Check-in</div><div class="timing-value">4:00 PM</div><div class="timing-sub">until 11:00 PM</div></div>
+      <div class="timing-card"><div class="timing-label">Check-out</div><div class="timing-value">11:00 AM</div><div class="timing-sub">at the latest</div></div>
+    </div>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Arrival</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Park in the private parking space reserved for your apartment.</span></li><li><span class="step-num">2</span><span class="step-text">Make your way to the front door of the apartment.</span></li><li><span class="step-num">3</span><span class="step-text">Enter your <strong>personal PIN code</strong> on the Nuki smart lock — your code was sent by message before your arrival.</span></li><li><span class="step-num">4</span><span class="step-text">The door opens automatically. Welcome!</span></li></ul>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Departure</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Leave used sheets and towels in the designated basket.</span></li><li><span class="step-num">2</span><span class="step-text">Rinse the dishes and leave the apartment in a reasonable state.</span></li><li><span class="step-num">3</span><span class="step-text">Make sure all windows are closed.</span></li><li><span class="step-num">4</span><span class="step-text">Simply pull the door shut behind you — it locks automatically. Your code is deactivated at check-out time.</span></li></ul>
+    <div class="info-box" style="margin-top:16px;">💡 Final cleaning is included in your booking — no need to deep clean before leaving.</div>
+  </div>
+
+  <div class="section" id="wifi">
+    <div class="section-header"><span class="section-number">02</span><span class="section-title">WiFi connection</span></div>
+    <div class="wifi-box">
+      <div class="wifi-icon">📶</div>
+      <div class="wifi-label">WiFi credentials</div>
+      <div class="wifi-note">See the QR code displayed in the apartment</div>
+      <div class="wifi-sub">Photo frame / entrance console</div>
+    </div>
+    <div class="info-box" style="margin-top:16px;"><strong>WiFi 7 · Fibre optic 1 Gb/s</strong><br>Very high-speed connection available throughout the apartment. Perfect for remote work, video calls and 4K streaming.</div>
+  </div>
+
+  <div class="section" id="equipements">
+    <div class="section-header"><span class="section-number">03</span><span class="section-title">The apartment</span></div>
+    <div class="equip-grid"><div class="equip-item">📶 WiFi 7 · Fibre</div><div class="equip-item">🅿️ Private parking</div><div class="equip-item">🔑 Nuki smart lock</div><div class="equip-item">🍳 Equipped kitchen</div><div class="equip-item">☕ Nespresso machine</div><div class="equip-item">🫙 Dishwasher</div><div class="equip-item">👕 Washer-dryer</div><div class="equip-item">📺 Smart TV</div><div class="equip-item">❄️ Mobile AC</div><div class="equip-item">🛁 Walk-in shower</div><div class="equip-item">🛏️ Bed linen</div><div class="equip-item">🪒 Hair dryer</div><div class="equip-item">🧴 Toiletries</div><div class="equip-item">💡 Bedside switches</div><div class="equip-item">🔒 Smoke detector</div><div class="equip-item">🧯 Fire extinguisher</div></div>
+  </div>
+
+  <div class="section" id="regles">
+    <div class="section-header"><span class="section-number">04</span><span class="section-title">House rules</span></div>
+    <ul class="rules-list"><li><span class="rule-icon">🚭</span><span>Strictly no smoking — indoors and outdoors on the entire property.</span></li><li><span class="rule-icon">🐾</span><span>No pets allowed.</span></li><li><span class="rule-icon">🔇</span><span>Quiet hours: 10 PM – 7 AM — neighbours live nearby.</span></li><li><span class="rule-icon">🎉</span><span>No parties. The apartment is for registered guests only.</span></li><li><span class="rule-icon">🪟</span><span>Please close windows and shutters when absent or at night.</span></li><li><span class="rule-icon">💧</span><span>In case of a problem (leak, breakdown), contact the host immediately.</span></li><li><span class="rule-icon">🔌</span><span>Please turn off lights and appliances when not in use.</span></li></ul>
+  </div>
+
+  <div class="section" id="quartier">
+    <div class="section-header"><span class="section-number">05</span><span class="section-title">Area & local tips</span></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Haguenau, capital of Northern Alsace, has a lively historic centre just a few minutes away. Strasbourg is 30 min by car or 24 min by regional train. The apartment is on the ground floor of a renovated 1930s house with external thermal insulation — blending old charm with modern comfort.</p>
+    <div class="place-group"><div class="place-group-title">🚌 Transport</div><div class="place-item"><div><div class="place-name">Bus line 1 Ritmo</div><div class="place-detail">Hannong stop · towards city centre and station</div></div><div class="place-dist">7 min walk</div></div><div class="place-item"><div><div class="place-name">Haguenau city centre</div><div class="place-detail">On foot or by bus</div></div><div class="place-dist">11 min · 7 min bus</div></div><div class="place-item"><div><div class="place-name">Haguenau train station</div><div class="place-detail">TER → Strasbourg in 24 min</div></div><div class="place-dist">9 min bus</div></div><div class="place-item"><div><div class="place-name">Strasbourg</div><div class="place-detail">By car or TER train</div></div><div class="place-dist">30 min · 24 min train</div></div></div>
+    <div class="place-group"><div class="place-group-title">🛒 Shopping</div><div class="place-item"><div><div class="place-name">Pedestrian city centre</div><div class="place-detail">Shops, bakeries, pharmacies</div></div><div class="place-dist">11 min walk</div></div><div class="place-item"><div><div class="place-name">Intermarché / Leclerc</div><div class="place-detail">Supermarket</div></div><div class="place-dist">~5 min drive</div></div><div class="place-item"><div><div class="place-name">Haguenau covered market</div><div class="place-detail">Tuesday & Friday mornings</div></div><div class="place-dist">~1.2 km</div></div></div>
+    <div class="place-group"><div class="place-group-title">🍽️ Eating out</div><div class="place-item"><div><div class="place-name">City centre restaurants</div><div class="place-detail">Alsatian cuisine, pizzerias, brasseries</div></div><div class="place-dist">11 min walk</div></div></div>
+    <div class="warn-box">💡 Ask your host for his favourite spots — he knows the city well.</div>
+  </div>
+
+  <div class="section" id="urgences">
+    <div class="section-header"><span class="section-number">06</span><span class="section-title">In case of a problem</span></div>
+    <div class="urgence-grid"><div class="urgence-card"><div class="urgence-number">15</div><div><div class="urgence-label">SAMU</div><div class="urgence-sub">Medical emergencies</div></div></div><div class="urgence-card"><div class="urgence-number">18</div><div><div class="urgence-label">Fire dept.</div><div class="urgence-sub">Fire · rescue</div></div></div><div class="urgence-card"><div class="urgence-number">17</div><div><div class="urgence-label">Police</div><div class="urgence-sub">Gendarmerie</div></div></div><div class="urgence-card"><div class="urgence-number">112</div><div><div class="urgence-label">EU emergency</div><div class="urgence-sub">European number</div></div></div></div>
+    <div class="info-box" style="margin-top:16px;">For any issue in the apartment, contact Hubert via Airbnb messaging — he is on-site (apartment upstairs) and responds quickly.</div>
+  </div>
+
+  <div class="section" id="hote">
+    <div class="section-header"><span class="section-number">07</span><span class="section-title">Your host</span></div>
+    <div class="hote-card">
+      <div class="hote-avatar" style="background:none;overflow:hidden;">
+        <img src="https://a0.muscache.com/im/pictures/user/User/original/7c620a62-6bf3-4d09-b579-4ddc9886d5e1.jpeg?im_w=240" alt="Hubert" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" />
+      </div>
+      <div>
+        <div class="hote-name">Hubert</div>
+        <div class="hote-detail">Airbnb Superhost · Haguenau, Alsace</div>
+        <div class="hote-detail">📍 On-site — apartment upstairs</div>
+        <div class="hote-detail">🗣️ French · English · German</div>
+      </div>
+    </div>
+    <div class="hote-contact">
+      <strong>📱 Contact</strong>
+      Via Airbnb messaging — quick response, 7 days a week.
+    </div>
+    <div class="info-box" style="margin-top:16px;">I am delighted to welcome you to this apartment I have carefully prepared. Don&apos;t hesitate to contact me for any question — I am on-site and respond quickly.<br><br>I hope you have a wonderful stay in Haguenau and Alsace!</div>
+  </div>
+
+</main>
+
+<footer>Chez Hubert · Haguenau, Alsace · Updated July 2026<br>Airbnb: <em>Appart cosy 77m2 - WiFi 7 - Parking vs Strasbourg</em><br><span style="font-size:13px">🐇 Welcome among the <em>Sandhaas</em> — the sand hares of Haguenau</span></footer>
+
+</div>
+<div class="lang-block" id="block-de">
+
+<!-- RETOUR -->
+<div style="background:var(--moss);text-align:center;padding:10px 24px;">
+  <a href="index.html" style="color:rgba(255,255,255,0.8);font-family:Inter,sans-serif;font-size:13px;text-decoration:none;">← Zurück zur Wohnungspräsentation</a>
+</div>
+
+<header>
+  <p class="eyebrow">Hagenau · Elsass</p>
+  <h1>Willkommen in<br>Ihrem Zuhause</h1>
+  <p class="sub">Gemütliche Wohnung 77 m² · WiFi 7 · Privatparkplatz<br>Alles was Sie für einen perfekten Aufenthalt wissen müssen.</p>
+  <nav><a href="#arrivee" class="nav-pill">🔑 Check-in</a>
+<a href="#wifi" class="nav-pill">📶 WLAN</a>
+<a href="#equipements" class="nav-pill">🏠 Ausstattung</a>
+<a href="#regles" class="nav-pill">📋 Regeln</a>
+<a href="#quartier" class="nav-pill">📍 Umgebung</a>
+<a href="#urgences" class="nav-pill">🚨 Notfall</a>
+<a href="#hote" class="nav-pill">👤 Gastgeber</a></nav>
+</header>
+
+<main>
+
+  <div class="section" id="arrivee">
+    <div class="section-header"><span class="section-number">01</span><span class="section-title">An- & Abreise</span></div>
+    <div class="timing-grid">
+      <div class="timing-card"><div class="timing-label">Check-in</div><div class="timing-value">16:00</div><div class="timing-sub">bis 23:00 Uhr</div></div>
+      <div class="timing-card"><div class="timing-label">Check-out</div><div class="timing-value">11:00</div><div class="timing-sub">spätestens</div></div>
+    </div>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Ankunft</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Parken Sie auf dem privaten Stellplatz, der für Ihre Wohnung reserviert ist.</span></li><li><span class="step-num">2</span><span class="step-text">Gehen Sie zur Eingangstür der Wohnung.</span></li><li><span class="step-num">3</span><span class="step-text">Geben Sie Ihren <strong>persönlichen PIN-Code</strong> am Nuki Smart Lock ein — Ihr Code wurde vor der Ankunft per Nachricht mitgeteilt.</span></li><li><span class="step-num">4</span><span class="step-text">Die Tür öffnet sich automatisch. Herzlich willkommen!</span></li></ul>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Abreise</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Legen Sie benutzte Bettwäsche und Handtücher in den dafür vorgesehenen Korb.</span></li><li><span class="step-num">2</span><span class="step-text">Spülen Sie das Geschirr und hinterlassen Sie die Wohnung in einem ordentlichen Zustand.</span></li><li><span class="step-num">3</span><span class="step-text">Vergewissern Sie sich, dass alle Fenster geschlossen sind.</span></li><li><span class="step-num">4</span><span class="step-text">Ziehen Sie die Tür einfach hinter sich zu — sie verriegelt sich automatisch. Ihr Code wird zur Abreisezeit deaktiviert.</span></li></ul>
+    <div class="info-box" style="margin-top:16px;">💡 Die Endreinigung ist in Ihrer Buchung inbegriffen — kein Tiefenreinigen vor der Abreise nötig.</div>
+  </div>
+
+  <div class="section" id="wifi">
+    <div class="section-header"><span class="section-number">02</span><span class="section-title">WLAN-Verbindung</span></div>
+    <div class="wifi-box">
+      <div class="wifi-icon">📶</div>
+      <div class="wifi-label">WLAN-Zugangsdaten</div>
+      <div class="wifi-note">Siehe QR-Code in der Wohnung</div>
+      <div class="wifi-sub">Fotorahmen / Eingangskonsoletisch</div>
+    </div>
+    <div class="info-box" style="margin-top:16px;"><strong>WiFi 7 · Glasfaser 1 Gb/s</strong><br>Sehr schnelle Verbindung in der gesamten Wohnung. Ideal für Homeoffice, Videokonferenzen und 4K-Streaming.</div>
+  </div>
+
+  <div class="section" id="equipements">
+    <div class="section-header"><span class="section-number">03</span><span class="section-title">Die Wohnung</span></div>
+    <div class="equip-grid"><div class="equip-item">📶 WiFi 7 · Glasfaser</div><div class="equip-item">🅿️ Privatparkplatz</div><div class="equip-item">🔑 Nuki Smart Lock</div><div class="equip-item">🍳 Ausgestattete Küche</div><div class="equip-item">☕ Nespresso-Maschine</div><div class="equip-item">🫙 Geschirrspüler</div><div class="equip-item">👕 Waschtrockner</div><div class="equip-item">📺 Smart TV</div><div class="equip-item">❄️ Mobile Klimaanlage</div><div class="equip-item">🛁 Bodengleiche Dusche</div><div class="equip-item">🛏️ Bettwäsche</div><div class="equip-item">🪒 Haartrockner</div><div class="equip-item">🧴 Toilettenartikel</div><div class="equip-item">💡 Bettschalter</div><div class="equip-item">🔒 Rauchmelder</div><div class="equip-item">🧯 Feuerlöscher</div></div>
+  </div>
+
+  <div class="section" id="regles">
+    <div class="section-header"><span class="section-number">04</span><span class="section-title">Hausregeln</span></div>
+    <ul class="rules-list"><li><span class="rule-icon">🚭</span><span>Absolutes Rauchverbot — drinnen und draußen auf dem gesamten Grundstück.</span></li><li><span class="rule-icon">🐾</span><span>Keine Haustiere erlaubt.</span></li><li><span class="rule-icon">🔇</span><span>Ruhezeiten: 22:00 – 7:00 Uhr — Nachbarn wohnen in unmittelbarer Nähe.</span></li><li><span class="rule-icon">🎉</span><span>Keine Partys. Die Wohnung ist nur für angemeldete Gäste.</span></li><li><span class="rule-icon">🪟</span><span>Bitte Fenster und Rollläden bei Abwesenheit oder nachts schließen.</span></li><li><span class="rule-icon">💧</span><span>Bei Problemen (Leck, Ausfall) sofort den Gastgeber kontaktieren.</span></li><li><span class="rule-icon">🔌</span><span>Bitte Lichter und Geräte ausschalten, wenn sie nicht genutzt werden.</span></li></ul>
+  </div>
+
+  <div class="section" id="quartier">
+    <div class="section-header"><span class="section-number">05</span><span class="section-title">Umgebung & Tipps</span></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Hagenau, Hauptstadt Nordelsass&apos;, hat ein lebhaftes historisches Zentrum, das nur wenige Minuten entfernt ist. Straßburg ist 30 Min. mit dem Auto oder 24 Min. mit dem Regionalzug entfernt. Die Wohnung liegt im Erdgeschoss eines renovierten Hauses aus den 1930er Jahren mit Außendämmung — eine Mischung aus altem Charme und modernem Komfort.</p>
+    <div class="place-group"><div class="place-group-title">🚌 Verkehr</div><div class="place-item"><div><div class="place-name">Buslinie 1 Ritmo</div><div class="place-detail">Haltestelle Hannong · Richtung Zentrum und Bahnhof</div></div><div class="place-dist">7 Min. zu Fuß</div></div><div class="place-item"><div><div class="place-name">Hagenau Stadtzentrum</div><div class="place-detail">Zu Fuß oder mit dem Bus</div></div><div class="place-dist">11 Min. · 7 Min. Bus</div></div><div class="place-item"><div><div class="place-name">Bahnhof Hagenau</div><div class="place-detail">TER → Straßburg in 24 Min.</div></div><div class="place-dist">9 Min. Bus</div></div><div class="place-item"><div><div class="place-name">Straßburg</div><div class="place-detail">Mit Auto oder TER-Zug</div></div><div class="place-dist">30 Min. · 24 Min. Zug</div></div></div>
+    <div class="place-group"><div class="place-group-title">🛒 Einkaufen</div><div class="place-item"><div><div class="place-name">Fußgängerzone Zentrum</div><div class="place-detail">Geschäfte, Bäckereien, Apotheken</div></div><div class="place-dist">11 Min. zu Fuß</div></div><div class="place-item"><div><div class="place-name">Intermarché / Leclerc</div><div class="place-detail">Supermarkt</div></div><div class="place-dist">~5 Min. Auto</div></div><div class="place-item"><div><div class="place-name">Markthalle Hagenau</div><div class="place-detail">Dienstag & Freitagmorgen</div></div><div class="place-dist">~1,2 km</div></div></div>
+    <div class="place-group"><div class="place-group-title">🍽️ Essen gehen</div><div class="place-item"><div><div class="place-name">Restaurants im Zentrum</div><div class="place-detail">Elsässische Küche, Pizzerien, Brasserien</div></div><div class="place-dist">11 Min. zu Fuß</div></div></div>
+    <div class="warn-box">💡 Fragen Sie Ihren Gastgeber nach seinen Lieblingsadressen — er kennt die Stadt gut.</div>
+  </div>
+
+  <div class="section" id="urgences">
+    <div class="section-header"><span class="section-number">06</span><span class="section-title">Im Notfall</span></div>
+    <div class="urgence-grid"><div class="urgence-card"><div class="urgence-number">15</div><div><div class="urgence-label">SAMU</div><div class="urgence-sub">Medizinische Notfälle</div></div></div><div class="urgence-card"><div class="urgence-number">18</div><div><div class="urgence-label">Feuerwehr</div><div class="urgence-sub">Brand · Rettung</div></div></div><div class="urgence-card"><div class="urgence-number">17</div><div><div class="urgence-label">Polizei</div><div class="urgence-sub">Gendarmerie</div></div></div><div class="urgence-card"><div class="urgence-number">112</div><div><div class="urgence-label">EU-Notruf</div><div class="urgence-sub">Europäische Nummer</div></div></div></div>
+    <div class="info-box" style="margin-top:16px;">Bei Problemen in der Wohnung, kontaktieren Sie Hubert über Airbnb-Nachrichten — er ist vor Ort (Wohnung im Obergeschoss) und antwortet schnell.</div>
+  </div>
+
+  <div class="section" id="hote">
+    <div class="section-header"><span class="section-number">07</span><span class="section-title">Ihr Gastgeber</span></div>
+    <div class="hote-card">
+      <div class="hote-avatar" style="background:none;overflow:hidden;">
+        <img src="https://a0.muscache.com/im/pictures/user/User/original/7c620a62-6bf3-4d09-b579-4ddc9886d5e1.jpeg?im_w=240" alt="Hubert" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" />
+      </div>
+      <div>
+        <div class="hote-name">Hubert</div>
+        <div class="hote-detail">Airbnb Superhost · Hagenau, Elsass</div>
+        <div class="hote-detail">📍 Vor Ort — Wohnung im Obergeschoss</div>
+        <div class="hote-detail">🗣️ Französisch · Englisch · Deutsch</div>
+      </div>
+    </div>
+    <div class="hote-contact">
+      <strong>📱 Kontakt</strong>
+      Über Airbnb-Nachrichten — schnelle Antwort, 7 Tage die Woche.
+    </div>
+    <div class="info-box" style="margin-top:16px;">Ich freue mich, Sie in dieser sorgfältig eingerichteten Wohnung willkommen zu heißen. Zögern Sie nicht, mich bei Fragen zu kontaktieren — ich bin vor Ort und antworte schnell.<br><br>Ich wünsche Ihnen einen wunderbaren Aufenthalt in Hagenau und im Elsass!</div>
+  </div>
+
+</main>
+
+<footer>Chez Hubert · Hagenau, Elsass · Aktualisiert Juli 2026<br>Airbnb: <em>Appart cosy 77m2 - WiFi 7 - Parking vs Strasbourg</em><br><span style="font-size:13px">🐇 Willkommen bei den <em>Sandhaas</em> — den Sandhasen von Hagenau</span></footer>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll(&apos;.lang-block&apos;).forEach(function(el) { el.classList.remove(&apos;active&apos;); });
+  document.querySelectorAll(&apos;.lang-btn&apos;).forEach(function(el) { el.classList.remove(&apos;active&apos;); });
+  document.getElementById(&apos;block-&apos; + lang).classList.add(&apos;active&apos;);
+  event.target.classList.add(&apos;active&apos;);
+  window.scrollTo(0, 0);
+}
+// Activer FR par défaut
+document.getElementById(&apos;block-fr&apos;).classList.add(&apos;active&apos;);
+</script>
 
 </body>
 </html>
