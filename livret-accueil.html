@@ -422,14 +422,14 @@
 
 <script>
 function setLang(lang) {
-  document.querySelectorAll(&apos;.lang-block&apos;).forEach(function(el) { el.classList.remove(&apos;active&apos;); });
-  document.querySelectorAll(&apos;.lang-btn&apos;).forEach(function(el) { el.classList.remove(&apos;active&apos;); });
-  document.getElementById(&apos;block-&apos; + lang).classList.add(&apos;active&apos;);
-  event.target.classList.add(&apos;active&apos;);
+  document.querySelectorAll('.lang-block').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.lang-btn').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('block-' + lang).classList.add('active');
+  event.target.classList.add('active');
   window.scrollTo(0, 0);
 }
 // Activer FR par défaut
-document.getElementById(&apos;block-fr&apos;).classList.add(&apos;active&apos;);
+document.getElementById('block-fr').classList.add('active');
 </script>
 
 </body>
