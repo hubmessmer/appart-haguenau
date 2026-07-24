@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hubmessmer.github.io/appart-haguenau/sitemap.xml
