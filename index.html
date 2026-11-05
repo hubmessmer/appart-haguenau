@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Appartement 77m² à Haguenau — 2 chambres, parking privé, WiFi fibre 1 Gb/s. Idéal pour missions professionnelles. À 30 min de Strasbourg." />
+  <meta name="description" content="Appartement 77m² à Haguenau, 2 chambres, parking privé, WiFi fibre 1 Gb/s. Idéal pour missions professionnelles. À 30 min de Strasbourg." />
   <meta name="keywords" content="location haguenau, appartement haguenau, logement professionnel haguenau, airbnb haguenau, location courte durée haguenau, appartement strasbourg proche, hébergement mission pro alsace" />
-  <title>Appartement 77m² à Haguenau — 2 chambres, Parking, WiFi fibre</title>
+  <title>Le Havre du Château Fiat · Appartement 77m² à Haguenau, 2 chambres, parking, WiFi fibre</title>
 
   <link rel="canonical" href="https://hubmessmer.github.io/appart-haguenau/" />
   <link rel="alternate" hreflang="fr" href="https://hubmessmer.github.io/appart-haguenau/" />
   <link rel="alternate" hreflang="en" href="https://hubmessmer.github.io/appart-haguenau/index-en.html" />
   <link rel="alternate" hreflang="de" href="https://hubmessmer.github.io/appart-haguenau/index-de.html" />
+  <link rel="alternate" hreflang="it" href="https://hubmessmer.github.io/appart-haguenau/index-it.html" />
+  <link rel="alternate" hreflang="es" href="https://hubmessmer.github.io/appart-haguenau/index-es.html" />
+  <link rel="alternate" hreflang="nl" href="https://hubmessmer.github.io/appart-haguenau/index-nl.html" />
   <link rel="alternate" hreflang="x-default" href="https://hubmessmer.github.io/appart-haguenau/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Appartement 77m² à Haguenau — Parking privé · WiFi fibre · 2 chambres" />
-  <meta property="og:description" content="Location courte durée à Haguenau. 77m², 2 chambres séparées, parking privé, fibre 1 Gb/s. Idéal pour missions pro. Superhost Airbnb, note 4,92/5." />
+  <meta property="og:title" content="Le Havre du Château Fiat · Appartement 77m² à Haguenau, 2 chambres, parking, WiFi fibre" />
+  <meta property="og:description" content="Location courte durée à Haguenau. 77m², 2 chambres séparées, parking privé, fibre 1 Gb/s. Idéal pour missions pro. Note voyageurs 4,94/5." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hubmessmer.github.io/appart-haguenau/" />
   <meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/36e9ed6b-c5df-4e7b-838b-a40af7f5fd33.jpeg?im_w=1200" />
@@ -289,39 +292,41 @@
     /* ÉQUIPEMENTS GRID */
     .equipements {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-top: 24px;
     }
-
+    @media (max-width: 640px) { .equipements { grid-template-columns: 1fr 1fr; } }
     .equip-item {
-      background: var(--white);
-      padding: 20px 24px;
+      background: var(--pale);
+      border-radius: 10px;
+      padding: 16px 16px;
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
-
     .equip-icon {
-      font-size: 20px;
+      font-size: 18px;
       flex-shrink: 0;
-      margin-top: 2px;
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-light);
+      border-radius: 50%;
     }
-
     .equip-name {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 14px;
       font-weight: 600;
       color: var(--ink);
       display: block;
+      margin-bottom: 2px;
     }
-
     .equip-detail {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 12px;
+      line-height: 1.45;
       color: var(--muted);
+      display: block;
     }
 
     /* PROFIL PRO */
@@ -470,7 +475,48 @@
     }
 
     footer a { color: var(--muted); }
+    /* MOBILE */
+    @media (max-width: 560px) {
+      .hero { flex-direction: column !important; }
+      .hero-mascot { flex: 0 0 auto !important; padding: 12px !important; }
+      .hero-mascot svg { width: 96px; height: 130px; }
+      .hero-photos img { height: 150px !important; }
+      .stats-bar { display: grid !important; grid-template-columns: 1fr 1fr; }
+      .stat { padding: 14px 8px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); cursor: pointer; }
+      .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.15); }
+      .stat-popup { position: fixed; left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%); width: calc(100vw - 32px); max-width: 340px; min-width: 0; }
+      .stat-popup::before, .stat-popup::after { display: none; }
+    }
+    .stat.open .stat-popup { display: block; }
+    .stat-hint .tap { display: none; }
+    @media (hover: none) {
+      .stat-hint .hover { display: none; }
+      .stat-hint .tap { display: inline; }
+    }
   </style>
+<style>@media (max-width:640px){.lang-name{display:none}a[aria-label] > svg, button > svg{margin-right:0!important}}</style>
+<style id="fond-appartement">
+body{background:#efe6d8!important}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(246,238,226,.35),rgba(246,238,226,.35)),url('images/piece-de-vie.jpg') center/cover;z-index:-1}
+main{background:rgba(255,252,247,.90);box-shadow:0 0 50px rgba(60,40,20,.20);padding:0 40px!important;max-width:calc(var(--max) + 80px)!important}
+@media (min-width:1100px){main{max-width:1000px!important;padding:0 56px!important}}
+@media (min-width:1400px){main{max-width:1180px!important;padding:0 64px!important}.gal-grid img{height:210px}.gal-grid .gal-big img{height:460px}}
+.equip-item,.loc-item,.dest{background:rgba(246,241,232,.85)!important}
+@media (max-width:640px){
+ main{background:rgba(255,252,247,.78);padding:0 16px!important;margin:0 6px!important}
+ .equipements{grid-template-columns:1fr!important}
+ .equip-item,.loc-item,.dest{background:rgba(250,246,238,.82)!important}
+}
+</style>
+<style id="menu-sections">
+.sec-nav{position:sticky;top:0;z-index:50;background:rgba(26,26,26,.92);backdrop-filter:blur(6px);display:flex;gap:4px;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding:8px 10px;scrollbar-width:none}
+.sec-nav::-webkit-scrollbar{display:none}
+.sec-nav a{color:#eee;text-decoration:none;font:600 12px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.04em;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.sec-nav a:hover{background:rgba(255,255,255,.12)}
+.sec-nav a.cta{background:#2d6a4f}
+section[id]{scroll-margin-top:60px}
+footer a{color:inherit}
+</style>
 </head>
 <body>
 
@@ -479,7 +525,7 @@
 {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "Appartement 77m² Haguenau — 2 chambres, Parking privé, WiFi fibre",
+  "name": "Appartement 77m² Haguenau, 2 chambres, Parking privé, WiFi fibre",
   "description": "Appartement contemporain de 77m² à Haguenau, Alsace. 2 chambres séparées, parking privé gratuit, WiFi fibre 1 Gb/s, accès autonome par code personnel. Idéal pour voyageurs professionnels et missions de longue durée. À 30 minutes de Strasbourg.",
   "address": {
     "@type": "PostalAddress",
@@ -502,15 +548,15 @@
   "amenityFeature": [
     {"@type": "LocationFeatureSpecification", "name": "WiFi fibre 1 Gb/s", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Parking privé gratuit", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Climatisation réversible", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Climatisation mobile", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Lave-linge séchant", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Lave-vaisselle", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Accès autonome par code personnel", "value": true}
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.93",
-    "reviewCount": "29",
+    "ratingValue": "4.94",
+    "reviewCount": "34",
     "bestRating": "5"
   },
   "review": [
@@ -518,7 +564,7 @@
       "@type": "Review",
       "author": {"@type": "Person", "name": "Nicolette"},
       "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-      "reviewBody": "The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly."
+      "reviewBody": "The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Location is good: a 10 minutes walk from Haguenau center. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly."
     },
     {
       "@type": "Review",
@@ -530,7 +576,7 @@
       "@type": "Review",
       "author": {"@type": "Person", "name": "Yonghee"},
       "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-      "reviewBody": "This place was one of the best deals I've ever found. The apartment was very clean, tidy, and comfortable. Parking is easy, and there is private parking right at the entrance. The price is unbelievably good for the quality provided."
+      "reviewBody": "This place was one of the best deals I’ve ever found. The apartment was very clean, tidy, and comfortable, and it felt warm and cozy throughout our stay. The access is excellent. Parking is easy, and if needed, there is private parking right at the entrance, which makes moving luggage very convenient. Moreover, the price is unbelievably good for the quality provided."
     },
     {
       "@type": "Review",
@@ -544,19 +590,22 @@
 </script>
 
 <!-- SÉLECTEUR DE LANGUE -->
-<div style="background:#1a1a1a;text-align:center;padding:10px 16px;position:sticky;top:0;z-index:50;display:flex;justify-content:center;gap:8px;">
-  <a href="index.html" style="background:#2d6a4f;color:white;text-decoration:none;padding:6px 18px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;">🇫🇷 Français</a>
-  <a href="index-en.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 18px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;">🇬🇧 English</a>
-  <a href="index-de.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 18px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;">🇩🇪 Deutsch</a>
+<div style="background:#1a1a1a;text-align:center;padding:10px 16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+  <a aria-label="Français" href="index.html" aria-current="page" style="background:#2d6a4f;color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg><span class="lang-name">Français</span></a>
+  <a aria-label="English" href="index-en.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 60 30" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><clipPath id="gbc"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#gbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span class="lang-name">English</span></a>
+  <a aria-label="Deutsch" href="index-de.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 5 3" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="lang-name">Deutsch</span></a>
+  <a aria-label="Italiano" href="index-it.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><span class="lang-name">Italiano</span></a>
+  <a aria-label="Español" href="index-es.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span class="lang-name">Español</span></a>
+  <a aria-label="Nederlands" href="index-nl.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 9 6" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></svg><span class="lang-name">Nederlands</span></a>
 </div>
 
 <header>
 
   <!-- HERO : Sandhaas + patchwork photos -->
-  <div style="display:flex; align-items:stretch; max-width:900px; margin:0 auto; gap:0;">
+  <div class="hero" style="display:flex; align-items:stretch; max-width:900px; margin:0 auto; gap:0;">
 
     <!-- SANDHAAS gauche -->
-    <div style="flex:0 0 160px; background:#2d6a4f; display:flex; align-items:center; justify-content:center; padding:8px;">
+    <div class="hero-mascot" style="flex:0 0 160px; background:#2d6a4f; display:flex; align-items:center; justify-content:center; padding:8px;">
       <svg viewBox="0 0 200 270" width="144" height="195" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="100" cy="185" rx="60" ry="50" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
   <ellipse cx="100" cy="120" rx="38" ry="36" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
@@ -601,7 +650,7 @@
     </div>
 
     <!-- PATCHWORK PHOTOS droite -->
-    <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px; overflow:hidden;">
+    <div class="hero-photos" style="flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px; overflow:hidden;">
       <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/36e9ed6b-c5df-4e7b-838b-a40af7f5fd33.jpeg?im_w=720" alt="Salon" style="width:100%; height:100px; object-fit:cover; display:block;"/>
       <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/c3a209d8-d2f2-452b-8496-8cc968fff826.jpeg?im_w=720" alt="Chambre" style="width:100%; height:100px; object-fit:cover; display:block;"/>
       <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/2a800e08-570f-4785-995d-888e5640135b.jpeg?im_w=720" alt="Cuisine" style="width:100%; height:100px; object-fit:cover; display:block;"/>
@@ -612,9 +661,9 @@
 
   <!-- TITRE sous le hero -->
   <div style="padding:32px 24px 24px;">
-    <p class="eyebrow">Location courte durée · Haguenau, Alsace</p>
-    <h1>Appartement <em>77 m²</em>, 2 chambres<br>à Haguenau</h1>
-    <p class="tagline">Parking privé · WiFi fibre 1 Gb/s · Accès autonome · 30 min de Strasbourg</p>
+    <p class="eyebrow">Meublé de tourisme · Haguenau, Alsace</p>
+    <h1>Le Havre <em>du Château Fiat</em></h1>
+    <p class="tagline">Appartement 77 m², 2 chambres · Parking privé · WiFi fibre 1 Gb/s · Accès autonome · 30 min de Strasbourg</p>
   </div>
 
 </header>
@@ -627,7 +676,7 @@
       <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/36e9ed6b-c5df-4e7b-838b-a40af7f5fd33.jpeg?im_w=720" alt="Salon 77m²" />
       <div class="stat-popup-text">
         <strong>77 m² lumineux</strong>
-        Salon spacieux, cuisine équipée, 2 chambres séparées — style scandinave contemporain.
+        Salon spacieux, cuisine équipée, 2 chambres séparées, style scandinave contemporain.
       </div>
     </div>
   </div>
@@ -649,63 +698,126 @@
       </div>
       <div class="stat-popup-text">
         <strong>2 vraies chambres</strong>
-        Un lit queen-size et deux lits simples — idéal pour les familles ou les binômes en mission.
+        Un lit queen-size et deux lits simples, idéal pour les familles ou les binômes en mission.
       </div>
     </div>
   </div>
   <div class="stat">
-    <span class="stat-number">4,93 / 5</span>
+    <span class="stat-number">4,94 / 5</span>
     <span class="stat-label">Note voyageurs</span>
     <div class="stat-popup">
       <div class="stat-popup-text">
-        <strong>★★★★★ Christine D. — juillet 2026</strong>
-        "Si je pouvais attribuer une note supérieure à 5 étoiles, je le ferais sans la moindre hésitation. En de nombreuses années d'utilisation d'Airbnb, je n'avais encore jamais rencontré un tel niveau d'excellence."
+        <strong>★★★★★ Christine D., juillet 2026</strong>
+        "Si je pouvais attribuer une note supérieure à 5 étoiles, je le ferais sans la moindre hésitation. […] Pour nous, cette expérience mérite largement un 6/5."
       </div>
     </div>
   </div>
   <div class="stat">
-    <span class="stat-number">29</span>
-    <span class="stat-label">Avis vérifiés</span>
+    <span class="stat-number">34</span>
+    <span class="stat-label">Avis voyageurs</span>
     <div class="stat-popup">
       <div class="stat-popup-text">
-        <strong>29 avis 5 étoiles</strong>
-        <a href="https://www.airbnb.fr/rooms/1571844331384116055#reviews" target="_blank" rel="noopener" style="pointer-events:all; display:block; margin-top:8px; padding:8px 12px; background:var(--accent); color:white; text-decoration:none; border-radius:6px; text-align:center; font-weight:600;">Lire tous les avis →</a>
+        <strong>34 avis voyageurs</strong>
+        <a href="#avis" style="pointer-events:all; display:block; margin-top:8px; padding:8px 12px; background:var(--accent); color:white; text-decoration:none; border-radius:6px; text-align:center; font-weight:600;">Lire les avis ↓</a>
       </div>
     </div>
   </div>
 </div>
-<div style="text-align:center; background: var(--accent); padding: 6px; font-family:&apos;Helvetica Neue&apos;,Arial,sans-serif; font-size:12px; color:rgba(255,255,255,0.7); letter-spacing:0.08em;">
-  &#8593; Survolez les chiffres pour découvrir l'appartement
+<div class="stat-hint" style="text-align:center; background: var(--accent); padding: 6px; font-family:&apos;Helvetica Neue&apos;,Arial,sans-serif; font-size:12px; color:rgba(255,255,255,0.7); letter-spacing:0.08em;">
+  &#8593; <span class="hover">Survolez les chiffres pour découvrir l'appartement</span><span class="tap">Touchez les chiffres pour découvrir l'appartement</span>
 </div>
 
+<nav class="sec-nav" aria-label="Sections"><a href="#photos">Photos</a><a href="#logement">Logement</a><a href="#equipements">Équipements</a><a href="#avis">Avis</a><a href="#localisation">Accès</a><a href="#infos">Infos pratiques</a><a href="#reserver" class="cta">Réserver</a></nav>
 <main>
 
-  <!-- PRÉSENTATION -->
-  <section>
-    <h2>Le logement</h2>
-    <h3>77 m², 2 vraies chambres, parking privé — rare à Haguenau</h3>
-    <p>Situé au rez-de-chaussée d'une maison rénovée des années 30 avec isolation thermique extérieure à Haguenau (Alsace), cet appartement de 77 m² propose 2 chambres séparées — un lit queen-size et deux lits simples — pour 4 personnes maximum. Style scandinave, lumineux, calme.</p>
-    <p>Le logement est conçu pour être utilisé de façon totalement autonome : serrure connectée avec code personnel par réservation, portail motorisé. L'hôte réside sur place et reste joignable en cas de besoin.</p>
 
-    <div class="badges">
-      <span class="badge">✦ Superhost Airbnb</span>
-      <span class="badge">✦ Top Guest Favorite</span>
-      <span class="badge">✦ Note 4,93 / 5</span>
+  <!-- GALERIE PHOTOS -->
+  <section id="photos">
+    <h2>Photos</h2>
+    <h3>L'appartement en images</h3>
+
+
+
+<style>
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.gal-grid button{padding:0;border:0;background:none;cursor:zoom-in;display:block;overflow:hidden}
+.gal-grid img{width:100%;height:170px;object-fit:cover;display:block;transition:transform .3s}
+.gal-grid button:hover img,.gal-grid button:focus-visible img{transform:scale(1.04)}
+.gal-grid .gal-big{grid-column:1 / -1}
+.gal-grid .gal-big img{height:340px}
+.gal-hint{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--muted);margin-top:10px}
+@media (max-width:640px){.gal-grid{grid-template-columns:1fr 1fr}.gal-grid img{height:130px}.gal-grid .gal-big img{height:220px}}
+#lb{position:fixed;inset:0;background:rgba(10,12,11,.94);display:none;z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:80vh;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+#lb .lb-cap{color:#eee;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;margin-top:14px;text-align:center;padding:0 16px}
+#lb .lb-count{color:#aaa;font-size:12px;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif}
+#lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer;line-height:1}
+#lb button:hover{background:rgba(255,255,255,.25)}
+#lb .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+#lb .lb-next{right:16px;top:50%;transform:translateY(-50%)}
+#lb .lb-close{top:16px;right:16px;font-size:26px}
+@media (max-width:640px){#lb .lb-prev,#lb .lb-next{top:auto;bottom:18px;transform:none}}
+</style>
+    <div class="gal-grid">
+      <button type="button" class="gal-big" data-i="0" aria-label="Agrandir la photo : La pièce de vie, table dressée et salon"><img src="images/piece-de-vie.jpg" alt="La pièce de vie, table dressée et salon" loading="lazy" /></button>
+      <button type="button" class="" data-i="1" aria-label="Agrandir la photo : La table dressée pour quatre"><img src="images/table-dressee.jpg" alt="La table dressée pour quatre" loading="lazy" /></button>
+      <button type="button" class="" data-i="2" aria-label="Agrandir la photo : Le salon et son canapé d'angle"><img src="images/salon-canape.jpg" alt="Le salon et son canapé d'angle" loading="lazy" /></button>
+      <button type="button" class="" data-i="3" aria-label="Agrandir la photo : Le balcon ensoleillé, accessible depuis la cuisine"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/6a2ff8c6-99a3-4d49-8243-508c1c52c8d3.jpeg?im_w=1920" alt="Le balcon ensoleillé, accessible depuis la cuisine" loading="lazy" /></button>
+      <button type="button" class="" data-i="4" aria-label="Agrandir la photo : Le balcon et son salon de jardin"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/9e3081e4-1421-48ef-96e0-997cc8b24da4.jpeg?im_w=1920" alt="Le balcon et son salon de jardin" loading="lazy" /></button>
+      <button type="button" class="" data-i="5" aria-label="Agrandir la photo : La cuisine équipée"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/2a800e08-570f-4785-995d-888e5640135b.jpeg?im_w=1920" alt="La cuisine équipée" loading="lazy" /></button>
+      <button type="button" class="" data-i="6" aria-label="Agrandir la photo : La cuisine, plan de travail et coin repas"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/410e4c9c-51f4-488f-8f7b-624ad68979a1.jpeg?im_w=1920" alt="La cuisine, plan de travail et coin repas" loading="lazy" /></button>
+      <button type="button" class="" data-i="7" aria-label="Agrandir la photo : La cuisine, lave-linge et réfrigérateur"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/9fd964ef-7854-4b13-b630-c16b3c330771.jpeg?im_w=1920" alt="La cuisine, lave-linge et réfrigérateur" loading="lazy" /></button>
+      <button type="button" class="" data-i="8" aria-label="Agrandir la photo : Café, thés et bouilloire à disposition"><img src="images/cafe-the.jpg" alt="Café, thés et bouilloire à disposition" loading="lazy" /></button>
+      <button type="button" class="" data-i="9" aria-label="Agrandir la photo : Une corbeille de fruits vous attend à l'arrivée"><img src="images/corbeille-fruits.jpg" alt="Une corbeille de fruits vous attend à l'arrivée" loading="lazy" /></button>
+      <button type="button" class="" data-i="10" aria-label="Agrandir la photo : La chambre avec lit queen-size"><img src="images/chambre-queen.jpg" alt="La chambre avec lit queen-size" loading="lazy" /></button>
+      <button type="button" class="" data-i="11" aria-label="Agrandir la photo : La chambre avec deux lits simples"><img src="images/chambre-deux-lits.jpg" alt="La chambre avec deux lits simples" loading="lazy" /></button>
+      <button type="button" class="" data-i="12" aria-label="Agrandir la photo : La salle de bain"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/5d9f292d-9398-4db8-97e1-dc266530777a.jpeg?im_w=1920" alt="La salle de bain" loading="lazy" /></button>
+      <button type="button" class="" data-i="13" aria-label="Agrandir la photo : La douche à l'italienne"><img src="images/douche.jpg" alt="La douche à l'italienne" loading="lazy" /></button>
+      <button type="button" class="" data-i="14" aria-label="Agrandir la photo : Le bureau, pour travailler au calme"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/61310c32-d240-4784-ad96-9c40bb200f94.jpeg?im_w=1920" alt="Le bureau, pour travailler au calme" loading="lazy" /></button>
+      <button type="button" class="" data-i="15" aria-label="Agrandir la photo : L'entrée"><img src="images/entree.jpg" alt="L'entrée" loading="lazy" /></button>
+      <button type="button" class="" data-i="16" aria-label="Agrandir la photo : Des chaussons pour toute la famille"><img src="images/chaussons.jpg" alt="Des chaussons pour toute la famille" loading="lazy" /></button>
+      <button type="button" class="" data-i="17" aria-label="Agrandir la photo : En décembre, l'appartement se met à l'heure de Noël"><img src="images/noel-salon.jpg" alt="En décembre, l'appartement se met à l'heure de Noël" loading="lazy" /></button>
+      <button type="button" class="" data-i="18" aria-label="Agrandir la photo : La couronne de l'Avent"><img src="images/noel-couronne.jpg" alt="La couronne de l'Avent" loading="lazy" /></button>
     </div>
+    <p class="gal-hint">Cliquez sur une photo pour l'agrandir, puis passez à la suivante</p>
+  </section>
+
+  <!-- PRÉSENTATION -->
+  <section id="logement">
+    <h2>Le logement</h2>
+    <h3>77 m², 2 vraies chambres, parking privé, rare à Haguenau</h3>
+    <p>Situé au rez-de-chaussée d'une maison rénovée des années 30 avec isolation thermique extérieure à Haguenau (Alsace), cet appartement de 77 m² propose 2 chambres séparées, un lit queen-size et deux lits simples, pour 4 personnes maximum. Style scandinave, lumineux, calme.</p>
+    <p>Le logement est conçu pour être utilisé de façon totalement autonome : serrure connectée avec code personnel par réservation, portail motorisé. L'hôte réside sur place et reste joignable en cas de besoin.</p>
+    <h4 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:22px 0 8px">Pièce par pièce</h4>
+    <ul style="line-height:1.7;padding-left:1.2em">
+      <li><strong>Pièce de vie :</strong> salon avec canapé d'angle et Smart TV, coin repas avec table ronde pour quatre.</li>
+      <li><strong>Cuisine équipée :</strong> ouverte sur un balcon ensoleillé avec salon de jardin.</li>
+      <li><strong>Chambre 1 :</strong> lit queen-size 160 × 200, penderie à portes miroir et bureau pour travailler au calme.</li>
+      <li><strong>Chambre 2 :</strong> deux lits simples 90 × 200, armoire.</li>
+      <li><strong>Salle de bain :</strong> douche à l'italienne, WC, sèche-serviettes.</li>
+      <li><strong>Entrée :</strong> banc et chaussons pour toute la famille.</li>
+    </ul>
   </section>
 
   <!-- ÉQUIPEMENTS -->
-  <section>
+  <section id="equipements">
     <h2>Équipements</h2>
     <h3>Tout ce qu'il faut, sans supplément</h3>
     <p>Parking, linge de maison et ménage final inclus dans le tarif. Aucune mauvaise surprise à l'arrivée.</p>
 
+    <style>
+.equip-item{position:relative}
+.equip-item .eq-img{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(6px);width:220px;height:150px;object-fit:cover;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20;border:3px solid #fff}
+.equip-item:hover .eq-img,.equip-item.on .eq-img{opacity:1;transform:translateX(-50%) translateY(0)}
+.equip-item.has-img{cursor:zoom-in}
+</style>
     <div class="equipements">
       <div class="equip-item">
         <span class="equip-icon">📶</span>
         <div>
           <span class="equip-name">WiFi fibre 1 Gb/s</span>
-          <span class="equip-detail">WiFi 7 — idéal télétravail et visio</span>
+          <span class="equip-detail">WiFi 7, idéal télétravail et visio</span>
         </div>
       </div>
       <div class="equip-item">
@@ -723,62 +835,124 @@
         </div>
       </div>
       <div class="equip-item">
-        <span class="equip-icon">❄️</span>
+        <span class="equip-icon">🍳</span>
         <div>
-          <span class="equip-name">Climatisation mobile</span>
-          <span class="equip-detail">Air frais dans tout l'appartement</span>
-        </div>
-      </div>
-      <div class="equip-item">
-        <span class="equip-icon">🫧</span>
-        <div>
-          <span class="equip-name">Lave-linge séchant</span>
-          <span class="equip-detail">Pour les séjours longue durée</span>
+          <span class="equip-name">Tout pour cuisiner</span>
+          <span class="equip-detail">Four, cuisinière, micro-ondes, cocotte-minute, blender, casseroles et poêles, huile, sel et poivre</span>
         </div>
       </div>
       <div class="equip-item">
         <span class="equip-icon">🍽️</span>
         <div>
           <span class="equip-name">Lave-vaisselle</span>
-          <span class="equip-detail">Cuisine entièrement équipée</span>
+          <span class="equip-detail">Vaisselle, verres à vin, grille-pain</span>
         </div>
       </div>
       <div class="equip-item">
         <span class="equip-icon">☕</span>
         <div>
-          <span class="equip-name">Machine Nespresso</span>
-          <span class="equip-detail">Capsules de bienvenue incluses</span>
+          <span class="equip-name">Café et thé</span>
+          <span class="equip-detail">Nespresso, cafetière filtre, bouilloire</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🫧</span>
+        <div>
+          <span class="equip-name">Lave-linge séchant</span>
+          <span class="equip-detail">Fer et étendoir à linge</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🛏️</span>
+        <div>
+          <span class="equip-name">Linge et ménage inclus</span>
+          <span class="equip-detail">Lits faits, serviettes, ménage final</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">❄️</span>
+        <div>
+          <span class="equip-name">Climatisation mobile</span>
+          <span class="equip-detail">Sur demande avant l'arrivée ; chauffage dans tout l'appartement</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">👶</span>
+        <div>
+          <span class="equip-name">Équipement bébé</span>
+          <span class="equip-detail">Lit parapluie, chaise haute, baignoire, sur demande</span>
+        </div>
+      </div>
+      <div class="equip-item">
+        <span class="equip-icon">🎲</span>
+        <div>
+          <span class="equip-name">Lecture et jeux</span>
+          <span class="equip-detail">Livres, jeux pour enfants, jeux de société</span>
         </div>
       </div>
       <div class="equip-item">
         <span class="equip-icon">📺</span>
         <div>
           <span class="equip-name">Smart TV</span>
-          <span class="equip-detail">Netflix, YouTube, Amazon Prime et plateformes</span>
+          <span class="equip-detail">Netflix, Amazon Prime Video et plateformes</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERIE PHOTOS -->
-  <section>
-    <h2>Photos</h2>
-    <h3>L'appartement en images</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px;">
-      <div style="grid-column: 1 / -1;">
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/36e9ed6b-c5df-4e7b-838b-a40af7f5fd33.jpeg?im_w=1920" alt="Salon séjour appartement 77m² Haguenau" style="width: 100%; height: 300px; object-fit: cover; display: block;" />
+  <!-- AVIS -->
+  <section id="avis">
+    <h2>Ce que disent les voyageurs</h2>
+    <h3>34 avis de voyageurs, note moyenne 4,94 / 5</h3>
+
+    <div class="avis-grid">
+      <div class="avis-card" style="grid-column: 1 / -1; background: #eaf2ec; border-left: 4px solid var(--accent);">
+        <div class="stars" style="font-size: 15px;">★★★★★ <span style="font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 12px; color: var(--muted); margin-left: 8px;">6/5 selon la voyageuse</span></div>
+        <p class="avis-text" style="font-size: 16px;">"Si je pouvais attribuer une note supérieure à 5 étoiles, je le ferais sans la moindre hésitation. Tout a été absolument parfait : l'accueil, le logement, les équipements, la propreté et toutes les petites attentions. […] Pour nous, cette expérience mérite largement un 6/5. Hubert a été exceptionnel, aussi bien par la qualité de sa communication que par sa disponibilité et sa gentillesse. On sent immédiatement qu'il met tout son cœur à accueillir ses hôtes. Nous étions 4 adultes et 1 bébé, et nous n'aurions pas pu rêver d'un meilleur logement."</p>
+        <span class="avis-author">Christine D., Suisse · juillet 2026 · Séjour en famille</span>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/2a800e08-570f-4785-995d-888e5640135b.jpeg?im_w=1920" alt="Cuisine équipée appartement Haguenau" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Location is good: a 10 minutes walk from Haguenau center. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly. […]</p>
+        <span class="avis-author">Nicolette, Pays-Bas · juin 2026</span>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/c3a209d8-d2f2-452b-8496-8cc968fff826.jpeg?im_w=1920" alt="Chambre lit queen-size appartement Haguenau" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Logement très agréable, bien équipé, joliment décoré. Le centre ville de Haguenau et ses restaurants sont accessibles à pied. Hubert est un hôte sympa, pro actif et il y avait de belles attentions à notre arrivée.</p>
+        <span class="avis-author">Émilie, famille, 6 nuits · mai 2026</span>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/cad12897-9ce3-4fe4-b240-b1bcd1c21ff8.jpeg?im_w=1920" alt="Espace repas appartement Haguenau" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Nous avons passé un excellent séjour en famille. Le logement est proche du centre ville à pied, bien rangé, lumineux et spacieux. Hubert est un hôte très réactif. Si nous sommes de retour dans le coin nous reviendrons dans son logement sans hésiter.</p>
+        <span class="avis-author">Anthony, famille · avril 2026</span>
       </div>
-      <div style="background: var(--pale); display: flex; align-items: center; justify-content: center; height: 200px;">
-        <a href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener" style="color: var(--accent); font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; text-align: center;">Voir toutes les photos<br>sur Airbnb →</a>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Nous avons passé un excellent séjour, Hubert a été très réactif et sympathique. Le logement est conforme aux photos. Il est confortable, le mobilier est de qualité. Tout est pensé des chaussons aux portes valises, nous recommandons vraiment ce logement. Vraiment TOP. Merci beaucoup 😊</p>
+        <span class="avis-author">Gàby, février 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">This place was one of the best deals I’ve ever found. The apartment was very clean, tidy, and comfortable, and it felt warm and cozy throughout our stay. The access is excellent. Parking is easy, and if needed, there is private parking right at the entrance, which makes moving luggage very convenient. Moreover, the price is unbelievably good for the quality provided. The house rules are emphasized several times, which may feel slightly strict at first, but they are completely reasonable and well worth following. Also, the host was very friendly, responsive, and easy to communicate with.</p>
+        <span class="avis-author">Yonghee · février 2026</span>
+      </div>
+      <div class="avis-card">
+        <div class="stars">★★★★★</div>
+        <p class="avis-text">Super séjour, Hubert est flexible et très réactif, nous a laissé des explications claires et complètes, avec arrivée en toute autonomie. Le logement est conforme aux photos, très propre et équipé plus qu'il n'en faut, je recommande vivement !</p>
+        <span class="avis-author">Nicolas, Île-de-France · juin 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOT D'HUBERT -->
+  <section id="hote">
+    <h2>Le mot d'Hubert</h2>
+    <h3>Votre hôte, à l'étage au-dessus</h3>
+    <div class="hote-box" style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-top:16px">
+      <img src="images/hubert.jpg" alt="Hubert, votre hôte" loading="lazy" style="width:150px;height:195px;object-fit:cover;border-radius:12px;flex-shrink:0;box-shadow:0 6px 18px rgba(60,40,20,.18)">
+      <div style="flex:1;min-width:240px">
+        <p style="font-style:italic;font-size:17px">« Alsacien curieux du monde, j'aime recevoir comme j'aime être reçu en voyage. J'habite l'immeuble de l'appartement, ce qui me permet d'être disponible et réactif pendant votre séjour. Je partage volontiers mes bonnes adresses de Haguenau et d'Alsace du Nord, entre forêt, villages à colombages et bonnes tables. Musicien et sensible à l'écologie, j'ai à cœur un accueil simple, soigné et chaleureux. Willkomme ! »</p>
+        <p style="font-family:'Brush Script MT','Segoe Script',cursive;font-size:26px;color:var(--accent);margin-top:6px">Hubert</p>
       </div>
     </div>
   </section>
@@ -788,132 +962,165 @@
     <p>L'appartement accueille aussi bien des familles en escapade alsacienne, des couples en week-end, des groupes d'amis, que des professionnels en déplacement. La surface de 77 m², les 2 chambres séparées et le parking privé en font une base idéale pour rayonner en Alsace du Nord.</p>
 
     <div class="pro-block">
-      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020 — label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.<br><br>
+      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020, label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.<br><br>
       → <a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener" style="color: var(--accent);">Office de tourisme du Pays de Haguenau</a><br>
       → <a href="https://www.alsace-verte.com" target="_blank" rel="noopener" style="color: var(--accent);">Office de tourisme de l'Alsace Verte (Outre-Forêt)</a>
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
-      🐇 Les habitants de Haguenau ont un surnom : les <strong>Sandhaas</strong> — les lièvres des sables en alsacien, d'après les nombreux lièvres qui peuplaient la forêt sablonneuse. Le Sandhaas est aujourd'hui la mascotte officielle de la ville.
+      🐇 Les habitants de Haguenau ont un surnom : les <strong>Sandhaas</strong>, les lièvres des sables en alsacien, d'après les nombreux lièvres qui peuplaient la forêt sablonneuse. Le Sandhaas est aujourd'hui la mascotte officielle de la ville.
     </div>
 
     <div class="pro-block" style="margin-top: 12px;">
-      <p><strong>Voyageurs professionnels :</strong> Haguenau est un pôle industriel majeur d'Alsace du Nord (Siemens, Bosch, Liebherr, ITW). Fibre 1 Gb/s, accès autonome, parking privé, 2 chambres pour les binômes en mission.</p>
-    </div>
-  </section>
-
-  <!-- AVIS -->
-  <section>
-    <h2>Ce que disent les voyageurs</h2>
-    <h3>29 avis vérifiés, note 4,93 / 5</h3>
-
-    <div class="avis-grid">
-      <div class="avis-card" style="grid-column: 1 / -1; background: #eaf2ec; border-left: 4px solid var(--accent);">
-        <div class="stars" style="font-size: 15px;">★★★★★ <span style="font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 12px; color: var(--muted); margin-left: 8px;">6/5 selon la voyageuse</span></div>
-        <p class="avis-text" style="font-size: 16px;">"Si je pouvais attribuer une note supérieure à 5 étoiles, je le ferais sans la moindre hésitation. Tout a été absolument parfait : l'accueil, le logement, les équipements, la propreté et toutes les petites attentions. En de nombreuses années d'utilisation d'Airbnb, je n'avais encore jamais rencontré un tel niveau d'excellence. Pour nous, cette expérience mérite largement un 6/5. Hubert a été exceptionnel, aussi bien par la qualité de sa communication que par sa disponibilité et sa gentillesse. On sent immédiatement qu'il met tout son cœur à accueillir ses hôtes. Nous étions 4 adultes et 1 bébé, et nous n'aurions pas pu rêver d'un meilleur logement."</p>
-        <span class="avis-author">Christine DUMONT — Épalinges, Suisse · juillet 2026 · Séjour en famille</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">The apartment feels like home! It is spacious and comfortable. Good bed, nice shower, well equipped kitchen. Very nice to have a parking place next to the apartment. Hubert is a very good host, he reacts quickly and friendly.</p>
-        <span class="avis-author">Nicolette — Pays-Bas · juin 2026</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">Logement très agréable, bien équipé, joliment décoré. Le centre ville de Haguenau et ses restaurants sont accessibles à pied. Hubert est un hôte sympa, pro actif et il y avait de belles attentions à notre arrivée.</p>
-        <span class="avis-author">Émilie — famille, 6 nuits · mai 2026</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">Nous avons passé un excellent séjour en famille. Le logement est proche du centre ville à pied, bien rangé, lumineux et spacieux. Hubert est un hôte très réactif. Nous reviendrons sans hésiter.</p>
-        <span class="avis-author">Anthony — famille · avril 2026</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">Nous avons passé un excellent séjour, Hubert a été très réactif et sympathique. Tout est pensé des chaussons aux porte-valises, nous recommandons vraiment ce logement. Vraiment TOP !</p>
-        <span class="avis-author">Gàby — février 2026</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">This place was one of the best deals I've ever found. The apartment was very clean, tidy, and comfortable. Private parking right at the entrance. The price is unbelievably good for the quality provided.</p>
-        <span class="avis-author">Yonghee · février 2026</span>
-      </div>
-      <div class="avis-card">
-        <div class="stars">★★★★★</div>
-        <p class="avis-text">Super séjour, Hubert est flexible et très réactif, avec arrivée en toute autonomie. Le logement est conforme aux photos, très propre et équipé plus qu'il n'en faut, je recommande vivement !</p>
-        <span class="avis-author">Nicolas — Île-de-France · juin 2026</span>
-      </div>
+      <p><strong>Voyageurs professionnels :</strong> Haguenau est un pôle industriel majeur d'Alsace du Nord : Siemens, Schaeffler, SEW-Usocome et Trumpf y ont des sites, et CAF construit ses trains à Reichshoffen, à une vingtaine de kilomètres. L'appartement est idéal pour les cadres et techniciens en mission : fibre 1 Gb/s, bureau, arrivée autonome, parking privé, 2 chambres séparées pour les binômes.</p>
     </div>
   </section>
 
   <!-- LOCALISATION -->
-  <section>
+  <section id="localisation">
     <h2>Localisation</h2>
-    <h3>Haguenau, Alsace — idéalement placé</h3>
+    <h3>Haguenau, Alsace, idéalement placé</h3>
     <p>Haguenau est la 2e ville du Bas-Rhin, à 30 km au nord de Strasbourg. Nœud routier (A4/A35) et ferroviaire, elle concentre un tissu industriel dense et des zones d'activités majeures : Wintershouse, Marienthal, Schweighouse.</p>
 
+    <figure class="carte" style="margin:24px auto 8px;max-width:620px">
+<svg viewBox="0 0 400 300" role="img" aria-label="Carte schématique des environs de Haguenau" style="width:100%;height:auto;display:block;background:#f3eee3;border-radius:12px">
+<defs><pattern id="hills" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M0 10 L7 3 L14 10" fill="none" stroke="#9bb59f" stroke-width="1.2"/></pattern></defs>
+<rect x="8" y="20" width="95" height="80" rx="30" fill="url(#hills)" opacity=".9"/>
+<text x="20" y="18" font-size="10" fill="#5f7d66" font-family="Helvetica Neue,Arial,sans-serif" font-style="italic">Vosges du Nord</text>
+<ellipse cx="160" cy="100" rx="52" ry="22" fill="#cfe0c9"/>
+<g fill="#7fa883"><circle cx="135" cy="95" r="4"/><circle cx="150" cy="104" r="4"/><circle cx="168" cy="92" r="4"/><circle cx="185" cy="102" r="4"/><circle cx="198" cy="94" r="3.5"/></g>
+<text x="185" y="76" font-size="10" text-anchor="middle" fill="#4b7051" font-family="Helvetica Neue,Arial,sans-serif" font-style="italic">Forêt de Haguenau</text>
+<path d="M126 300 C130 262 138 232 160 205 S212 152 222 136 S268 60 300 0" fill="none" stroke="#8fb6d6" stroke-width="7" stroke-linecap="round"/>
+<text x="248" y="92" font-size="10" fill="#4f7ea6" font-family="Helvetica Neue,Arial,sans-serif" font-style="italic" transform="rotate(-55 248 92)">Rhin</text>
+<text x="392" y="250" text-anchor="end" font-size="11" fill="#8a8a8a" font-family="Helvetica Neue,Arial,sans-serif" letter-spacing="2">ALLEMAGNE</text>
+<text x="20" y="290" font-size="11" fill="#8a8a8a" font-family="Helvetica Neue,Arial,sans-serif" letter-spacing="2">FRANCE</text>
+<g font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#1a1a1a">
+<circle cx="117" cy="223" r="5" fill="#1a1a1a"/><text x="108" y="227" text-anchor="end">Strasbourg</text>
+<circle cx="333" cy="39" r="5" fill="#1a1a1a"/><text x="333" y="58" text-anchor="middle">Karlsruhe</text>
+<circle cx="87" cy="73" r="3.5" fill="#555"/><text x="80" y="77" text-anchor="end" font-size="10" fill="#555" style="paint-order:stroke" stroke="#f3eee3" stroke-width="3">Reichshoffen</text>
+<g transform="translate(77 240)"><path d="M-7 0 L7 0 M0 -7 L0 7" stroke="#555" stroke-width="2"/></g><text x="20" y="256" font-size="10" fill="#555">Entzheim ✈</text>
+<g transform="translate(236 140)"><path d="M-6 0 L6 0 M0 -6 L0 6" stroke="#555" stroke-width="2"/></g><text x="246" y="144" font-size="10" fill="#555">Baden-Airpark ✈</text>
+</g>
+<path d="M117 223 L130 122" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="80" y="178" font-size="10" fill="#2d6a4f" font-family="Helvetica Neue,Arial,sans-serif">TER direct</text>
+<g transform="translate(130 122)"><path d="M0 0 C-9 -12 -9 -22 0 -22 C9 -22 9 -12 0 0 Z" fill="#2d6a4f"/><circle cy="-15" r="3.5" fill="#fff"/></g>
+<text x="120" y="128" text-anchor="end" font-size="12" font-weight="700" fill="#2d6a4f" font-family="Helvetica Neue,Arial,sans-serif">Haguenau</text>
+<text x="120" y="141" text-anchor="end" font-size="9.5" fill="#2d6a4f" font-family="Helvetica Neue,Arial,sans-serif">Le Havre du Château Fiat</text>
+<text x="392" y="292" font-size="9" text-anchor="end" fill="#999" font-family="Helvetica Neue,Arial,sans-serif">Schéma, pas à l'échelle</text>
+</svg></figure>
     <div class="loc-facts">
       <div class="loc-item">
         <div class="loc-dest">Centre-ville Haguenau</div>
-        <div class="loc-dist">11 min à pied (750m) · 7 min en bus</div>
+        <div class="loc-dist">11 min à pied (800 m) · 7 min en bus</div>
       </div>
       <div class="loc-item">
         <div class="loc-dest">Gare de Haguenau</div>
         <div class="loc-dist">9 min en bus · arrêt Hannong (ligne 1 Ritmo, 7 min à pied)</div>
       </div>
       <div class="loc-item">
-        <div class="loc-dest">Strasbourg centre</div>
-        <div class="loc-dist">30 min en voiture · 24 min en train</div>
-      </div>
-      <div class="loc-item">
-        <div class="loc-dest">Karlsruhe (DE)</div>
-        <div class="loc-dist">50 min en voiture</div>
-      </div>
-      <div class="loc-item">
         <div class="loc-dest">Zones industrielles Haguenau</div>
         <div class="loc-dist">5–10 min en voiture</div>
       </div>
-      <div class="loc-item">
-        <div class="loc-dest">Aéroport EuroAirport Bâle-Mulhouse</div>
-        <div class="loc-dist">1h15 en voiture</div>
-      </div>
     </div>
+    <div class="pro-block" style="margin-top:14px"><p><strong>🚄 Gare de Strasbourg :</strong> l'une des plus fréquentées de France, avec environ 20 millions de voyageurs par an et des TGV vers Paris et le reste de l'Europe. Depuis la gare de Haguenau, à 9 min en bus de l'appartement, environ 88 TER directs par jour vous y conduisent en 21 à 30 minutes.</p></div>
+
+<style>
+.loc-facts{grid-template-columns:repeat(3,1fr)!important;gap:10px!important;background:none!important;border:0!important}
+.loc-item{background:var(--pale)!important;border-radius:10px}
+@media (max-width:640px){.loc-facts{grid-template-columns:1fr!important}}
+.dest-title{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:28px 0 10px}
+.dest-wrap{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.dest-track{display:flex;align-items:flex-start;gap:12px;width:max-content;animation:destmove 38s linear infinite;padding:4px 0}
+.dest-wrap:hover .dest-track,.dest-wrap.paused .dest-track{animation-play-state:paused}
+@keyframes destmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.dest-wrap{-webkit-mask-image:none;mask-image:none}.dest-track{animation:none;display:grid;grid-template-columns:repeat(3,1fr);width:auto}.dest{width:auto}.dest-track .dup{display:none}}
+@media (prefers-reduced-motion:reduce) and (max-width:640px){.dest-track{grid-template-columns:1fr 1fr}}
+.dest{width:210px;flex-shrink:0;background:var(--pale);border-radius:12px;padding:14px;cursor:pointer;font-family:'Helvetica Neue',Arial,sans-serif;border:0;text-align:left;color:var(--ink)}
+.dest .ill{display:block;height:0;overflow:hidden;opacity:0;transition:height .35s ease,opacity .35s ease,margin .35s ease}
+.dest .ill svg{width:100%;height:110px;display:block}
+.dest:hover .ill,.dest:focus-visible .ill,.dest.on .ill{height:110px;opacity:1;margin-bottom:10px}
+.dest b{display:block;font-size:14px;margin-bottom:4px}
+.dest span.k{display:block;font-size:12px;color:var(--muted);line-height:1.45}
+.dest-note{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--muted);margin-top:8px}
+</style>
+    <div class="dest-title">Villes et aéroports</div>
+    <div class="dest-wrap"><div class="dest-track"><button type="button" class="dest"><b>Strasbourg, cathédrale</b><span class="k">34 km · env. 40 min en voiture · 21 à 30 min en TER direct</span></button><button type="button" class="dest"><b>Aéroport Strasbourg-Entzheim</b><span class="k">47 km · env. 45 min en voiture</span></button><button type="button" class="dest"><b>Aéroport Karlsruhe/Baden-Baden</b><span class="k">37 km · env. 40 min en voiture</span></button><button type="button" class="dest"><b>Karlsruhe, centre</b><span class="k">67 km · env. 1 h en voiture</span></button><button type="button" class="dest"><b>Aéroport de Francfort</b><span class="k">184 km · env. 2 h en voiture</span></button><button type="button" class="dest"><b>EuroAirport Bâle-Mulhouse</b><span class="k">156 km · env. 1 h 40 en voiture</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>Strasbourg, cathédrale</b><span class="k">34 km · env. 40 min en voiture · 21 à 30 min en TER direct</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>Aéroport Strasbourg-Entzheim</b><span class="k">47 km · env. 45 min en voiture</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>Aéroport Karlsruhe/Baden-Baden</b><span class="k">37 km · env. 40 min en voiture</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>Karlsruhe, centre</b><span class="k">67 km · env. 1 h en voiture</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>Aéroport de Francfort</b><span class="k">184 km · env. 2 h en voiture</span></button><button tabindex="-1" aria-hidden="true" type="button" class="dest dup"><b>EuroAirport Bâle-Mulhouse</b><span class="k">156 km · env. 1 h 40 en voiture</span></button></div></div>
+    <p class="dest-note">Temps mesurés en fin de journée, depuis l'appartement.</p>
+  </section>
+
+  <!-- SAISONS -->
+  <section id="saisons">
+    <h2>Au fil des saisons</h2>
+    <h3>Haguenau toute l'année</h3>
+    <style>
+    .sais-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
+    .sais-photos figure{margin:0}
+    .sais-photos img{width:100%;height:190px;object-fit:cover;border-radius:10px;display:block}
+    .sais-photos figcaption{font:12px 'Helvetica Neue',Arial,sans-serif;color:var(--muted);margin-top:4px}
+    .sais-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .sais-item{background:rgba(246,241,232,.85);border-radius:10px;padding:14px 16px;font-family:'Helvetica Neue',Arial,sans-serif}
+    .sais-item b{display:block;font-size:14px;margin-bottom:4px;color:var(--accent)}
+    .sais-item span{font-size:13px;line-height:1.5;color:var(--ink)}
+    @media (max-width:640px){.sais-photos{grid-template-columns:1fr 1fr}.sais-list{grid-template-columns:1fr}}
+    </style>
+    <div class="sais-photos"><figure><img src="images/noel-sapin.jpg" alt="Le grand sapin de Noël" loading="lazy"><figcaption>Le grand sapin de Noël</figcaption></figure><figure><img src="images/tour-chevaliers-noel.jpg" alt="La tour des Chevaliers à Noël" loading="lazy"><figcaption>La tour des Chevaliers à Noël</figcaption></figure><figure><img src="images/noel-mug.jpg" alt="Le gobelet du marché de Noël" loading="lazy"><figcaption>Le gobelet du marché de Noël</figcaption></figure><figure><img src="images/automne-foret.jpg" alt="Balade d'automne" loading="lazy"><figcaption>Balade d'automne</figcaption></figure></div>
+    <div class="sais-list"><div class="sais-item"><b>Hiver</b><span>Noël à Haguenau : illuminations, grand sapin, marché de Noël et vin chaud, jusqu'à la tour des Chevaliers ornée de flocons.</span></div><div class="sais-item"><b>Printemps et été</b><span>La forêt de Haguenau à pied ou à vélo, les villages à colombages d'Alsace du Nord, et en août le Festival du Houblon.</span></div><div class="sais-item"><b>Automne</b><span>De grandes balades sous les arbres, dans la lumière dorée des fins d'après-midi.</span></div></div>
   </section>
 
   <!-- INFOS PRATIQUES -->
-  <section>
+  <section id="infos">
     <h2>Informations pratiques</h2>
     <h3>Séjour sans friction</h3>
-    <p><strong>Durée minimum :</strong> 2 nuits. <strong>Capacité :</strong> 4 personnes maximum. <strong>Check-in / check-out :</strong> accès par code personnel, arrivée flexible. <strong>Animaux :</strong> non autorisés. <strong>Fumeur :</strong> non autorisé.</p>
+    <p><strong>Arrivée :</strong> en toute autonomie à partir de 16 h, grâce à la serrure connectée et à votre code personnel. Pas besoin de convenir d'une heure avec moi. <strong>Départ :</strong> avant 11 h.</p>
+    <p><strong>Durée minimum :</strong> 2 nuits. <strong>Capacité :</strong> 4 personnes maximum.</p>
+    <p><strong>Règlement :</strong> logement non-fumeur à l'intérieur comme à l'extérieur, animaux non admis, fêtes et soirées non autorisées.</p>
     <p><strong>Langues :</strong> Hubert parle français, anglais et allemand. Le guide voyageur est disponible en FR / EN / DE via QR code dans l'appartement.</p>
-    <p><strong>Linge et ménage :</strong> inclus dans le tarif. Lits faits à l'arrivée.</p>
+    <p><strong>Linge et ménage :</strong> linge de lit et de toilette fournis, lits faits à votre arrivée, ménage de fin de séjour inclus dans le tarif.</p>
+    <p><strong>Cadeau de bienvenue :</strong> une corbeille de fruits, des boissons fraîches au réfrigérateur et, selon la saison, des spécialités alsaciennes : bredele à Noël, kougelhopf pour le petit-déjeuner du dimanche.</p>
+    <p><strong>Bébé :</strong> lit parapluie, chaise haute et baignoire pour bébé, sur demande et sans supplément.</p>
+    <p><strong>Lecture et jeux :</strong> des livres, des jeux pour enfants et des jeux de société, dont un Scrabble en version miniature, un jeu de quiz et le Skyjo.</p>
+  </section>
+
+  <!-- ACCESSIBILITE -->
+  <section>
+    <h2>Accessibilité</h2>
+    <h3>Un logement de plain-pied, accessible par quelques marches</h3>
+    <p>L'appartement est au rez-de-chaussée et toutes ses pièces sont au même niveau, avec une douche à l'italienne. On y accède depuis l'extérieur par quelques marches. La place de stationnement privée se trouve juste à côté de la maison. Le logement n'est pas adapté aux fauteuils roulants. Pour toute question sur l'accès, écrivez-moi avant de réserver : je vous réponds volontiers.</p>
+  </section>
+
+  <!-- ECO-GESTES -->
+  <section>
+    <h2>Séjourner en éco-responsable</h2>
+    <h3>Quelques gestes simples</h3>
+    <ul style="line-height:1.7; padding-left:1.2em;">
+      <li>Le tri sélectif est en place : les consignes sont affichées dans le logement.</li>
+      <li>Produits d'accueil et d'entretien bio, en petits formats.</li>
+      <li>Pensez à couper le chauffage ou la climatisation lorsque les fenêtres sont ouvertes ou en votre absence.</li>
+      <li>Douches courtes et lave-vaisselle plein : de petits gestes qui comptent.</li>
+      <li>Le centre-ville est à 800 m à pied, Strasbourg à 21 à 30 min en TER direct, et la forêt de Haguenau se découvre à vélo.</li>
+    </ul>
   </section>
 
   <!-- CTA -->
-  <section style="border-bottom: none; padding-bottom: 0;">
+  <section id="reserver" style="border-bottom: none; padding-bottom: 0;">
     <div class="cta-section">
       <h3>Réserver l'appartement</h3>
-      <p>Disponible sur Airbnb. Superhost · Top Guest Favorite · Note 4,93/5.</p>
+      <p>Réservation sécurisée en ligne via Airbnb, où se trouvent aussi le calendrier, les tarifs et la messagerie pour me contacter.</p>
       <a class="btn" href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">
-        Voir les disponibilités sur Airbnb
+        Voir les disponibilités et réserver
       </a>
-      <p style="margin-top: 28px;">
-        <a href="livret-accueil.html" style="color: var(--accent); background: var(--white); border: 2px solid var(--accent); font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 28px; text-decoration: none; display: inline-block;">
-          📋 Livret d'accueil voyageurs
-        </a>
-      </p>
     </div>
   </section>
-
 </main>
 
 <footer>
-  <p>Chez Hubert · Haguenau, Alsace, France<br>
-  <a href="https://www.airbnb.fr/rooms/1571844331384116055">Annonce Airbnb</a> · Contact via la messagerie Airbnb</p>
+  <p>Le Havre du Château Fiat · Hubert Messmer, loueur · Haguenau, Alsace, France<br>
+  Réservation et contact via Airbnb<br>
+  <a href="livret-accueil.html">Livret d'accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
 </footer>
 
 <script>
-  // Autoplay carrousel — tourne tout seul toutes les 2.5 secondes
+  // Autoplay carrousel, tourne tout seul toutes les 2.5 secondes
   function initCarousel(id) {
     const carousel = document.getElementById(id);
     if (!carousel) return;
@@ -937,6 +1144,53 @@
   window.addEventListener('load', function() {
     initCarousel('carousel-chambres');
   });
+</script>
+<script>
+  // Mobile : ouvrir / fermer les fiches des chiffres au toucher
+  document.querySelectorAll('.stat').forEach(function (s) {
+    s.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      var wasOpen = s.classList.contains('open');
+      document.querySelectorAll('.stat.open').forEach(function (o) { o.classList.remove('open'); });
+      if (!wasOpen) s.classList.add('open');
+      e.stopPropagation();
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.stat.open').forEach(function (o) { o.classList.remove('open'); });
+  });
+</script>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photos">
+  <button type="button" class="lb-close" aria-label="Fermer">&times;</button>
+  <button type="button" class="lb-prev" aria-label="Photo précédente">&#8249;</button>
+  <img alt="" />
+  <div class="lb-cap"></div><div class="lb-count"></div>
+  <button type="button" class="lb-next" aria-label="Photo suivante">&#8250;</button>
+</div>
+<script>
+(function(){
+  var P=[["images/piece-de-vie.jpg","La pièce de vie, table dressée et salon"],["images/table-dressee.jpg","La table dressée pour quatre"],["images/salon-canape.jpg","Le salon et son canapé d'angle"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/6a2ff8c6-99a3-4d49-8243-508c1c52c8d3.jpeg?im_w=1920","Le balcon ensoleillé, accessible depuis la cuisine"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/9e3081e4-1421-48ef-96e0-997cc8b24da4.jpeg?im_w=1920","Le balcon et son salon de jardin"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/2a800e08-570f-4785-995d-888e5640135b.jpeg?im_w=1920","La cuisine équipée"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/410e4c9c-51f4-488f-8f7b-624ad68979a1.jpeg?im_w=1920","La cuisine, plan de travail et coin repas"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/9fd964ef-7854-4b13-b630-c16b3c330771.jpeg?im_w=1920","La cuisine, lave-linge et réfrigérateur"],["images/cafe-the.jpg","Café, thés et bouilloire à disposition"],["images/corbeille-fruits.jpg","Une corbeille de fruits vous attend à l'arrivée"],["images/chambre-queen.jpg","La chambre avec lit queen-size"],["images/chambre-deux-lits.jpg","La chambre avec deux lits simples"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/5d9f292d-9398-4db8-97e1-dc266530777a.jpeg?im_w=1920","La salle de bain"],["images/douche.jpg","La douche à l'italienne"],["https://a0.muscache.com/im/pictures/hosting/Hosting-1571844331384116055/original/61310c32-d240-4784-ad96-9c40bb200f94.jpeg?im_w=1920","Le bureau, pour travailler au calme"],["images/entree.jpg","L'entrée"],["images/chaussons.jpg","Des chaussons pour toute la famille"],["images/noel-salon.jpg","En décembre, l'appartement se met à l'heure de Noël"],["images/noel-couronne.jpg","La couronne de l'Avent"]], lb=document.getElementById('lb'), im=lb.querySelector('img'), cap=lb.querySelector('.lb-cap'), cnt=lb.querySelector('.lb-count'), cur=0, x0=null;
+  function show(i){cur=(i+P.length)%P.length; im.src=P[cur][0]; im.alt=P[cur][1]; cap.textContent=P[cur][1]; cnt.textContent=(cur+1)+' / '+P.length; var n=new Image(); n.src=P[(cur+1)%P.length][0];}
+  function open(i){show(i); lb.classList.add('open'); document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open'); document.body.style.overflow='';}
+  document.querySelectorAll('.gal-grid button').forEach(function(b){b.addEventListener('click',function(){open(+b.dataset.i);});});
+  lb.querySelector('.lb-prev').onclick=function(e){e.stopPropagation();show(cur-1);};
+  lb.querySelector('.lb-next').onclick=function(e){e.stopPropagation();show(cur+1);};
+  lb.querySelector('.lb-close').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')show(cur-1); if(e.key==='ArrowRight')show(cur+1);});
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40)show(cur+(dx<0?1:-1)); x0=null;});
+})();
+</script>
+
+<script>
+document.querySelectorAll('.dest').forEach(function(d){d.addEventListener('click',function(){var on=d.classList.toggle('on');d.closest('.dest-wrap').classList.toggle('paused',on);});});
+</script>
+
+<script>
+document.querySelectorAll('.equip-item.has-img').forEach(function(e){e.addEventListener('click',function(){var w=e.classList.contains('on');document.querySelectorAll('.equip-item.on').forEach(function(x){x.classList.remove('on')});if(!w)e.classList.add('on');});});
 </script>
 </body>
 </html>
