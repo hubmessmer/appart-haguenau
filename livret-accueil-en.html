@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome guide for Le Havre du Château Fiat in Haguenau: arrival, WiFi, appliances, house rules, recycling, neighbourhood, accessibility and emergencies." />
+  <title>Welcome guide · Le Havre du Château Fiat · Haguenau</title>
+  <link rel="canonical" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-en.html" />
+  <link rel="alternate" hreflang="fr" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil.html" />
+  <link rel="alternate" hreflang="en" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-en.html" />
+  <link rel="alternate" hreflang="de" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-de.html" />
+  <link rel="alternate" hreflang="it" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-it.html" />
+  <link rel="alternate" hreflang="es" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-es.html" />
+  <link rel="alternate" hreflang="nl" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil-nl.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hubmessmer.github.io/appart-haguenau/livret-accueil.html" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --lin: #f7f5f0; --white: #ffffff; --ink: #1c1c1c; --muted: #6b6b6b;
+      --moss: #3a6b4a; --moss-light: #eaf2ec; --moss-mid: #c2dcc9;
+      --rule: #e0dbd2; --warn: #f4a827; --radius: 12px; --max: 680px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--lin); color: var(--ink); font-size: 15px; line-height: 1.7; }
+
+    /* LANG BAR */
+    .lang-bar { background: var(--ink); display: flex; justify-content: center; gap: 8px; padding: 10px 16px; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
+    .lang-btn { background: rgba(255,255,255,0.1); color: white; border: 1.5px solid rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 999px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .lang-btn.active { background: var(--moss); border-color: var(--moss); }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+
+    header { background: var(--moss); color: var(--white); text-align: center; padding: 52px 24px 44px; }
+    header .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 16px; }
+    header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 6vw, 42px); font-weight: normal; line-height: 1.2; margin-bottom: 12px; }
+    header .sub { font-size: 14px; opacity: 0.8; margin-bottom: 24px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 0 16px; }
+    nav a { background: rgba(255,255,255,0.15); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 999px; }
+    nav a:hover { background: rgba(255,255,255,0.3); }
+    main { max-width: var(--max); margin: 0 auto; padding: 32px 16px 64px; }
+    .section { background: var(--white); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+    .section-number { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--moss); background: var(--moss-light); padding: 3px 8px; border-radius: 4px; font-weight: 500; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: normal; }
+    .timing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .timing-card { background: var(--lin); border-radius: 8px; padding: 16px 18px; text-align: center; }
+    .timing-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .timing-value { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 500; color: var(--moss); }
+    .timing-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+    .steps li:last-child { border-bottom: none; }
+    .step-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--moss); background: var(--moss-light); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-text { color: var(--ink); font-size: 14px; }
+    .info-box { background: var(--moss-light); border-left: 3px solid var(--moss); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink); }
+    .warn-box { background: #fff9ee; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink); }
+    .wifi-box { background: var(--lin); border-radius: 8px; padding: 20px; text-align: center; margin-top: 16px; }
+    .wifi-icon { font-size: 32px; margin-bottom: 8px; }
+    .wifi-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .wifi-note { font-size: 14px; color: var(--ink); font-weight: 500; }
+    .wifi-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .equip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 16px; }
+    .equip-item { background: var(--lin); border-radius: 8px; padding: 12px 14px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+    .rules-list { list-style: none; }
+    .rules-list li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+    .rules-list li:last-child { border-bottom: none; }
+    .rule-icon { font-size: 18px; flex-shrink: 0; }
+    .place-group { margin-bottom: 20px; }
+    .place-group-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+    .place-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; gap: 12px; }
+    .place-item:last-child { border-bottom: none; }
+    .place-name { font-weight: 500; }
+    .place-detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .place-dist { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--moss); white-space: nowrap; flex-shrink: 0; }
+    .urgence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    .urgence-card { background: var(--lin); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    .urgence-number { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; color: var(--moss); min-width: 40px; }
+    .urgence-label { font-size: 13px; font-weight: 500; }
+    .urgence-sub { font-size: 11px; color: var(--muted); }
+    .hote-card { display: flex; align-items: center; gap: 20px; background: var(--lin); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+    .hote-avatar { width: 60px; height: 60px; background: var(--moss); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: white; }
+    .hote-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: normal; }
+    .hote-detail { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .hote-contact { background: var(--moss); color: white; border-radius: 8px; padding: 14px 18px; font-size: 14px; }
+    .hote-contact strong { display: block; margin-bottom: 4px; }
+    footer { text-align: center; padding: 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; }
+    @media (max-width: 480px) {
+      .timing-grid { grid-template-columns: 1fr 1fr; }
+      .urgence-grid { grid-template-columns: 1fr; }
+      .section { padding: 20px 18px; }
+    }
+
+
+.lang-name{}
+@media (max-width:640px){.lang-name{display:none}a[aria-label] > svg{margin-right:0!important}}
+.appareil { border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+.appareil summary { background: var(--lin); padding: 12px 16px; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; }
+.appareil summary::-webkit-details-marker { display: none; }
+.appareil summary::after { content: '+'; margin-left: 8px; color: var(--moss); font-family: 'JetBrains Mono', monospace; }
+.appareil[open] summary::after { content: '−'; }
+.appareil .model { font-size: 11px; color: #888; margin-left: auto; font-weight: 500; }
+.appareil-body { padding: 14px 16px; font-size: 14px; }
+.appareil-body p { margin-bottom: 8px; color: var(--ink); }
+.appareil-body p:last-child { margin-bottom: 0; }
+.rooms { list-style: none; margin-bottom: 18px; }
+.rooms li { padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.rooms li:last-child { border-bottom: none; }
+.eco-list { list-style: none; }
+.eco-list li { padding: 9px 0 9px 26px; border-bottom: 1px solid var(--rule); font-size: 14px; position: relative; }
+.eco-list li:last-child { border-bottom: none; }
+.eco-list li::before { content: '🌿'; position: absolute; left: 0; top: 9px; }
+.hote-contact a, .info-box a { color: inherit; font-weight: 600; white-space: nowrap; }
+.lead { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+nav { gap: 6px; }
+nav a { font-size: 12px; padding: 6px 12px; }
+</style>
+</head>
+<body>
+<!-- SELECTEUR DE LANGUE -->
+<div style="background:#1a1a1a;text-align:center;padding:10px 16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+  <a aria-label="Français" href="livret-accueil.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg><span class="lang-name">Français</span></a>
+  <a aria-current="page" aria-label="English" href="livret-accueil-en.html" style="background:#2d6a4f;color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 60 30" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><clipPath id="gbc"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#gbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span class="lang-name">English</span></a>
+  <a aria-label="Deutsch" href="livret-accueil-de.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 5 3" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="lang-name">Deutsch</span></a>
+  <a aria-label="Italiano" href="livret-accueil-it.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><span class="lang-name">Italiano</span></a>
+  <a aria-label="Español" href="livret-accueil-es.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 3 2" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span class="lang-name">Español</span></a>
+  <a aria-label="Nederlands" href="livret-accueil-nl.html" style="background:rgba(255,255,255,0.1);color:white;text-decoration:none;padding:6px 14px;border-radius:999px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;"><svg width="18" height="12" viewBox="0 0 9 6" style="vertical-align:-1px;margin-right:6px;border-radius:2px" aria-hidden="true"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></svg><span class="lang-name">Nederlands</span></a>
+</div>
+
+<div style="background:var(--moss);text-align:center;padding:10px 24px;">
+  <a href="index-en.html" style="color:rgba(255,255,255,0.85);font-family:Inter,sans-serif;font-size:13px;text-decoration:none;">← Back to the apartment overview</a>
+</div>
+
+<header>
+  <p class="eyebrow">Haguenau · Alsace · Welcome guide</p>
+  <h1>Welcome to<br>Le Havre du Château Fiat</h1>
+  <p class="sub">77 m² · WiFi 7 · Private parking<br>Everything you need to know for a great stay.</p>
+  <nav><a href="#arrivee">🔑 Arrival</a>
+<a href="#wifi">📶 WiFi</a>
+<a href="#appartement">🏠 Apartment</a>
+<a href="#appareils">🔧 Appliances</a>
+<a href="#regles">📋 Rules</a>
+<a href="#eco">♻️ Recycling</a>
+<a href="#quartier">📍 Area</a>
+<a href="#accessibilite">♿ Access</a>
+<a href="#urgences">🚨 Emergencies</a>
+<a href="#hote">👤 Host</a></nav>
+</header>
+
+<main>
+  <div class="section" id="arrivee">
+    <div class="section-header"><span class="section-number">01</span><span class="section-title">Arrival and departure</span></div>
+    <div class="timing-grid">
+      <div class="timing-card"><div class="timing-label">Check-in</div><div class="timing-value">4:00 PM</div><div class="timing-sub">until 11:00 PM</div></div>
+      <div class="timing-card"><div class="timing-label">Check-out</div><div class="timing-value">11:00 AM</div><div class="timing-sub">at the latest</div></div>
+    </div>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Arrival</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Park in the private parking space, right next to the house.</span></li><li><span class="step-num">2</span><span class="step-text">Go to the apartment's front door, on the ground floor.</span></li><li><span class="step-num">3</span><span class="step-text">Enter your <strong>personal code</strong> on the Nuki smart lock, then press the confirm key. Your code is sent to you the day before you arrive.</span></li><li><span class="step-num">4</span><span class="step-text">The door unlocks. Welcome!</span></li></ul>
+    <div style="margin-top:24px;margin-bottom:8px;font-weight:600;font-size:14px;">Departure, before 11:00 AM</div>
+    <ul class="steps"><li><span class="step-num">1</span><span class="step-text">Your code is deactivated automatically at 11:00 AM. Need a little more time? Just let me know in advance and I'll be happy to adjust it.</span></li><li><span class="step-num">2</span><span class="step-text">If you used the dishwasher, start it with the last load: I'll take care of emptying it.</span></li><li><span class="step-num">3</span><span class="step-text">Leave the sheets on the beds, no need to strip them. Put used towels and tea towels in the basket provided.</span></li><li><span class="step-num">4</span><span class="step-text">Sort your waste following the instructions posted in the kitchen.</span></li><li><span class="step-num">5</span><span class="step-text">If you used the gate, put the remote control back in the black dish on the entrance console.</span></li><li><span class="step-num">6</span><span class="step-text">Check that the windows are closed.</span></li><li><span class="step-num">7</span><span class="step-text">Simply pull the door shut behind you: it locks automatically.</span></li></ul>
+    <div class="info-box" style="margin-top:16px;">💡 <strong>End-of-stay cleaning is included.</strong> Nothing is required of you. If you would still like to help out: broom and dustpan under the sink, cleaning products in the bathroom cupboard, vacuum cleaner in the kitchen. For longer stays, weekly cleaning with a change of linen is included.</div>
+  </div>
+  <div class="section" id="wifi">
+    <div class="section-header"><span class="section-number">02</span><span class="section-title">WiFi connection</span></div>
+    <div class="wifi-box">
+      <div class="wifi-icon">📶</div>
+      <div class="wifi-label">WiFi details</div>
+      <div class="wifi-note">Scan the QR code displayed in the apartment</div>
+      <div class="wifi-sub">Photo frame on the entrance console</div>
+    </div>
+    <div class="info-box" style="margin-top:16px;"><strong>WiFi 7 · 1 Gb/s fibre optic</strong><br>Ultra-fast connection throughout the apartment: remote work, video calls and 4K streaming.</div>
+  </div>
+  <div class="section" id="appartement">
+    <div class="section-header"><span class="section-number">03</span><span class="section-title">The apartment</span></div>
+    <ul class="rooms"><li><strong>Living room:</strong> corner sofa, Smart TV, round table for four.</li><li><strong>Kitchen:</strong> fully equipped, opening onto a sunny balcony with garden furniture.</li><li><strong>Bedroom 1:</strong> queen-size bed 160 × 200, desk.</li><li><strong>Bedroom 2:</strong> two single beds 90 × 200, wardrobe.</li><li><strong>Bathroom:</strong> walk-in shower, WC, heated towel rail, hairdryer.</li><li><strong>Entrance:</strong> bench and slippers for the whole family.</li></ul>
+    <div class="equip-grid"><div class="equip-item">📶 WiFi 7 · fibre</div><div class="equip-item">🅿️ Private parking</div><div class="equip-item">🔑 Nuki smart lock</div><div class="equip-item">🍳 Oven, ceramic hob, microwave</div><div class="equip-item">🍽️ Dishwasher</div><div class="equip-item">☕ Nespresso, coffee maker, kettle</div><div class="equip-item">🫧 Washer-dryer</div><div class="equip-item">👔 Iron and drying rack</div><div class="equip-item">🛏️ Bed linen and towels</div><div class="equip-item">❄️ Portable air conditioning, on request</div><div class="equip-item">🔥 Heating throughout</div><div class="equip-item">🧴 Organic toiletries</div><div class="equip-item">👶 Baby equipment, on request</div><div class="equip-item">🎲 Books and games</div><div class="equip-item">📺 Smart TV</div><div class="equip-item">💡 Light switches by the beds</div><div class="equip-item">🔒 Smoke detector</div><div class="equip-item">🧯 Fire extinguisher</div></div>
+  </div>
+  <div class="section" id="appareils">
+    <div class="section-header"><span class="section-number">04</span><span class="section-title">Appliance instructions</span></div>
+    <p class="lead">Tap an appliance to see its instructions.</p>
+    <details class="appareil"><summary>🫧 Washer-dryer<span class="model">Samsung</span></summary><div class="appareil-body"><p><strong>Washing:</strong> open the door and load the laundry (no more than three quarters of the drum). Turn the central dial: <strong>COTON</strong> (cotton) or <strong>ECO 40-60</strong> for everyday use, <strong>MIX</strong> for mixed fabrics, <strong>EXPRESS 15'</strong> for a quick wash. Press the start button (▷Ⅱ).</p><p><strong>Drying:</strong> choose <strong>SÉCH. COTON</strong> (cotton dry) to dry only, or <strong>LAV.+SÉCH.</strong> (wash + dry) to wash and dry in a single cycle. The detergent drawer is at the top left.</p><div class="warn-box">⚠️ Check the care labels on your clothes before choosing a programme.</div></div></details>
+    <details class="appareil"><summary>🍽️ Dishwasher<span class="model">Thomson TDW4760</span></summary><div class="appareil-body"><p>Scrape off leftovers and load the racks. Put a tablet in the detergent compartment. Choose the programme on the control panel: <strong>65°C</strong> for very dirty pans, <strong>ECO 50°C</strong> for everyday, economical use, <strong>verre 50°C</strong> (glass) for delicate items. Press on/off, then confirm.</p><div class="warn-box">⚠️ No kitchen knives, coated pans or crystal.</div></div></details>
+    <details class="appareil"><summary>🍳 Oven<span class="model">Amica ACV6005</span></summary><div class="appareil-body"><p>Turn the left-hand dial to choose the cooking mode, then the temperature dial. The central display shows the time and a timer: set it with the <strong>&lt;</strong>, <strong>OK</strong> and <strong>&gt;</strong> buttons. The red light stays on while the oven heats up and goes off once the temperature is reached.</p></div></details>
+    <details class="appareil"><summary>☕ Nespresso machine<span class="model">Krups</span></summary><div class="appareil-body"><p>Lift the lever to open the capsule holder, insert a capsule and close it. Place your cup, then press <strong>espresso</strong> (short) or <strong>lungo</strong> (long). Welcome capsules are waiting for you in the drawer under the machine.</p></div></details>
+    <details class="appareil"><summary>📺 Smart TV<span class="model">Hisense</span></summary><div class="appareil-body"><p>Switch on with the remote control. Netflix, YouTube and Prime Video are installed: sign in with your own account. To change input, use the <strong>Source</strong> button. The full manual is available via the QR code on the leaflet kept in the TV unit.</p><div class="warn-box">⚠️ Remember to sign out of your accounts before you leave.</div></div></details>
+    <details class="appareil"><summary>❄️ Portable air conditioning<span class="model">Beko</span></summary><div class="appareil-body"><p>Available on request before your arrival. The unit is on wheels: you can move it from one room to another, for example into a bedroom for the night.</p><p><strong>Window kit, essential:</strong> open the nearest window, lay the white PVC board horizontally on the windowsill, then lower the roller shutter until it rests on the board. The hose vents the hot air out through the grille.</p><p><strong>Getting started:</strong> press <strong>ON/OFF</strong> on the white Meliconi remote (or on the unit), use the orange <strong>TEMP ▲ ▼</strong> arrows for the temperature, and select <strong>Froid</strong> mode (cooling, snowflake ❄ on the display).</p><div class="warn-box">⚠️ Ground floor: only use the air conditioning, with the window ajar, in the room you are in, and close everything when you go out. During the day, close the windows and shutters on the sunny side; air the rooms at night or in the morning.</div></div></details>
+    <details class="appareil"><summary>🔥 Ceramic hob<span class="model"></span></summary><div class="appareil-body"><p>Touch On/Off, choose the cooking zone, then set the power with <strong>+</strong> and <strong>−</strong> (from 1 to 9). Use a flat-bottomed pan that fits the zone. When you have finished cooking, go back to 0 and switch off.</p><div class="warn-box">⚠️ The surface stays hot after switching off ("H" indicator): do not put anything on it.</div></div></details>
+    <details class="appareil"><summary>🌡️ Heating<span class="model"></span></summary><div class="appareil-body"><p>Gas central heating throughout the apartment. Adjust the temperature with the thermostat or the radiator valves: 19 to 20 °C is comfortable.</p><div class="warn-box">⚠️ Avoid leaving the windows open for long while the heating is on.</div></div></details>
+    <details class="appareil"><summary>🔑 Nuki lock and gate<span class="model"></span></summary><div class="appareil-body"><p><strong>Lock:</strong> your code becomes active at check-in time and is deactivated at check-out time. Enter it, then press the confirm key.</p><p><strong>Electric gate:</strong> the remote control is in the black dish on the entrance console. Press once to open, once to close.</p><div class="warn-box">⚠️ Do not share your code with anyone who is not part of the booking.</div></div></details>
+    <details class="appareil"><summary>🧊 Fridge-freezer<span class="model">Proline</span></summary><div class="appareil-body"><p>Frost-free combination. The freezer is at the bottom. Please make sure the doors are properly closed.</p></div></details>
+    <details class="appareil"><summary>🧹 Stick vacuum<span class="model">Dreame R10 Pro</span></summary><div class="appareil-body"><p>Cordless, kept on its charging base. The on button is on the handle. Empty the bin after use with the release button, then put the vacuum back on its base.</p></div></details>
+    <details class="appareil"><summary>👔 Steam generator iron<span class="model">Philips PerfectCare Pure</span></summary><div class="appareil-body"><p>Fill the water tank (this can be done at any time). Press the on button and wait about 2 minutes until the light stays steady.</p><div class="warn-box">⚠️ Never use without water in the tank. Let it cool down before putting it away.</div></div></details>
+
+  </div>
+  <div class="section" id="regles">
+    <div class="section-header"><span class="section-number">05</span><span class="section-title">House rules</span></div>
+    <ul class="rules-list"><li><span class="rule-icon">🚭</span><span>Smoking and vaping are strictly forbidden, both inside and outside, including on the balcony and around the house. Please do not throw any cigarette butts on the ground.</span></li><li><span class="rule-icon">🐾</span><span>No pets allowed.</span></li><li><span class="rule-icon">🔇</span><span>Quiet hours from 10:00 PM to 7:00 AM: neighbours live right next door.</span></li><li><span class="rule-icon">🎉</span><span>No parties. The accommodation is reserved for the guests listed on the booking.</span></li><li><span class="rule-icon">🪟</span><span>Close the windows and shutters when you go out and at night.</span></li><li><span class="rule-icon">💧</span><span>If there is a problem (leak, breakdown), let me know straight away.</span></li><li><span class="rule-icon">🔌</span><span>Switch off lights and appliances you are not using.</span></li></ul>
+  </div>
+  <div class="section" id="eco">
+    <div class="section-header"><span class="section-number">06</span><span class="section-title">Recycling and eco-friendly habits</span></div>
+    <ul class="eco-list"><li>Waste sorting is in place, with the instructions posted in the kitchen. Under the sink, the front bin is for general waste, the back one for recyclable packaging, and the small green caddy for food waste.</li><li>Organic toiletries and cleaning products, in small sizes.</li><li>Turn off the heating or air conditioning when the windows are open or when you are out.</li><li>Short showers, full loads in the dishwasher and washing machine: small things that make a difference.</li><li>The town centre is an 800 m walk away, Strasbourg is a direct TER train ride, and the Haguenau forest is best explored by bike.</li></ul>
+  </div>
+  <div class="section" id="quartier">
+    <div class="section-header"><span class="section-number">07</span><span class="section-title">Neighbourhood and local tips</span></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Haguenau, the capital of Northern Alsace, has a lively historic centre 800 m away. Strasbourg is about 40 min by car, or 21 to 30 min by direct TER train. The apartment occupies the ground floor of a renovated 1930s house with external insulation.</p>
+    <div class="place-group"><div class="place-group-title">🚌 Getting around</div><div class="place-item"><div><div class="place-name">Bus line 1 Ritmo</div><div class="place-detail">Hannong stop, towards the town centre and the station</div></div><div class="place-dist">7 min walk</div></div><div class="place-item"><div><div class="place-name">Haguenau town centre</div><div class="place-detail">On foot or by bus</div></div><div class="place-dist">11 min · 7 min by bus</div></div><div class="place-item"><div><div class="place-name">Haguenau station</div><div class="place-detail">Direct TER trains to Strasbourg</div></div><div class="place-dist">9 min by bus</div></div><div class="place-item"><div><div class="place-name">Strasbourg</div><div class="place-detail">By car or direct TER train</div></div><div class="place-dist">40 min · 21 to 30 min</div></div></div><div class="place-group"><div class="place-group-title">🛒 Shopping</div><div class="place-item"><div><div class="place-name">Pedestrian town centre</div><div class="place-detail">Shops, bakeries, pharmacies</div></div><div class="place-dist">11 min walk</div></div><div class="place-item"><div><div class="place-name">Intermarché, Leclerc</div><div class="place-detail">Supermarkets</div></div><div class="place-dist">approx. 5 min by car</div></div><div class="place-item"><div><div class="place-name">Covered market</div><div class="place-detail">Tuesday and Friday mornings</div></div><div class="place-dist">approx. 1.2 km</div></div></div><div class="place-group"><div class="place-group-title">🌲 Nature and food</div><div class="place-item"><div><div class="place-name">Haguenau forest</div><div class="place-detail">Forêt d'Exception®, one of the largest lowland forests in France</div></div><div class="place-dist">within walking distance</div></div><div class="place-item"><div><div class="place-name">Town centre restaurants</div><div class="place-detail">Alsatian cuisine, pizzerias, brasseries</div></div><div class="place-dist">11 min walk</div></div></div>
+    <div class="warn-box">💡 Ask me for my favourite places: I know the town well.</div>
+  </div>
+  <div class="section" id="accessibilite">
+    <div class="section-header"><span class="section-number">08</span><span class="section-title">Accessibility</span></div>
+    <p style="font-size:14px;">The apartment is on the ground floor and all its rooms are on the same level, with a walk-in shower. It is reached from outside by a few steps. The private parking space is right next to the house. The accommodation is not suitable for wheelchairs. For any question about access, please contact me.</p>
+  </div>
+  <div class="section" id="urgences">
+    <div class="section-header"><span class="section-number">09</span><span class="section-title">If something goes wrong</span></div>
+    <div class="urgence-grid"><div class="urgence-card"><div class="urgence-number">15</div><div><div class="urgence-label">SAMU (ambulance)</div><div class="urgence-sub">Medical emergencies</div></div></div><div class="urgence-card"><div class="urgence-number">18</div><div><div class="urgence-label">Fire brigade</div><div class="urgence-sub">Fire, rescue</div></div></div><div class="urgence-card"><div class="urgence-number">17</div><div><div class="urgence-label">Police</div><div class="urgence-sub">Gendarmerie</div></div></div><div class="urgence-card"><div class="urgence-number">112</div><div><div class="urgence-label">EU emergencies</div><div class="urgence-sub">European number</div></div></div><div class="urgence-card"><div class="urgence-number">3237</div><div><div class="urgence-label">Duty pharmacy</div><div class="urgence-sub">National number</div></div></div><div class="urgence-card"><div class="urgence-number">114</div><div><div class="urgence-label">Emergencies by text</div><div class="urgence-sub">Deaf or hard of hearing people</div></div></div></div>
+    <div class="info-box" style="margin-top:16px;">For any problem in the apartment, call or message me on <a href="tel:+33695426415">+33 6 95 42 64 15</a>. I live in the apartment upstairs and reply quickly.</div>
+  </div>
+  <div class="section" id="hote">
+    <div class="section-header"><span class="section-number">10</span><span class="section-title">Your host</span></div>
+    <div class="hote-card">
+      <div class="hote-avatar" style="background:none;overflow:hidden;"><img src="images/hubert.jpg" alt="Hubert" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" /></div>
+      <div>
+        <div class="hote-name">Hubert</div>
+        <div class="hote-detail">Haguenau, Alsace</div>
+        <div class="hote-detail">📍 On site, in the apartment upstairs</div>
+        <div class="hote-detail">🗣️ Français · English · Deutsch</div>
+      </div>
+    </div>
+    <div class="hote-contact"><strong>📱 Contact me</strong>Phone and WhatsApp: <a href="tel:+33695426415">+33 6 95 42 64 15</a><br>or via your booking platform's messaging.</div>
+    <div class="info-box" style="margin-top:16px;">I am delighted to welcome you to this apartment, which I have furnished with care. If you have any questions, feel free to call me or knock on my door.<br><br>I wish you a wonderful stay in Haguenau and in Alsace!</div>
+  </div>
+</main>
+
+<footer>Le Havre du Château Fiat · 29 rue du Château Fiat, 67500 Haguenau<br>Guide updated in November 2026<br><span style="font-size:13px"><svg viewBox="0 0 200 270" width="80" height="108" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="100" cy="185" rx="60" ry="50" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
+  <ellipse cx="100" cy="120" rx="38" ry="36" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
+  <ellipse cx="78" cy="64" rx="11" ry="38" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5" transform="rotate(-8 78 64)"/>
+  <ellipse cx="78" cy="64" rx="5" ry="28" fill="#c0392b" transform="rotate(-8 78 64)"/>
+  <ellipse cx="122" cy="62" rx="11" ry="38" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5" transform="rotate(8 122 62)"/>
+  <ellipse cx="122" cy="62" rx="5" ry="28" fill="#c0392b" transform="rotate(8 122 62)"/>
+  <circle cx="87" cy="113" r="5" fill="#1a5276"/>
+  <circle cx="113" cy="113" r="5" fill="#1a5276"/>
+  <circle cx="88" cy="111" r="2" fill="white"/>
+  <circle cx="114" cy="111" r="2" fill="white"/>
+  <polygon points="87,113 82,107 87,101 92,107" fill="none" stroke="#1a5276" stroke-width="1.2"/>
+  <polygon points="113,113 108,107 113,101 118,107" fill="none" stroke="#1a5276" stroke-width="1.2"/>
+  <line x1="92" y1="107" x2="108" y2="107" stroke="#1a5276" stroke-width="1.2"/>
+  <ellipse cx="100" cy="130" rx="6" ry="4" fill="#c0392b"/>
+  <line x1="70" y1="130" x2="94" y2="132" stroke="#1a5276" stroke-width="0.8"/>
+  <line x1="68" y1="134" x2="94" y2="134" stroke="#1a5276" stroke-width="0.8"/>
+  <line x1="106" y1="132" x2="130" y2="130" stroke="#1a5276" stroke-width="0.8"/>
+  <line x1="106" y1="134" x2="132" y2="134" stroke="#1a5276" stroke-width="0.8"/>
+  <ellipse cx="52" cy="172" rx="13" ry="28" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.2" transform="rotate(-20 52 172)"/>
+  <ellipse cx="148" cy="172" rx="13" ry="28" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.2" transform="rotate(20 148 172)"/>
+  <ellipse cx="80" cy="228" rx="18" ry="9" fill="#1a5276" opacity="0.7"/>
+  <ellipse cx="120" cy="228" rx="18" ry="9" fill="#1a5276" opacity="0.7"/>
+  <circle cx="155" cy="193" r="10" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.2"/>
+  <path d="M60 148 Q100 160 140 148 Q138 159 100 168 Q62 159 60 148Z" fill="#c0392b"/>
+  <line x1="74" y1="149" x2="74" y2="166" stroke="white" stroke-width="1" opacity="0.7"/>
+  <line x1="87" y1="152" x2="87" y2="167" stroke="white" stroke-width="1" opacity="0.7"/>
+  <line x1="100" y1="153" x2="100" y2="168" stroke="white" stroke-width="1" opacity="0.7"/>
+  <line x1="113" y1="152" x2="113" y2="167" stroke="white" stroke-width="1" opacity="0.7"/>
+  <line x1="126" y1="149" x2="126" y2="166" stroke="white" stroke-width="1" opacity="0.7"/>
+  <g transform="translate(100, 182)">
+    <ellipse cx="0" cy="-8" rx="4" ry="7" fill="white" stroke="#1a5276" stroke-width="0.7"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="7" fill="white" stroke="#1a5276" stroke-width="0.7" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="7" fill="white" stroke="#1a5276" stroke-width="0.7" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="7" fill="white" stroke="#1a5276" stroke-width="0.7" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="7" fill="white" stroke="#1a5276" stroke-width="0.7" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="4" fill="#c0392b"/>
+  </g>
+  <text x="100" y="204" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="#1a5276">Hawenauer</text>
+  <text x="100" y="216" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="#1a5276">Sandhaas</text>
+</svg>
+🐇 Welcome to the home of the <em>Sandhaas</em>, the sand hares of Haguenau</span></footer>
+</body>
+</html>
