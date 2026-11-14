@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Livret A5 · Chez Hubert · Haguenau</title>
+  <title>Livret A5 · Le Havre du Château Fiat · Haguenau</title>
   <style>
     @page {
       size: A5;
@@ -29,7 +29,7 @@
     }
     .page:last-child { page-break-after: avoid; }
 
-    /* PAGE 1 — COUVERTURE */
+    /* PAGE 1 : COUVERTURE */
     .cover {
       background: #2d6a4f;
       color: white;
@@ -173,6 +173,23 @@
       .no-print { display: none; }
     }
   </style>
+<style>
+@page { size: A5; margin: 0; }
+@media print {
+  .page { width: 148mm; height: 210mm; min-height: 0; overflow: hidden; padding: 11mm 13mm 12mm; }
+  .page.cover, .cover { height: 210mm; min-height: 0; padding: 18mm 14mm; }
+  .page:last-of-type { page-break-after: auto; }
+  .inner { padding: 0; }
+  .page:has(.cover) { padding: 0; }
+  .section-title { margin-top: 0 !important; }
+  .info { padding: 1.6mm 3mm !important; margin: 1.5mm 0 !important; }
+  .code-box { padding: 1.6mm 3mm !important; font-size: 10.5pt !important; }
+  .timing-card { padding: 2mm !important; }
+  hr { margin: 2.5mm 0 !important; }
+  .step { margin-bottom: 1.2mm !important; }
+  .footer-print { bottom: 6mm; left: 13mm; right: 13mm; }
+}
+</style>
 </head>
 <body>
 
@@ -182,7 +199,7 @@
 </div>
 
 <!-- ======================== -->
-<!-- PAGE 1 — COUVERTURE     -->
+<!-- PAGE 1 : COUVERTURE     -->
 <!-- ======================== -->
 <div class="page">
   <div class="cover">
@@ -230,29 +247,12 @@
   <text x="100" y="216" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="bold" fill="#1a5276">Sandhaas</text>
 </svg>
 
-    <h1>Bienvenue<br>Chez Hubert</h1>
+    <h1>Bienvenue au<br>Havre du Château Fiat</h1>
     <p class="sub">Appartement 77 m² · Haguenau, Alsace<br>WiFi 7 · Parking privé · Accès autonome</p>
 
     <div class="cover-qr">
-      <!-- Placeholder QR code — à remplacer par le vrai QR code une fois l'URL connue -->
-      <svg width="80" height="80" viewBox="0 0 80 80">
-        <rect width="80" height="80" fill="white"/>
-        <rect x="5" y="5" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
-        <rect x="12" y="12" width="16" height="16" rx="1" fill="#2d6a4f"/>
-        <rect x="45" y="5" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
-        <rect x="52" y="12" width="16" height="16" rx="1" fill="#2d6a4f"/>
-        <rect x="5" y="45" width="30" height="30" rx="3" fill="none" stroke="#2d6a4f" stroke-width="3"/>
-        <rect x="12" y="52" width="16" height="16" rx="1" fill="#2d6a4f"/>
-        <rect x="45" y="45" width="6" height="6" fill="#2d6a4f"/>
-        <rect x="55" y="45" width="6" height="6" fill="#2d6a4f"/>
-        <rect x="65" y="45" width="9" height="6" fill="#2d6a4f"/>
-        <rect x="45" y="55" width="9" height="6" fill="#2d6a4f"/>
-        <rect x="58" y="55" width="6" height="6" fill="#2d6a4f"/>
-        <rect x="45" y="65" width="6" height="9" fill="#2d6a4f"/>
-        <rect x="55" y="68" width="6" height="6" fill="#2d6a4f"/>
-        <rect x="65" y="62" width="9" height="12" fill="#2d6a4f"/>
-      </svg>
-      <p>Scannez pour le<br>guide numérique complet</p>
+      <img src="data:image/png;base64,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" width="96" height="96" alt="QR code du livret numérique" style="display:block;margin:0 auto">
+      <p>Scannez pour le livret numérique<br>en 6 langues · modes d&apos;emploi · bonnes adresses</p>
     </div>
 
     <p class="cover-footer">🐇 Les Sandhaas vous souhaitent un excellent séjour</p>
@@ -260,7 +260,7 @@
 </div>
 
 <!-- ======================== -->
-<!-- PAGE 2 — ARRIVÉE + WIFI -->
+<!-- PAGE 2 : ARRIVÉE + WIFI -->
 <!-- ======================== -->
 <div class="page">
   <div class="inner">
@@ -268,12 +268,12 @@
 
     <div class="timing-row">
       <div class="timing-card">
-        <div class="timing-lbl">Check-in</div>
+        <div class="timing-lbl">Arrivée</div>
         <div class="timing-val">16h00</div>
         <div class="timing-lbl">jusqu&apos;à 23h00</div>
       </div>
       <div class="timing-card">
-        <div class="timing-lbl">Check-out</div>
+        <div class="timing-lbl">Départ</div>
         <div class="timing-val">11h00</div>
         <div class="timing-lbl">au plus tard</div>
       </div>
@@ -281,32 +281,29 @@
 
     <p class="section-title">🔑 Serrure Nuki</p>
     <div class="step"><span class="step-num">1</span><span>Garez-vous sur la place privée</span></div>
-    <div class="step"><span class="step-num">2</span><span>Approchez-vous de la porte d&apos;entrée</span></div>
-    <div class="step"><span class="step-num">3</span><span>Saisissez votre <strong>code PIN personnel</strong> + validation</span></div>
+    <div class="step"><span class="step-num">2</span><span>Rejoignez la porte de l&apos;appartement, au rez-de-chaussée</span></div>
+    <div class="step"><span class="step-num">3</span><span>Saisissez votre <strong>code personnel</strong> (reçu la veille), puis validez</span></div>
     <div class="step"><span class="step-num">4</span><span>La porte s&apos;ouvre. Bienvenue !</span></div>
 
-    <div class="info">Télécommande portail : coupelle noire sur la console d&apos;entrée</div>
+    <div class="info">Télécommande du portail : coupelle noire sur la console d&apos;entrée. Vous préférez un accueil en personne ? Dites-le-moi.</div>
 
     <hr/>
 
     <p class="section-title">📶 WiFi</p>
-    <p style="font-size:8pt;color:#666;margin-bottom:1mm">Réseau 5 GHz :</p>
-    <div class="code-box">[SSID]</div>
-    <p style="font-size:8pt;color:#666;margin:2mm 0 1mm">Mot de passe :</p>
-    <div class="code-box">[MOT DE PASSE]</div>
-    <div class="info">WiFi 7 · Fibre 1 Gb/s — idéal pour le télétravail</div>
+    <p>Scannez le QR code du cadre photo, sur la console d&apos;entrée : votre téléphone se connecte directement.</p>
+    <div class="info">WiFi 7 · Fibre 1 Gb/s, idéal pour le télétravail</div>
 
     <hr/>
 
     <p class="section-title">🚪 Départ</p>
-    <p>Draps et serviettes → bac prévu · Rincez la vaisselle · Fermez les fenêtres · Tirez la porte (verrouillage automatique). Votre code se désactive à 11h00.</p>
-    <div class="info">Le ménage final est inclus — pas besoin de nettoyer en profondeur.</div>
+    <p>Votre code se désactive à 11h00. Replacez la télécommande du portail dans la coupelle, fermez les fenêtres, puis verrouillez la porte en appuyant sur la flèche blanche du clavier.</p>
+    <div class="info"><strong>Le ménage final est inclus : rien à nettoyer.</strong> Si vous le voulez bien : vaisselle dans l&apos;évier ou le lave-vaisselle, serviettes rassemblées dans la salle de bain, déchets triés. Les draps restent sur les lits.</div>
   </div>
-  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+  <p class="footer-print">Le Havre du Château Fiat · Haguenau</p>
 </div>
 
 <!-- ========================== -->
-<!-- PAGE 3 — ÉQUIPEMENTS       -->
+<!-- PAGE 3 : ÉQUIPEMENTS       -->
 <!-- ========================== -->
 <div class="page">
   <div class="inner">
@@ -321,7 +318,7 @@
 
     <p class="section-title">🍽️ Lave-vaisselle</p>
     <p>Rincez grossièrement · Chargez · Pastille dans compartiment détergent · Vérifiez sel et brillant · Programme Eco ou Normal · Start.</p>
-    <div class="warn">Pas de couteaux de cuisine ni casseroles à revêtement.</div>
+    <div class="warn">Pas de casseroles à revêtement.</div>
 
     <hr/>
 
@@ -331,30 +328,30 @@
     <hr/>
 
     <p class="section-title">❄️ Climatisation mobile</p>
-    <p>Dans le salon — l&apos;air frais circule dans tout l&apos;appartement. Power → température 22-24°C → mode Cool. Fermez les fenêtres.</p>
+    <p>Dans le salon : l&apos;air frais circule dans tout l&apos;appartement. Power → température 22-24°C → mode Cool. Fermez les fenêtres.</p>
 
     <hr/>
 
     <p class="section-title">📺 Smart TV</p>
-    <p>Netflix, YouTube, Amazon Prime préinstallés. Connectez-vous avec votre compte. <strong>Déconnectez-vous avant de partir.</strong></p>
+    <p>Netflix, YouTube et Prime Video sont installés. Plus de 230 chaînes, dont des chaînes en anglais, allemand et italien.</p>
 
     <hr/>
 
     <p class="section-title">💡 Éclairage (Shelly)</p>
     <p>Interrupteurs près des lits : appui court = on/off · appui long = variation.</p>
   </div>
-  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+  <p class="footer-print">Le Havre du Château Fiat · Haguenau</p>
 </div>
 
 <!-- ========================== -->
-<!-- PAGE 4 — RÈGLES + URGENCES -->
+<!-- PAGE 4 : RÈGLES + URGENCES -->
 <!-- ========================== -->
 <div class="page">
   <div class="inner">
     <p class="page-title">Règles & Urgences</p>
 
     <p class="section-title">📋 Règles de la maison</p>
-    <div class="rule"><span>🚭</span><span>Non-fumeur — intérieur ET extérieur de la résidence</span></div>
+    <div class="rule"><span>🚭</span><span>Ni tabac ni vapotage, à l&apos;intérieur comme à l&apos;extérieur (balcon et abords compris)</span></div>
     <div class="rule"><span>🐾</span><span>Animaux non autorisés</span></div>
     <div class="rule"><span>🔇</span><span>Calme entre 22h et 7h</span></div>
     <div class="rule"><span>🎉</span><span>Fêtes non autorisées</span></div>
@@ -368,7 +365,7 @@
       <div class="urg-card"><div class="urg-num">15</div><div><div class="urg-label">SAMU</div><div class="urg-sub">Urgences médicales</div></div></div>
       <div class="urg-card"><div class="urg-num">18</div><div><div class="urg-label">Pompiers</div><div class="urg-sub">Incendie · secours</div></div></div>
       <div class="urg-card"><div class="urg-num">17</div><div><div class="urg-label">Police</div><div class="urg-sub">Gendarmerie</div></div></div>
-      <div class="urg-card"><div class="urg-num">112</div><div><div class="urg-label">EU</div><div class="urg-sub">Numéro européen</div></div></div>
+      <div class="urg-card"><div class="urg-num">112</div><div><div class="urg-label">Urgences UE</div><div class="urg-sub">Numéro européen</div></div></div>
     </div>
 
     <hr/>
@@ -377,15 +374,15 @@
     <div class="hote-box">
       <div class="hote-name">Hubert</div>
       <p style="font-size:8pt;color:#666;margin:1mm 0">Sur place · appartement du dessus · FR / EN / DE</p>
-      <div class="hote-tel">06 95 42 64 15</div>
+      <div class="hote-tel">+33 6 95 42 64 15</div>
       <p style="font-size:8pt;color:#666;margin-top:1mm">Je suis disponible 7j/7 pour toute question.</p>
     </div>
 
     <div class="info" style="margin-top:4mm;text-align:center">
-      🐇 <em>Sandhaas</em> — Les lièvres des sables vous souhaitent un excellent séjour à Haguenau !
+      🐇 <em>Sandhaas</em> : Les lièvres des sables vous souhaitent un excellent séjour à Haguenau !
     </div>
   </div>
-  <p class="footer-print">Chez Hubert · Haguenau · guide privé</p>
+  <p class="footer-print">Le Havre du Château Fiat · Haguenau</p>
 </div>
 
 </body>

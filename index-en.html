@@ -517,6 +517,46 @@ main{background:rgba(255,252,247,.90);box-shadow:0 0 50px rgba(60,40,20,.20);pad
 section[id]{scroll-margin-top:60px}
 footer a{color:inherit}
 </style>
+<style id="v3">
+header{position:relative;padding:0!important;background:#1a1a1a url('images/piece-de-vie.jpg') center 58%/cover no-repeat!important;min-height:clamp(440px,68vh,640px);display:flex;flex-direction:column;justify-content:flex-end;text-align:left!important;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,.18) 0%,rgba(18,22,20,.10) 35%,rgba(18,22,20,.72) 78%,rgba(18,22,20,.90) 100%)}
+header>*{position:relative}
+.hero{position:absolute!important;top:22px;left:max(24px,calc(50% - 590px));display:block!important;max-width:none!important;margin:0!important}
+.hero-mascot{width:76px;height:76px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
+.hero-mascot svg{width:44px!important;height:60px!important}
+.hero-text{max-width:1228px;width:100%;margin:0 auto;padding:0 24px 40px!important}
+header .eyebrow{color:#cfe8da!important;margin-bottom:12px!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+header h1{font-size:clamp(34px,6.4vw,68px)!important;line-height:1.05!important;max-width:none!important;margin:0 0 14px!important;text-shadow:0 2px 18px rgba(0,0,0,.45);text-wrap:balance}
+header h1 em{color:#9be0b8!important}
+header .tagline{color:#f1efe9!important;font-size:15px!important;max-width:62ch;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-cta a{font:700 13px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border-radius:4px}
+.hero-cta .p{background:#2d6a4f;color:#fff}
+.hero-cta .p:hover{background:#24573f}
+.hero-cta .s{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hero-cta .s:hover{background:rgba(255,255,255,.26)}
+.hero-cta a:focus-visible,.m-book a:focus-visible{outline:3px solid #9be0b8;outline-offset:2px}
+main a{color:var(--accent)}
+body{overflow-x:clip}
+#infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#infos>h2,#infos>h3{grid-column:1/-1}
+#infos>h3{margin-bottom:6px}
+#infos>p{background:rgba(246,241,232,.85);border-radius:8px;padding:16px 18px;margin:0!important;font-size:15.5px;line-height:1.6;border-left:3px solid var(--accent)}
+#infos>p>strong:first-child{display:block;font:700 11px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.m-book{display:none}
+@media (max-width:640px){
+ header{min-height:500px}
+ .hero{top:14px;left:14px}
+ .hero-mascot{width:58px;height:58px}.hero-mascot svg{width:34px!important;height:46px!important}
+ .hero-text{padding:0 18px 26px!important}
+ .hero-cta a{flex:1 1 auto;text-align:center;padding:13px 14px}
+ #infos{grid-template-columns:1fr}
+ .m-book{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;align-items:center;justify-content:space-between;background:rgba(26,26,26,.94);backdrop-filter:blur(6px);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));font:600 13px 'Helvetica Neue',Arial,sans-serif;color:#eee}
+ .m-book a{background:#2d6a4f;color:#fff;text-decoration:none;padding:11px 18px;border-radius:4px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:12px;white-space:nowrap}
+ body{padding-bottom:64px}
+ .sec-nav a.cta{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -650,10 +690,10 @@ footer a{color:inherit}
 <header>
 
   <!-- HERO : Sandhaas + patchwork photos -->
-  <div class="hero" style="display:flex; align-items:stretch; max-width:900px; margin:0 auto; gap:0;">
+  <div class="hero">
 
     <!-- SANDHAAS gauche -->
-    <div class="hero-mascot" style="flex:0 0 160px; background:#2d6a4f; display:flex; align-items:center; justify-content:center; padding:8px;">
+    <div class="hero-mascot">
       <svg viewBox="0 0 200 270" width="144" height="195" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="100" cy="185" rx="60" ry="50" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
   <ellipse cx="100" cy="120" rx="38" ry="36" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
@@ -697,21 +737,14 @@ footer a{color:inherit}
 </svg>
     </div>
 
-    <!-- PATCHWORK PHOTOS droite -->
-    <div class="hero-photos" style="flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px; overflow:hidden;">
-      <img src="images/piece-de-vie.jpg" alt="The living area" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/cuisine.jpg" alt="Kitchen" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/chambre-queen-size.jpg" alt="Bedroom" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/chambre-lits-simples.jpg" alt="Twin bedroom" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-    </div>
-
   </div>
 
   <!-- TITRE sous le hero -->
-  <div style="padding:32px 24px 24px;">
+  <div class="hero-text">
     <p class="eyebrow">Holiday rental · Haguenau, Alsace</p>
     <h1>Le Havre <em>du Château Fiat</em></h1>
     <p class="tagline">77 m² apartment, 2 bedrooms · Private parking · Fibre WiFi 1 Gb/s · Autonomous access · 30 min from Strasbourg</p>
+    <div class="hero-cta"><a class="p" href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">Check availability and book</a><a class="s" href="livret-accueil-en.html">Welcome guide</a></div>
   </div>
 
 </header>
@@ -1118,7 +1151,7 @@ footer a{color:inherit}
   <section id="infos">
     <h2>Practical information</h2>
     <h3>Hassle-free stay</h3>
-    <p><strong>Arrival:</strong> self check-in from 4 pm with the smart lock and your personal code, so there is no need to agree on a time with me. <strong>Departure:</strong> before 11 am.</p>
+    <p><strong>Arrival:</strong> self check-in from 4 pm with the smart lock and your personal code, so there is no need to agree on a time with me. If you prefer, I am happy to welcome you in person: just let me know. <strong>Departure:</strong> before 11 am.</p>
     <p><strong>Minimum stay:</strong> 2 nights. <strong>Capacity:</strong> 4 guests maximum.</p>
     <p><strong>House rules:</strong> no smoking inside or outside, no pets, no parties or events.</p>
     <p><strong>Languages:</strong> Hubert speaks French, English and German. The <a href="livret-accueil-en.html"><strong>welcome guide</strong></a> (arrival, appliance instructions, recycling, neighbourhood) can be read now in six languages, and via QR code in the apartment.</p>
@@ -1159,6 +1192,7 @@ footer a{color:inherit}
     </div>
   </section>
 </main>
+<div class="m-book"><span>4,94 / 5 · 77 m²</span><a href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">Book</a></div>
 
 <footer>
   <p>Le Havre du Château Fiat · Hubert Messmer, host · Haguenau, Alsace, France<br>

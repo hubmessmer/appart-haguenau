@@ -517,6 +517,46 @@ main{background:rgba(255,252,247,.90);box-shadow:0 0 50px rgba(60,40,20,.20);pad
 section[id]{scroll-margin-top:60px}
 footer a{color:inherit}
 </style>
+<style id="v3">
+header{position:relative;padding:0!important;background:#1a1a1a url('images/piece-de-vie.jpg') center 58%/cover no-repeat!important;min-height:clamp(440px,68vh,640px);display:flex;flex-direction:column;justify-content:flex-end;text-align:left!important;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,.18) 0%,rgba(18,22,20,.10) 35%,rgba(18,22,20,.72) 78%,rgba(18,22,20,.90) 100%)}
+header>*{position:relative}
+.hero{position:absolute!important;top:22px;left:max(24px,calc(50% - 590px));display:block!important;max-width:none!important;margin:0!important}
+.hero-mascot{width:76px;height:76px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
+.hero-mascot svg{width:44px!important;height:60px!important}
+.hero-text{max-width:1228px;width:100%;margin:0 auto;padding:0 24px 40px!important}
+header .eyebrow{color:#cfe8da!important;margin-bottom:12px!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+header h1{font-size:clamp(34px,6.4vw,68px)!important;line-height:1.05!important;max-width:none!important;margin:0 0 14px!important;text-shadow:0 2px 18px rgba(0,0,0,.45);text-wrap:balance}
+header h1 em{color:#9be0b8!important}
+header .tagline{color:#f1efe9!important;font-size:15px!important;max-width:62ch;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-cta a{font:700 13px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border-radius:4px}
+.hero-cta .p{background:#2d6a4f;color:#fff}
+.hero-cta .p:hover{background:#24573f}
+.hero-cta .s{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hero-cta .s:hover{background:rgba(255,255,255,.26)}
+.hero-cta a:focus-visible,.m-book a:focus-visible{outline:3px solid #9be0b8;outline-offset:2px}
+main a{color:var(--accent)}
+body{overflow-x:clip}
+#infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#infos>h2,#infos>h3{grid-column:1/-1}
+#infos>h3{margin-bottom:6px}
+#infos>p{background:rgba(246,241,232,.85);border-radius:8px;padding:16px 18px;margin:0!important;font-size:15.5px;line-height:1.6;border-left:3px solid var(--accent)}
+#infos>p>strong:first-child{display:block;font:700 11px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.m-book{display:none}
+@media (max-width:640px){
+ header{min-height:500px}
+ .hero{top:14px;left:14px}
+ .hero-mascot{width:58px;height:58px}.hero-mascot svg{width:34px!important;height:46px!important}
+ .hero-text{padding:0 18px 26px!important}
+ .hero-cta a{flex:1 1 auto;text-align:center;padding:13px 14px}
+ #infos{grid-template-columns:1fr}
+ .m-book{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;align-items:center;justify-content:space-between;background:rgba(26,26,26,.94);backdrop-filter:blur(6px);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));font:600 13px 'Helvetica Neue',Arial,sans-serif;color:#eee}
+ .m-book a{background:#2d6a4f;color:#fff;text-decoration:none;padding:11px 18px;border-radius:4px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:12px;white-space:nowrap}
+ body{padding-bottom:64px}
+ .sec-nav a.cta{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -602,10 +642,10 @@ footer a{color:inherit}
 <header>
 
   <!-- HERO : Sandhaas + patchwork photos -->
-  <div class="hero" style="display:flex; align-items:stretch; max-width:900px; margin:0 auto; gap:0;">
+  <div class="hero">
 
     <!-- SANDHAAS gauche -->
-    <div class="hero-mascot" style="flex:0 0 160px; background:#2d6a4f; display:flex; align-items:center; justify-content:center; padding:8px;">
+    <div class="hero-mascot">
       <svg viewBox="0 0 200 270" width="144" height="195" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="100" cy="185" rx="60" ry="50" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
   <ellipse cx="100" cy="120" rx="38" ry="36" fill="#f0f4f8" stroke="#1a5276" stroke-width="1.5"/>
@@ -649,21 +689,14 @@ footer a{color:inherit}
 </svg>
     </div>
 
-    <!-- PATCHWORK PHOTOS droite -->
-    <div class="hero-photos" style="flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px; overflow:hidden;">
-      <img src="images/piece-de-vie.jpg" alt="La pièce de vie" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/cuisine.jpg" alt="Cuisine" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/chambre-queen-size.jpg" alt="Chambre" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-      <img src="images/chambre-lits-simples.jpg" alt="Chambre aux deux lits simples" style="width:100%; height:100px; object-fit:cover; display:block;"/>
-    </div>
-
   </div>
 
   <!-- TITRE sous le hero -->
-  <div style="padding:32px 24px 24px;">
+  <div class="hero-text">
     <p class="eyebrow">Meublé de tourisme · Haguenau, Alsace</p>
     <h1>Le Havre <em>du Château Fiat</em></h1>
     <p class="tagline">Appartement 77 m², 2 chambres · Parking privé · WiFi fibre 1 Gb/s · Accès autonome · 30 min de Strasbourg</p>
+    <div class="hero-cta"><a class="p" href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">Voir les disponibilités et réserver</a><a class="s" href="livret-accueil.html">Livret d'accueil</a></div>
   </div>
 
 </header>
@@ -768,7 +801,7 @@ footer a{color:inherit}
       <button type="button" class="" data-i="5" aria-label="Agrandir la photo : La cuisine, lave-linge et réfrigérateur"><img src="images/cuisine-lave-linge.jpg" alt="La cuisine, lave-linge et réfrigérateur" loading="lazy" /></button>
       <button type="button" class="" data-i="6" aria-label="Agrandir la photo : Café, thés et bouilloire à disposition"><img src="images/cafe-the.jpg" alt="Café, thés et bouilloire à disposition" loading="lazy" /></button>
       <button type="button" class="" data-i="7" aria-label="Agrandir la photo : Le balcon ensoleillé, accessible depuis la cuisine"><img src="images/balcon.jpg" alt="Le balcon ensoleillé, accessible depuis la cuisine" loading="lazy" /></button>
-      <button type="button" class="" data-i="8" aria-label="Agrandir la photo : Le balcon et son salon de jardin"><img src="images/balcon-salon-de-jardin.jpg" alt="Le balcon et son salon de jardin" loading="lazy" /></button>
+      <button type="button" class="" data-i="8" aria-label="Agrandir la photo : Le balcon : table, deux chaises et deux tabourets"><img src="images/balcon-salon-de-jardin.jpg" alt="Le balcon : table, deux chaises et deux tabourets" loading="lazy" /></button>
       <button type="button" class="" data-i="9" aria-label="Agrandir la photo : La chambre avec lit queen-size"><img src="images/chambre-queen.jpg" alt="La chambre avec lit queen-size" loading="lazy" /></button>
       <button type="button" class="" data-i="10" aria-label="Agrandir la photo : Le bureau, pour travailler au calme"><img src="images/bureau.jpg" alt="Le bureau, pour travailler au calme" loading="lazy" /></button>
       <button type="button" class="" data-i="11" aria-label="Agrandir la photo : La chambre avec deux lits simples"><img src="images/chambre-deux-lits.jpg" alt="La chambre avec deux lits simples" loading="lazy" /></button>
@@ -791,7 +824,7 @@ footer a{color:inherit}
     <h4 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:22px 0 8px">Pièce par pièce</h4>
     <ul style="line-height:1.7;padding-left:1.2em">
       <li><strong>Pièce de vie :</strong> salon avec canapé d'angle et Smart TV, coin repas avec table ronde pour quatre.</li>
-      <li><strong>Cuisine équipée :</strong> ouverte sur un balcon ensoleillé avec salon de jardin.</li>
+      <li><strong>Cuisine équipée :</strong> ouverte sur un balcon ensoleillé avec table, deux chaises et deux tabourets.</li>
       <li><strong>Chambre 1 :</strong> lit queen-size 160 × 200, penderie à portes miroir et bureau pour travailler au calme.</li>
       <li><strong>Chambre 2 :</strong> deux lits simples 90 × 200, armoire.</li>
       <li><strong>Salle de bain :</strong> douche à l'italienne, WC, sèche-serviettes.</li>
@@ -1070,7 +1103,7 @@ footer a{color:inherit}
   <section id="infos">
     <h2>Informations pratiques</h2>
     <h3>Séjour sans friction</h3>
-    <p><strong>Arrivée :</strong> en toute autonomie à partir de 16 h, grâce à la serrure connectée et à votre code personnel. Pas besoin de convenir d'une heure avec moi. <strong>Départ :</strong> avant 11 h.</p>
+    <p><strong>Arrivée :</strong> en toute autonomie à partir de 16 h, grâce à la serrure connectée et à votre code personnel. Pas besoin de convenir d'une heure avec moi. Si vous préférez, je vous accueille volontiers en personne : il suffit de me le dire. <strong>Départ :</strong> avant 11 h.</p>
     <p><strong>Durée minimum :</strong> 2 nuits. <strong>Capacité :</strong> 4 personnes maximum.</p>
     <p><strong>Règlement :</strong> logement non-fumeur à l'intérieur comme à l'extérieur, animaux non admis, fêtes et soirées non autorisées.</p>
     <p><strong>Langues :</strong> Hubert parle français, anglais et allemand. Le <a href="livret-accueil.html"><strong>livret d'accueil</strong></a> (arrivée, modes d'emploi, tri, quartier) est consultable dès maintenant en six langues, et par QR code dans l'appartement.</p>
@@ -1111,6 +1144,7 @@ footer a{color:inherit}
     </div>
   </section>
 </main>
+<div class="m-book"><span>4,94 / 5 · 77 m²</span><a href="https://www.airbnb.fr/rooms/1571844331384116055" target="_blank" rel="noopener">Réserver</a></div>
 
 <footer>
   <p>Le Havre du Château Fiat · Hubert Messmer, loueur · Haguenau, Alsace, France<br>
@@ -1169,7 +1203,7 @@ footer a{color:inherit}
 </div>
 <script>
 (function(){
-  var P=[["images/piece-de-vie.jpg", "La pièce de vie, table dressée et salon"], ["images/salon-canape.jpg", "Le salon et son canapé d'angle"], ["images/table-dressee.jpg", "La table dressée pour quatre"], ["images/cuisine.jpg", "La cuisine équipée"], ["images/cuisine-coin-repas.jpg", "La cuisine, plan de travail et coin repas"], ["images/cuisine-lave-linge.jpg", "La cuisine, lave-linge et réfrigérateur"], ["images/cafe-the.jpg", "Café, thés et bouilloire à disposition"], ["images/balcon.jpg", "Le balcon ensoleillé, accessible depuis la cuisine"], ["images/balcon-salon-de-jardin.jpg", "Le balcon et son salon de jardin"], ["images/chambre-queen.jpg", "La chambre avec lit queen-size"], ["images/bureau.jpg", "Le bureau, pour travailler au calme"], ["images/chambre-deux-lits.jpg", "La chambre avec deux lits simples"], ["images/salle-de-bain.jpg", "La salle de bain"], ["images/douche.jpg", "La douche à l'italienne"], ["images/entree.jpg", "L'entrée"], ["images/chaussons.jpg", "Des chaussons pour toute la famille"], ["images/corbeille-fruits.jpg", "Une corbeille de fruits vous attend à l'arrivée"], ["images/noel-salon.jpg", "En décembre, l'appartement se met à l'heure de Noël"], ["images/noel-couronne.jpg", "La couronne de l'Avent"]], lb=document.getElementById('lb'), im=lb.querySelector('img'), cap=lb.querySelector('.lb-cap'), cnt=lb.querySelector('.lb-count'), cur=0, x0=null;
+  var P=[["images/piece-de-vie.jpg", "La pièce de vie, table dressée et salon"], ["images/salon-canape.jpg", "Le salon et son canapé d'angle"], ["images/table-dressee.jpg", "La table dressée pour quatre"], ["images/cuisine.jpg", "La cuisine équipée"], ["images/cuisine-coin-repas.jpg", "La cuisine, plan de travail et coin repas"], ["images/cuisine-lave-linge.jpg", "La cuisine, lave-linge et réfrigérateur"], ["images/cafe-the.jpg", "Café, thés et bouilloire à disposition"], ["images/balcon.jpg", "Le balcon ensoleillé, accessible depuis la cuisine"], ["images/balcon-salon-de-jardin.jpg", "Le balcon : table, deux chaises et deux tabourets"], ["images/chambre-queen.jpg", "La chambre avec lit queen-size"], ["images/bureau.jpg", "Le bureau, pour travailler au calme"], ["images/chambre-deux-lits.jpg", "La chambre avec deux lits simples"], ["images/salle-de-bain.jpg", "La salle de bain"], ["images/douche.jpg", "La douche à l'italienne"], ["images/entree.jpg", "L'entrée"], ["images/chaussons.jpg", "Des chaussons pour toute la famille"], ["images/corbeille-fruits.jpg", "Une corbeille de fruits vous attend à l'arrivée"], ["images/noel-salon.jpg", "En décembre, l'appartement se met à l'heure de Noël"], ["images/noel-couronne.jpg", "La couronne de l'Avent"]], lb=document.getElementById('lb'), im=lb.querySelector('img'), cap=lb.querySelector('.lb-cap'), cnt=lb.querySelector('.lb-count'), cur=0, x0=null;
   function show(i){cur=(i+P.length)%P.length; im.src=P[cur][0]; im.alt=P[cur][1]; cap.textContent=P[cur][1]; cnt.textContent=(cur+1)+' / '+P.length; var n=new Image(); n.src=P[(cur+1)%P.length][0];}
   function open(i){show(i); lb.classList.add('open'); document.body.style.overflow='hidden';}
   function close(){lb.classList.remove('open'); document.body.style.overflow='';}
