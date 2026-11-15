@@ -557,6 +557,22 @@ body{overflow-x:clip}
  .sec-nav a.cta{display:none}
 }
 </style>
+<style id="ot-cards">
+.ot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.ot a{display:block;position:relative;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff!important;aspect-ratio:16/9;background:#1a1a1a;box-shadow:0 4px 16px rgba(60,40,20,.18);transition:transform .2s,box-shadow .2s}
+.ot a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(60,40,20,.28)}
+.ot a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ot a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,0) 30%,rgba(18,22,20,.82) 100%)}
+.ot span{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;font:700 15px/1.25 'Helvetica Neue',Arial,sans-serif;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.ot small{display:block;font:600 11px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.9;margin-top:4px}
+.ot small{text-transform:none;letter-spacing:.02em;font-size:12px}
+.ot-more{margin-top:14px}
+.ot-more a{color:var(--accent)}
+.ot-more small{display:block;margin-top:8px;font:400 11.5px/1.4 'Helvetica Neue',Arial,sans-serif;opacity:.7}
+@media (max-width:640px){.ot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ot a{transition:none}}
+</style>
 </head>
 <body>
 
@@ -999,9 +1015,9 @@ body{overflow-x:clip}
     <p>El apartamento recibe tanto a familias de escapada por Alsacia como a parejas de fin de semana, grupos de amigos y viajeros de negocios. Con 77 m², 2 dormitorios independientes y aparcamiento privado, es la base perfecta para descubrir el norte de Alsacia.</p>
 
     <div class="pro-block">
-      <p><strong>Turismo:</strong> Haguenau está a 30 min de Strasbourg y cerca del parque natural regional de los Vosgos del Norte. El bosque de Haguenau (13.400 ha), uno de los mayores bosques de llanura de Francia, cuenta desde 2020 con la certificación <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a>, renovada hasta 2031. Se puede llegar a pie desde el barrio.<br><br><strong>Durante el Adviento:</strong> el mercado navideño de Haguenau instala unas sesenta casetas en el centro, a 800 m a pie, con un tiovivo antiguo, vino caliente y dampfnudel. Estrasburgo, «Capital de la Navidad», con su Christkindelsmärik creado en 1570, está a entre 21 y 30 minutos en tren directo.<br><br>
-      → <a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener" style="color: var(--accent);">Oficina de Turismo de Haguenau</a><br>
-      → <a href="https://www.alsace-verte.com" target="_blank" rel="noopener" style="color: var(--accent);">Oficina de Turismo de Alsace Verte (Outre-Forêt)</a>
+      <p><strong>Turismo:</strong> Haguenau está a 30 min de Strasbourg y cerca del parque natural regional de los Vosgos del Norte. El bosque de Haguenau (13.400 ha), uno de los mayores bosques de llanura de Francia, cuenta desde 2020 con la certificación <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a>, renovada hasta 2031. Se puede llegar a pie desde el barrio.<br><br><strong>Durante el Adviento:</strong> el mercado navideño de Haguenau instala unas sesenta casetas en el centro, a 15 minutos a pie, con un tiovivo antiguo, vino caliente y dampfnudel. Estrasburgo, «Capital de la Navidad», con su Christkindelsmärik creado en 1570, está a entre 21 y 30 minutos en tren directo.<br><br>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="El gran árbol del mercado navideño de Haguenau" loading="lazy" /><span>Mercado navideño de Haguenau<small>Fechas, horarios y programa · jds.fr (en francés) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Oficina de Turismo de Haguenau<small>Sitio oficial ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Oficina de Turismo de Alsace Verte (Outre-Forêt)</a><small>Foto Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (recortada).</small></div>
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1048,7 +1064,7 @@ body{overflow-x:clip}
     <div class="loc-facts">
       <div class="loc-item">
         <div class="loc-dest">Centro de Haguenau</div>
-        <div class="loc-dist">11 min a pie (800 m) · 7 min en autobús</div>
+        <div class="loc-dist">15 min a pie · 7 min en autobús</div>
       </div>
       <div class="loc-item">
         <div class="loc-dest">Estación de tren de Haguenau</div>
@@ -1134,7 +1150,7 @@ body{overflow-x:clip}
       <li>Productos de aseo y de limpieza ecológicos, en envases pequeños.</li>
       <li>Por favor, apague la calefacción o el aire acondicionado cuando las ventanas estén abiertas o cuando salga.</li>
       <li>Duchas cortas y lavavajillas a plena carga: pequeños gestos que marcan la diferencia.</li>
-      <li>El centro está a 800 m a pie, Strasbourg a 21 a 30 min en tren directo, y el bosque de Haguenau se descubre mejor en bicicleta.</li>
+      <li>El centro está a 15 minutos a pie, Strasbourg a 21 a 30 min en tren directo, y el bosque de Haguenau se descubre mejor en bicicleta.</li>
     </ul>
   </section>
 

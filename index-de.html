@@ -557,6 +557,22 @@ body{overflow-x:clip}
  .sec-nav a.cta{display:none}
 }
 </style>
+<style id="ot-cards">
+.ot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.ot a{display:block;position:relative;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff!important;aspect-ratio:16/9;background:#1a1a1a;box-shadow:0 4px 16px rgba(60,40,20,.18);transition:transform .2s,box-shadow .2s}
+.ot a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(60,40,20,.28)}
+.ot a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ot a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,0) 30%,rgba(18,22,20,.82) 100%)}
+.ot span{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;font:700 15px/1.25 'Helvetica Neue',Arial,sans-serif;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.ot small{display:block;font:600 11px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.9;margin-top:4px}
+.ot small{text-transform:none;letter-spacing:.02em;font-size:12px}
+.ot-more{margin-top:14px}
+.ot-more a{color:var(--accent)}
+.ot-more small{display:block;margin-top:8px;font:400 11.5px/1.4 'Helvetica Neue',Arial,sans-serif;opacity:.7}
+@media (max-width:640px){.ot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ot a{transition:none}}
+</style>
 </head>
 <body>
 
@@ -1042,9 +1058,9 @@ body{overflow-x:clip}
     <p>Die Wohnung empfängt Familien auf Elsass-Ausflug, Paare am Wochenende, Freundesgruppen und Geschäftsreisende. Mit 77 m², 2 getrennten Schlafzimmern und Privatparkplatz, die perfekte Basis für Nordelsass.</p>
 
     <div class="pro-block">
-      <p><strong>Tourismus:</strong> Hagenau liegt 30 Min. von Straßburg und in der Nähe des Regionalnaturparks Nordvogesen. Der Hagenauer Forst (13.400 ha), einer der größten Tieflandwälder Frankreichs, trägt das Label <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> seit 2020, bis 2031 erneuert. Zu Fuß aus dem Viertel erreichbar.<br><br><strong>In der Adventszeit:</strong> Der Hagenauer Weihnachtsmarkt stellt rund sechzig Holzhütten in der Innenstadt auf, 800 m zu Fuß entfernt, mit einem nostalgischen Karussell, Glühwein und Dampfnudeln. Straßburg, die „Weihnachtshauptstadt“ mit ihrem seit 1570 bestehenden Christkindelsmärik, ist mit dem Direktzug in 21 bis 30 Minuten erreichbar.<br><br>
-      → <a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener" style="color: var(--accent);">Touristenbüro Hagenau</a><br>
-      → <a href="https://www.alsace-verte.com" target="_blank" rel="noopener" style="color: var(--accent);">Touristenbüro Grünes Elsass (Outre-Forêt)</a>
+      <p><strong>Tourismus:</strong> Hagenau liegt 30 Min. von Straßburg und in der Nähe des Regionalnaturparks Nordvogesen. Der Hagenauer Forst (13.400 ha), einer der größten Tieflandwälder Frankreichs, trägt das Label <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> seit 2020, bis 2031 erneuert. Zu Fuß aus dem Viertel erreichbar.<br><br><strong>In der Adventszeit:</strong> Der Hagenauer Weihnachtsmarkt stellt rund sechzig Holzhütten in der Innenstadt auf, 15 Gehminuten entfernt, mit einem nostalgischen Karussell, Glühwein und Dampfnudeln. Straßburg, die „Weihnachtshauptstadt“ mit ihrem seit 1570 bestehenden Christkindelsmärik, ist mit dem Direktzug in 21 bis 30 Minuten erreichbar.<br><br>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Der große Weihnachtsbaum auf dem Hagenauer Weihnachtsmarkt" loading="lazy" /><span>Hagenauer Weihnachtsmarkt<small>Termine, Öffnungszeiten und Programm · jds.fr (auf Französisch) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Touristenbüro Hagenau<small>Offizielle Website ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Touristenbüro Grünes Elsass (Outre-Forêt)</a><small>Foto Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (zugeschnitten).</small></div>
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1091,7 +1107,7 @@ body{overflow-x:clip}
     <div class="loc-facts">
       <div class="loc-item">
         <div class="loc-dest">Hagenau Stadtzentrum</div>
-        <div class="loc-dist">11 Min. zu Fuß (800 m) · 7 Min. Bus</div>
+        <div class="loc-dist">15 Min. zu Fuß · 7 Min. Bus</div>
       </div>
       <div class="loc-item">
         <div class="loc-dest">Bahnhof Hagenau</div>
@@ -1177,7 +1193,7 @@ body{overflow-x:clip}
       <li>Bio-Pflege- und Reinigungsprodukte in kleinen Gebinden.</li>
       <li>Bitte schalten Sie Heizung oder Klimaanlage aus, wenn die Fenster offen sind oder Sie unterwegs sind.</li>
       <li>Kurz duschen, Geschirrspüler voll beladen: kleine Gesten mit Wirkung.</li>
-      <li>Die Innenstadt liegt 800 m zu Fuß entfernt, Straßburg 21 bis 30 Min. mit dem Direktzug, und den Hagenauer Forst entdeckt man am besten mit dem Fahrrad.</li>
+      <li>Die Innenstadt liegt 15 Gehminuten entfernt, Straßburg 21 bis 30 Min. mit dem Direktzug, und den Hagenauer Forst entdeckt man am besten mit dem Fahrrad.</li>
     </ul>
   </section>
 

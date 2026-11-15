@@ -557,6 +557,22 @@ body{overflow-x:clip}
  .sec-nav a.cta{display:none}
 }
 </style>
+<style id="ot-cards">
+.ot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.ot a{display:block;position:relative;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff!important;aspect-ratio:16/9;background:#1a1a1a;box-shadow:0 4px 16px rgba(60,40,20,.18);transition:transform .2s,box-shadow .2s}
+.ot a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(60,40,20,.28)}
+.ot a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ot a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,0) 30%,rgba(18,22,20,.82) 100%)}
+.ot span{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;font:700 15px/1.25 'Helvetica Neue',Arial,sans-serif;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.ot small{display:block;font:600 11px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.9;margin-top:4px}
+.ot small{text-transform:none;letter-spacing:.02em;font-size:12px}
+.ot-more{margin-top:14px}
+.ot-more a{color:var(--accent)}
+.ot-more small{display:block;margin-top:8px;font:400 11.5px/1.4 'Helvetica Neue',Arial,sans-serif;opacity:.7}
+@media (max-width:640px){.ot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ot a{transition:none}}
+</style>
 </head>
 <body>
 
@@ -994,9 +1010,9 @@ body{overflow-x:clip}
     <p>L'appartement accueille aussi bien des familles en escapade alsacienne, des couples en week-end, des groupes d'amis, que des professionnels en déplacement. La surface de 77 m², les 2 chambres séparées et le parking privé en font une base idéale pour rayonner en Alsace du Nord.</p>
 
     <div class="pro-block">
-      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020, label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.<br><br><strong>Pendant l'Avent :</strong> le marché de Noël de Haguenau installe une soixantaine de chalets dans le centre-ville, à 800 m à pied, avec un manège ancien, du vin chaud et des dampfnudel. Strasbourg, « Capitale de Noël », avec son Christkindelsmärik créé en 1570, est à 21 à 30 min en TER direct.<br><br>
-      → <a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener" style="color: var(--accent);">Office de tourisme du Pays de Haguenau</a><br>
-      → <a href="https://www.alsace-verte.com" target="_blank" rel="noopener" style="color: var(--accent);">Office de tourisme de l'Alsace Verte (Outre-Forêt)</a>
+      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020, label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.<br><br><strong>Pendant l'Avent :</strong> le marché de Noël de Haguenau installe une soixantaine de chalets dans le centre-ville, à 15 minutes à pied, avec un manège ancien, du vin chaud et des dampfnudel. Strasbourg, « Capitale de Noël », avec son Christkindelsmärik créé en 1570, est à 21 à 30 min en TER direct.<br><br>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Le grand sapin du marché de Noël de Haguenau" loading="lazy" /><span>Marché de Noël de Haguenau<small>Dates, horaires et programme · jds.fr ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Office de tourisme du Pays de Haguenau<small>Site officiel ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Office de tourisme de l'Alsace Verte (Outre-Forêt)</a><small>Photo Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (recadrée).</small></div>
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1043,7 +1059,7 @@ body{overflow-x:clip}
     <div class="loc-facts">
       <div class="loc-item">
         <div class="loc-dest">Centre-ville Haguenau</div>
-        <div class="loc-dist">11 min à pied (800 m) · 7 min en bus</div>
+        <div class="loc-dist">15 min à pied · 7 min en bus</div>
       </div>
       <div class="loc-item">
         <div class="loc-dest">Gare de Haguenau</div>
@@ -1129,7 +1145,7 @@ body{overflow-x:clip}
       <li>Produits d'accueil et d'entretien bio, en petits formats.</li>
       <li>Pensez à couper le chauffage ou la climatisation lorsque les fenêtres sont ouvertes ou en votre absence.</li>
       <li>Douches courtes et lave-vaisselle plein : de petits gestes qui comptent.</li>
-      <li>Le centre-ville est à 800 m à pied, Strasbourg à 21 à 30 min en TER direct, et la forêt de Haguenau se découvre à vélo.</li>
+      <li>Le centre-ville est à 15 minutes à pied, Strasbourg à 21 à 30 min en TER direct, et la forêt de Haguenau se découvre à vélo.</li>
     </ul>
   </section>
 
