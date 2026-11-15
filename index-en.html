@@ -522,8 +522,8 @@ header{position:relative;padding:0!important;background:#1a1a1a url('images/piec
 header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,.18) 0%,rgba(18,22,20,.10) 35%,rgba(18,22,20,.72) 78%,rgba(18,22,20,.90) 100%)}
 header>*{position:relative}
 .hero{position:absolute!important;top:22px;left:max(24px,calc(50% - 590px));display:block!important;max-width:none!important;margin:0!important}
-.hero-mascot{width:76px;height:76px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
-.hero-mascot svg{width:44px!important;height:60px!important}
+.hero-mascot{overflow:hidden;width:116px;height:116px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
+.hero-mascot svg{width:98px!important;height:132px!important}
 .hero-text{max-width:1228px;width:100%;margin:0 auto;padding:0 24px 40px!important}
 header .eyebrow{color:#cfe8da!important;margin-bottom:12px!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 header h1{font-size:clamp(34px,6.4vw,68px)!important;line-height:1.05!important;max-width:none!important;margin:0 0 14px!important;text-shadow:0 2px 18px rgba(0,0,0,.45);text-wrap:balance}
@@ -547,7 +547,7 @@ body{overflow-x:clip}
 @media (max-width:640px){
  header{min-height:500px}
  .hero{top:14px;left:14px}
- .hero-mascot{width:58px;height:58px}.hero-mascot svg{width:34px!important;height:46px!important}
+ .hero-mascot{width:84px;height:84px}.hero-mascot svg{width:70px!important;height:95px!important}
  .hero-text{padding:0 18px 26px!important}
  .hero-cta a{flex:1 1 auto;text-align:center;padding:13px 14px}
  #infos{grid-template-columns:1fr}
@@ -1058,9 +1058,7 @@ body{overflow-x:clip}
     <p>The apartment welcomes families on an Alsatian getaway, couples on a weekend break, groups of friends, and business travellers alike. With 77 m², 2 separate bedrooms and private parking, it's the perfect base for exploring Northern Alsace.</p>
 
     <div class="pro-block">
-      <p><strong>Tourism:</strong> Haguenau is 30 min from Strasbourg and close to the Vosges du Nord regional nature park. The Haguenau Forest (13,400 ha), one of the largest lowland forests in France, holds the <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> certification since 2020, renewed until 2031. Accessible on foot from the neighbourhood.<br><br><strong>During Advent:</strong> the Haguenau Christmas market sets up some sixty wooden chalets in the town centre, a 15-minute walk away, with a vintage carousel, mulled wine and dampfnudel. Strasbourg, the “Capital of Christmas”, whose Christkindelsmärik dates back to 1570, is 21 to 30 min away by direct train.<br><br>
-      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="The big tree at the Haguenau Christmas market" loading="lazy" /><span>Haguenau Christmas market<small>Dates, opening hours and programme · jds.fr (in French) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Haguenau Tourist Office<small>Official website ↗</small></span></a></div>
-      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Alsace Verte Tourist Office (Outre-Forêt)</a><small>Photo Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (cropped).</small></div>
+      <p><strong>Tourism:</strong> Haguenau is 30 min from Strasbourg and close to the Vosges du Nord regional nature park. The Haguenau Forest (13,400 ha), one of the largest lowland forests in France, holds the <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> certification since 2020, renewed until 2031. Accessible on foot from the neighbourhood.
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1161,6 +1159,11 @@ body{overflow-x:clip}
     </style>
     <div class="sais-photos"><figure><img src="images/tour-chevaliers-noel.jpg" alt="The Knights' Tower at Christmas" loading="lazy"><figcaption>The Knights' Tower at Christmas</figcaption></figure><figure><img src="images/printemps-forsythia.jpg" alt="Spring in bloom" loading="lazy"><figcaption>Spring in bloom</figcaption></figure><figure><img src="images/automne-foret.jpg" alt="Autumn walk" loading="lazy"><figcaption>Autumn walk</figcaption></figure></div>
     <div class="sais-list"><div class="sais-item"><b>Winter</b><span>Christmas in Haguenau: lights, a giant Christmas tree, the Christmas market and mulled wine, right up to the Knights' Tower decorated with snowflakes.</span></div><div class="sais-item"><b>Spring and summer</b><span>Haguenau forest on foot or by bike, the half-timbered villages of Northern Alsace, and the Festival du Houblon (hop festival) in August.</span></div><div class="sais-item"><b>Autumn</b><span>Long walks under the trees, in the golden light of late afternoon.</span></div></div>
+      <div class="pro-block" style="margin-top:18px">
+      <p><strong>During Advent:</strong> the Haguenau Christmas market sets up some sixty wooden chalets in the town centre, a 15-minute walk away, with a vintage carousel, mulled wine and dampfnudel. Strasbourg, the “Capital of Christmas”, whose Christkindelsmärik dates back to 1570, is 21 to 30 min away by direct train.</p>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="The big tree at the Haguenau Christmas market" loading="lazy" /><span>Haguenau Christmas market<small>Dates, opening hours and programme · jds.fr (in French) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Haguenau Tourist Office<small>Official website ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Alsace Verte Tourist Office (Outre-Forêt)</a><small>Photo Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (cropped).</small></div>
+    </div>
   </section>
 
   <!-- INFOS PRATIQUES -->

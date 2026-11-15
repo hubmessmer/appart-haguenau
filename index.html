@@ -522,8 +522,8 @@ header{position:relative;padding:0!important;background:#1a1a1a url('images/piec
 header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,.18) 0%,rgba(18,22,20,.10) 35%,rgba(18,22,20,.72) 78%,rgba(18,22,20,.90) 100%)}
 header>*{position:relative}
 .hero{position:absolute!important;top:22px;left:max(24px,calc(50% - 590px));display:block!important;max-width:none!important;margin:0!important}
-.hero-mascot{width:76px;height:76px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
-.hero-mascot svg{width:44px!important;height:60px!important}
+.hero-mascot{overflow:hidden;width:116px;height:116px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
+.hero-mascot svg{width:98px!important;height:132px!important}
 .hero-text{max-width:1228px;width:100%;margin:0 auto;padding:0 24px 40px!important}
 header .eyebrow{color:#cfe8da!important;margin-bottom:12px!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 header h1{font-size:clamp(34px,6.4vw,68px)!important;line-height:1.05!important;max-width:none!important;margin:0 0 14px!important;text-shadow:0 2px 18px rgba(0,0,0,.45);text-wrap:balance}
@@ -547,7 +547,7 @@ body{overflow-x:clip}
 @media (max-width:640px){
  header{min-height:500px}
  .hero{top:14px;left:14px}
- .hero-mascot{width:58px;height:58px}.hero-mascot svg{width:34px!important;height:46px!important}
+ .hero-mascot{width:84px;height:84px}.hero-mascot svg{width:70px!important;height:95px!important}
  .hero-text{padding:0 18px 26px!important}
  .hero-cta a{flex:1 1 auto;text-align:center;padding:13px 14px}
  #infos{grid-template-columns:1fr}
@@ -1010,9 +1010,7 @@ body{overflow-x:clip}
     <p>L'appartement accueille aussi bien des familles en escapade alsacienne, des couples en week-end, des groupes d'amis, que des professionnels en déplacement. La surface de 77 m², les 2 chambres séparées et le parking privé en font une base idéale pour rayonner en Alsace du Nord.</p>
 
     <div class="pro-block">
-      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020, label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.<br><br><strong>Pendant l'Avent :</strong> le marché de Noël de Haguenau installe une soixantaine de chalets dans le centre-ville, à 15 minutes à pied, avec un manège ancien, du vin chaud et des dampfnudel. Strasbourg, « Capitale de Noël », avec son Christkindelsmärik créé en 1570, est à 21 à 30 min en TER direct.<br><br>
-      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Le grand sapin du marché de Noël de Haguenau" loading="lazy" /><span>Marché de Noël de Haguenau<small>Dates, horaires et programme · jds.fr ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Office de tourisme du Pays de Haguenau<small>Site officiel ↗</small></span></a></div>
-      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Office de tourisme de l'Alsace Verte (Outre-Forêt)</a><small>Photo Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (recadrée).</small></div>
+      <p><strong>Tourisme :</strong> Haguenau est à 30 min de Strasbourg et à proximité du parc naturel régional des Vosges du Nord. La forêt de Haguenau (13 400 ha), l'une des plus grandes forêts de plaine de France, est labellisée <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a> depuis 2020, label renouvelé jusqu'en 2031. Elle est accessible à pied depuis le quartier.
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1113,6 +1111,11 @@ body{overflow-x:clip}
     </style>
     <div class="sais-photos"><figure><img src="images/tour-chevaliers-noel.jpg" alt="La tour des Chevaliers à Noël" loading="lazy"><figcaption>La tour des Chevaliers à Noël</figcaption></figure><figure><img src="images/printemps-forsythia.jpg" alt="Le printemps en fleurs" loading="lazy"><figcaption>Le printemps en fleurs</figcaption></figure><figure><img src="images/automne-foret.jpg" alt="Balade d'automne" loading="lazy"><figcaption>Balade d'automne</figcaption></figure></div>
     <div class="sais-list"><div class="sais-item"><b>Hiver</b><span>Noël à Haguenau : illuminations, grand sapin, marché de Noël et vin chaud, jusqu'à la tour des Chevaliers ornée de flocons.</span></div><div class="sais-item"><b>Printemps et été</b><span>La forêt de Haguenau à pied ou à vélo, les villages à colombages d'Alsace du Nord, et en août le Festival du Houblon.</span></div><div class="sais-item"><b>Automne</b><span>De grandes balades sous les arbres, dans la lumière dorée des fins d'après-midi.</span></div></div>
+      <div class="pro-block" style="margin-top:18px">
+      <p><strong>Pendant l'Avent :</strong> le marché de Noël de Haguenau installe une soixantaine de chalets dans le centre-ville, à 15 minutes à pied, avec un manège ancien, du vin chaud et des dampfnudel. Strasbourg, « Capitale de Noël », avec son Christkindelsmärik créé en 1570, est à 21 à 30 min en TER direct.</p>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Le grand sapin du marché de Noël de Haguenau" loading="lazy" /><span>Marché de Noël de Haguenau<small>Dates, horaires et programme · jds.fr ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Office de tourisme du Pays de Haguenau<small>Site officiel ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Office de tourisme de l'Alsace Verte (Outre-Forêt)</a><small>Photo Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (recadrée).</small></div>
+    </div>
   </section>
 
   <!-- INFOS PRATIQUES -->

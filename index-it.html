@@ -522,8 +522,8 @@ header{position:relative;padding:0!important;background:#1a1a1a url('images/piec
 header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,20,.18) 0%,rgba(18,22,20,.10) 35%,rgba(18,22,20,.72) 78%,rgba(18,22,20,.90) 100%)}
 header>*{position:relative}
 .hero{position:absolute!important;top:22px;left:max(24px,calc(50% - 590px));display:block!important;max-width:none!important;margin:0!important}
-.hero-mascot{width:76px;height:76px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
-.hero-mascot svg{width:44px!important;height:60px!important}
+.hero-mascot{overflow:hidden;width:116px;height:116px;border-radius:50%;background:#2d6a4f!important;padding:0!important;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.85)}
+.hero-mascot svg{width:98px!important;height:132px!important}
 .hero-text{max-width:1228px;width:100%;margin:0 auto;padding:0 24px 40px!important}
 header .eyebrow{color:#cfe8da!important;margin-bottom:12px!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 header h1{font-size:clamp(34px,6.4vw,68px)!important;line-height:1.05!important;max-width:none!important;margin:0 0 14px!important;text-shadow:0 2px 18px rgba(0,0,0,.45);text-wrap:balance}
@@ -547,7 +547,7 @@ body{overflow-x:clip}
 @media (max-width:640px){
  header{min-height:500px}
  .hero{top:14px;left:14px}
- .hero-mascot{width:58px;height:58px}.hero-mascot svg{width:34px!important;height:46px!important}
+ .hero-mascot{width:84px;height:84px}.hero-mascot svg{width:70px!important;height:95px!important}
  .hero-text{padding:0 18px 26px!important}
  .hero-cta a{flex:1 1 auto;text-align:center;padding:13px 14px}
  #infos{grid-template-columns:1fr}
@@ -1015,9 +1015,7 @@ body{overflow-x:clip}
     <p>L'appartamento accoglie famiglie in vacanza in Alsazia, coppie per un weekend, gruppi di amici e professionisti in trasferta. Con i suoi 77 m², le 2 camere separate e il parcheggio privato, è la base ideale per esplorare l'Alsazia del Nord.</p>
 
     <div class="pro-block">
-      <p><strong>Turismo:</strong> Haguenau si trova a 30 min da Strasbourg, vicino al parco naturale regionale dei Vosges du Nord. La foresta di Haguenau (13.400 ha), una delle più grandi foreste di pianura di Francia, ha ottenuto nel 2020 il marchio <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a>, rinnovato fino al 2031. È raggiungibile a piedi dal quartiere.<br><br><strong>Durante l'Avvento:</strong> il mercatino di Natale di Haguenau allestisce una sessantina di casette nel centro città, a 15 minuti a piedi, con una giostra d'epoca, vin brulé e dampfnudel. Strasburgo, «Capitale del Natale», con il suo Christkindelsmärik nato nel 1570, è a 21-30 minuti in treno diretto.<br><br>
-      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Il grande albero del mercatino di Natale di Haguenau" loading="lazy" /><span>Mercatino di Natale di Haguenau<small>Date, orari e programma · jds.fr (in francese) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Ufficio del turismo di Haguenau<small>Sito ufficiale ↗</small></span></a></div>
-      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Ufficio del turismo Alsace Verte (Outre-Forêt)</a><small>Foto Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (ritagliata).</small></div>
+      <p><strong>Turismo:</strong> Haguenau si trova a 30 min da Strasbourg, vicino al parco naturale regionale dei Vosges du Nord. La foresta di Haguenau (13.400 ha), una delle più grandi foreste di pianura di Francia, ha ottenuto nel 2020 il marchio <a href="https://haguenau.fr/fr/page/haguenau-foret-dexception" target="_blank" rel="noopener" style="color: var(--accent);">Forêt d'Exception®</a>, rinnovato fino al 2031. È raggiungibile a piedi dal quartiere.
       </p>
     </div>
     <div style="margin-top: 16px; background: var(--pale); border-radius: 8px; padding: 18px 22px; font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif; font-size: 15px; color: var(--ink);">
@@ -1118,6 +1116,11 @@ body{overflow-x:clip}
     </style>
     <div class="sais-photos"><figure><img src="images/tour-chevaliers-noel.jpg" alt="La Torre dei Cavalieri a Natale" loading="lazy"><figcaption>La Torre dei Cavalieri a Natale</figcaption></figure><figure><img src="images/printemps-forsythia.jpg" alt="La primavera in fiore" loading="lazy"><figcaption>La primavera in fiore</figcaption></figure><figure><img src="images/automne-foret.jpg" alt="Passeggiata d'autunno" loading="lazy"><figcaption>Passeggiata d'autunno</figcaption></figure></div>
     <div class="sais-list"><div class="sais-item"><b>Inverno</b><span>Il Natale a Haguenau: luminarie, il grande albero, il mercatino di Natale e il vin brulé, fino alla Torre dei Cavalieri decorata con fiocchi di neve.</span></div><div class="sais-item"><b>Primavera ed estate</b><span>La foresta di Haguenau a piedi o in bicicletta, i villaggi a graticcio dell'Alsazia del Nord e, in agosto, il Festival du Houblon (festa del luppolo).</span></div><div class="sais-item"><b>Autunno</b><span>Lunghe passeggiate sotto gli alberi, nella luce dorata del tardo pomeriggio.</span></div></div>
+      <div class="pro-block" style="margin-top:18px">
+      <p><strong>Durante l'Avvento:</strong> il mercatino di Natale di Haguenau allestisce una sessantina di casette nel centro città, a 15 minuti a piedi, con una giostra d'epoca, vin brulé e dampfnudel. Strasburgo, «Capitale del Natale», con il suo Christkindelsmärik nato nel 1570, è a 21-30 minuti in treno diretto.</p>
+      <div class="ot"><a href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="Il grande albero del mercatino di Natale di Haguenau" loading="lazy" /><span>Mercatino di Natale di Haguenau<small>Date, orari e programma · jds.fr (in francese) ↗</small></span></a><a href="https://www.visithaguenau.alsace" target="_blank" rel="noopener"><img src="images/office-haguenau-chancellerie.jpg" alt="Ancienne Chancellerie, place Joseph Thierry, Haguenau" loading="lazy" /><span>Ufficio del turismo di Haguenau<small>Sito ufficiale ↗</small></span></a></div>
+      <div class="ot-more">→ <a href="https://www.alsace-verte.com" target="_blank" rel="noopener">Ufficio del turismo Alsace Verte (Outre-Forêt)</a><small>Foto Office de tourisme du Pays de Haguenau : <a href="https://commons.wikimedia.org/wiki/File:Haguenau_Mus%C3%A9eAlsacien_10.JPG" target="_blank" rel="noopener">Ralph Hammann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons (ritagliata).</small></div>
+    </div>
   </section>
 
   <!-- INFOS PRATIQUES -->
