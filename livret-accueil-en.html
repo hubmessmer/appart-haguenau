@@ -316,6 +316,63 @@ nav a { font-size: 12px; padding: 6px 12px; }
     <div class="section-header"><span class="section-number">07</span><span class="section-title">Neighbourhood and local tips</span></div>
     <p style="font-size:14px;color:var(--muted);margin-bottom:20px;">Haguenau, the capital of Northern Alsace, has a lively historic centre a 15-minute walk away. Strasbourg is about 40 min by car, or 21 to 30 min by direct TER train. The apartment occupies the ground floor of a renovated 1930s house with external insulation.</p>
     <a class="noel-card" href="https://www.jds.fr/manifestations/marche-de-noel/marche-noel-haguenau-73855_A" target="_blank" rel="noopener"><img src="images/noel-sapin.jpg" alt="The big tree at the Haguenau Christmas market" loading="lazy"><span>🎄 Haguenau Christmas market<small>Dates, opening hours and programme · jds.fr (in French) ↗</small></span></a>
+    <style id="carte-livret">
+.carte2{margin:26px auto 10px;max-width:640px}
+.carte2 figcaption{font:12px/1.5 'Helvetica Neue',Arial,sans-serif;color:var(--muted);margin-top:8px}
+.hm{margin:6px 0 22px}
+.hm h4{font:600 16px Georgia,serif;margin:0 0 14px;color:var(--ink)}
+.hm-map{position:relative;height:440px;border-radius:14px;overflow:hidden;background:#e8e4d8 linear-gradient(135deg,#e9efe3,#efe9da);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;z-index:0}
+.hm-map.on{display:block}
+.hm-btn{font:700 15px 'Helvetica Neue',Arial,sans-serif;background:#2d6a4f;color:#fff;border:0;border-radius:999px;padding:14px 24px;cursor:pointer;box-shadow:0 6px 18px rgba(45,106,79,.35)}
+.hm-btn:hover{background:#245741}
+.hm-btn:focus-visible{outline:3px solid #1c1c1c;outline-offset:3px}
+.hm-note{font:12px 'Helvetica Neue',Arial,sans-serif;color:#555;margin:0;padding:0 16px;text-align:center}
+.hm-leg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 28px;margin-top:16px;font-family:'Helvetica Neue',Arial,sans-serif}
+.hm-g h5{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:12px 0 6px}
+.hm-g ul{list-style:none;margin:0;padding:0}
+.hm-g li{display:flex;gap:10px;align-items:flex-start;padding:5px 0;font-size:13.5px;line-height:1.45}
+.hm-g li b{display:block;font-weight:700;color:var(--ink)}
+.hm-g li b a{color:inherit;text-decoration:underline;text-decoration-color:#b9cdbf;text-underline-offset:3px}
+.hm-g li em{font-style:normal;color:var(--muted);font-size:12.5px}
+.hm-n,.hm-pin{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font:700 12px 'Helvetica Neue',Arial,sans-serif;flex-shrink:0;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);box-sizing:border-box}
+.hm-c0{background:#2d6a4f}.hm-c1{background:#34648a}.hm-c2{background:#b5651d}.hm-c3{background:#7a4f9a}
+.hm-pin.hm-c0{width:34px;height:34px;font-size:15px}
+.leaflet-popup-content{font:13px/1.45 'Helvetica Neue',Arial,sans-serif;margin:11px 14px}
+.leaflet-popup-content b{display:block;font-size:14px;margin-bottom:2px}
+@media (max-width:640px){.hm-map{height:360px}.hm-leg{grid-template-columns:1fr}}
+</style>
+<div class="hm"><h4>Haguenau on foot: my addresses on the map</h4><div class="hm-map" id="hm-map"><button type="button" class="hm-btn" id="hm-btn">Show the interactive map</button><p class="hm-note">Base map: OpenStreetMap.</p></div></div><script>
+(function(){
+  var box=document.getElementById('hm-map'),btn=document.getElementById('hm-btn');if(!box||!btn)return;
+  var D=[{"n": 1, "la": 48.8125, "lo": 7.801, "t": "The apartment", "d": "Le Havre du Château Fiat", "c": 0}, {"n": 2, "la": 48.80999, "lo": 7.79686, "t": "Pharmacie du Schloessel", "d": "The nearest pharmacy", "c": 1}, {"n": 3, "la": 48.81336, "lo": 7.78222, "t": "Haguenau station", "d": "Direct trains to Strasbourg", "c": 1}, {"n": 4, "la": 48.81641, "lo": 7.79096, "t": "Halle aux Houblons", "d": "Covered market, Tuesday and Friday 7:30 am to 12 noon. On Fridays: organic vegetables from the Fitterer farm and organic bread from Le Four de Julien", "c": 2}, {"n": 5, "la": 48.8174, "lo": 7.7914, "t": "Cap d'Hag", "d": "My fishmonger · Tuesday to Friday 9 am to 6:30 pm, Saturday 9 am to 5 pm", "c": 2}, {"n": 6, "la": 48.81246, "lo": 7.78627, "t": "Pâtisserie Maxime", "d": "One of my two favourite pastry shops, on the pedestrian street", "c": 2}, {"n": 7, "la": 48.81395, "lo": 7.78848, "t": "Pâtisserie Heitz", "d": "The other pastry shop I recommend", "c": 2}, {"n": 8, "la": 48.81832, "lo": 7.79187, "t": "Restaurant Da Vinci", "d": "My favourite pizzeria · +33 3 88 80 90 57", "c": 2}, {"n": 9, "la": 48.82096, "lo": 7.77571, "t": "Liban FooD", "d": "Lebanese food, eat in or take away · closed on Sundays · +33 3 88 93 54 77", "c": 2}, {"n": 10, "la": 48.81442, "lo": 7.78967, "t": "Place de la République", "d": "Christmas market and 1900 carousel", "c": 3}, {"n": 11, "la": 48.8148, "lo": 7.7894, "t": "Musée alsacien", "d": "In the former chancellery of 1486: costumes, folk art, a potter's house", "c": 3}, {"n": 12, "la": 48.81306, "lo": 7.79151, "t": "Musée historique", "d": "Forest archaeology, history of the medieval town, Hannong faience", "c": 3}, {"n": 13, "la": 48.81518, "lo": 7.79374, "t": "Nautiland", "d": "Aquatic centre renovated in 2022: wild river, slide, water play, wellness area", "c": 3}, {"n": 14, "la": 48.82734, "lo": 7.81238, "t": "Forest entrance", "d": "Via route de Soufflenheim · 2.7 km", "c": 3}, {"n": 15, "la": 48.79928, "lo": 7.83527, "t": "Cinéma Mégarex", "d": "Cinema with 10 screens in the Taubenhof retail park · by car", "c": 3}];
+  function init(){
+    box.innerHTML='';box.classList.add('on');
+    var map=L.map(box,{scrollWheelZoom:false});map.attributionControl.setPrefix(false);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+    var near=[];
+    D.forEach(function(p){
+      var s=p.c===0?34:24;
+      L.marker([p.la,p.lo],{title:p.t,zIndexOffset:p.c===0?1000:0,icon:L.divIcon({className:'',html:'<span class="hm-pin hm-c'+p.c+'">'+(p.c===0?'\u2605':p.n)+'</span>',iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2]})})
+       .bindPopup('<b>'+p.n+'. '+p.t+'</b>'+p.d).addTo(map);
+      if(p.n<=14)near.push([p.la,p.lo]);
+    });
+    map.fitBounds(near,{padding:[34,34]});
+    map.on('click',function(){map.scrollWheelZoom.enable()});
+  }
+  var done=false;
+  function go(){
+    if(done)return;done=true;btn.disabled=true;
+    if(window.L)return init();
+    var c=document.createElement('link');c.rel='stylesheet';c.href='leaflet.css';document.head.appendChild(c);
+    var s=document.createElement('script');s.src='leaflet.js';s.onload=init;s.onerror=function(){done=false;btn.disabled=false};document.head.appendChild(s);
+  }
+  btn.addEventListener('click',go);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();go();}},{rootMargin:'300px'});io.observe(box);
+  }else{go();}
+})();
+</script>
+
     <div class="place-group"><div class="place-group-title">🚌 Getting around</div><div class="place-item"><div><div class="place-name">Bus line 1 Ritmo</div><div class="place-detail">Hannong stop, towards the town centre and the station</div></div><div class="place-dist">7 min walk</div></div><div class="place-item"><div><div class="place-name">Haguenau town centre</div><div class="place-detail">On foot or by bus</div></div><div class="place-dist">15 min · 7 min by bus</div></div><div class="place-item"><div><div class="place-name">Haguenau station</div><div class="place-detail">Direct TER trains to Strasbourg</div></div><div class="place-dist">9 min by bus</div></div><div class="place-item"><div><div class="place-name">Strasbourg</div><div class="place-detail">By car or direct TER train</div></div><div class="place-dist">40 min · 21 to 30 min</div></div></div><div class="place-group"><div class="place-group-title">🛒 Shopping</div><div class="place-item"><div><div class="place-name">Pharmacie du Schloessel</div><div class="place-detail">Nearest pharmacy, route de Bischwiller · easy parking</div></div><div class="place-dist">10 min walk</div></div><div class="place-item"><div><div class="place-name">Pedestrian town centre</div><div class="place-detail">Shops, bakeries, pharmacies</div></div><div class="place-dist">15 min walk</div></div><div class="place-item"><div><div class="place-name">Intermarché, Leclerc</div><div class="place-detail">Supermarkets</div></div><div class="place-dist">approx. 5 min by car</div></div><div class="place-item"><div><div class="place-name">Covered market</div><div class="place-detail">Tuesday and Friday mornings</div></div><div class="place-dist">approx. 1.2 km</div></div></div><div class="place-group"><div class="place-group-title">🌲 Nature and food</div><div class="place-item"><div><div class="place-name">Haguenau forest</div><div class="place-detail">Forêt d'Exception®, one of the largest lowland forests in France</div></div><div class="place-dist">2.7 km · 12 min by bike</div></div><div class="place-item"><div><div class="place-name">Town centre restaurants</div><div class="place-detail">Alsatian cuisine, pizzerias, brasseries</div></div><div class="place-dist">15 min walk</div></div></div><div class="place-group"><div class="place-group-title">⭐ My favourite places</div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Halle%20aux%20Houblons%2C%20115%20Grand%27Rue%2C%20Haguenau" target="_blank" rel="noopener">Halle aux Houblons</a></div><div class="place-detail">Covered market, Tuesday and Friday 7:30 am to 12 noon. On Fridays: organic vegetables from the Fitterer farm and organic bread from Le Four de Julien</div></div><div class="place-dist">115 Grand'Rue</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Cap%20d%27Hag%2C%20147%20Grand%27Rue%2C%20Haguenau" target="_blank" rel="noopener">Cap d'Hag</a></div><div class="place-detail">My fishmonger · Tuesday to Friday 9 am to 6:30 pm, Saturday 9 am to 5 pm</div></div><div class="place-dist">147 Grand'Rue</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=P%C3%A2tisserie%20Maxime%2C%20Grand%27Rue%2C%20Haguenau" target="_blank" rel="noopener">Pâtisserie Maxime</a></div><div class="place-detail">One of my two favourite pastry shops, on the pedestrian street</div></div><div class="place-dist">Grand'Rue</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=P%C3%A2tisserie%20Confiserie%20Heitz%2C%20Grand%27Rue%2C%20Haguenau" target="_blank" rel="noopener">Pâtisserie Heitz</a></div><div class="place-detail">The other pastry shop I recommend</div></div><div class="place-dist">Grand'Rue</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Da%20Vinci%2C%20176%20Grand%27Rue%2C%20Haguenau" target="_blank" rel="noopener">Restaurant Da Vinci</a></div><div class="place-detail">My favourite pizzeria · +33 3 88 80 90 57</div></div><div class="place-dist">176 Grand'Rue</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Liban%20FooD%2C%2035%20route%20de%20Bitche%2C%20Haguenau" target="_blank" rel="noopener">Liban FooD</a></div><div class="place-detail">Lebanese food, eat in or take away · closed on Sundays · +33 3 88 93 54 77</div></div><div class="place-dist">35 route de Bitche</div></div></div><div class="place-group"><div class="place-group-title">🎬 Going out and visiting</div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=M%C3%A9garex%2C%20rue%20Georges%20M%C3%A9li%C3%A8s%2C%20Haguenau" target="_blank" rel="noopener">Cinéma Mégarex</a></div><div class="place-detail">Cinema with 10 screens in the Taubenhof retail park · by car</div></div><div class="place-dist">Taubenhof</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Nautiland%2C%208%20rue%20des%20Dominicains%2C%20Haguenau" target="_blank" rel="noopener">Nautiland</a></div><div class="place-detail">Aquatic centre renovated in 2022: wild river, slide, water play, wellness area</div></div><div class="place-dist">8 rue des Dominicains</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Mus%C3%A9e%20historique%2C%209%20rue%20du%20Mar%C3%A9chal%20Foch%2C%20Haguenau" target="_blank" rel="noopener">Musée historique</a></div><div class="place-detail">Forest archaeology, history of the medieval town, Hannong faience</div></div><div class="place-dist">9 rue du Maréchal Foch</div></div><div class="place-item"><div><div class="place-name"><a href="https://www.google.com/maps/search/?api=1&query=Mus%C3%A9e%20alsacien%2C%201%20place%20Joseph%20Thierry%2C%20Haguenau" target="_blank" rel="noopener">Musée alsacien</a></div><div class="place-detail">In the former chancellery of 1486: costumes, folk art, a potter's house</div></div><div class="place-dist">1 place Joseph Thierry</div></div></div>
     <div class="warn-box">💡 Ask me for my favourite places: I know the town well.</div>
   </div>
@@ -410,7 +467,7 @@ document.querySelectorAll('.equip-item.has-app').forEach(function(a){
 </script>
 <script>
 (function(){
- var B='OCUG7hOfXYJqnv2jhscK514XXa3uaUyHB6rDi9k95IPxlmWGxESE2JVSE2/0haJ/E67XCZWGNQCpVwiAv1jqdDcEo9PAAGIfx8E8nJxH3Z1SD0AK',IT=600000,f=document.getElementById('wf'),i=document.getElementById('wcode'),m=document.getElementById('wmsg'),r=document.getElementById('wr');
+ var B='k1LbzPF3UvlLjdgoYBwEt/RxUgVmrs0KoNk0abKX0aixvbWGCeuldni3WCKmCDkTQ2p2LnRoRf402PVVgBhyWVkpChbcfRrEZ1nmk8V0Bjc82tTU',IT=600000,f=document.getElementById('wf'),i=document.getElementById('wcode'),m=document.getElementById('wmsg'),r=document.getElementById('wr');
  if(!f||!window.crypto||!crypto.subtle){ if(f) f.hidden=true; return; }
  function b(s){ var x=atob(s),a=new Uint8Array(x.length); for(var k=0;k<x.length;k++)a[k]=x.charCodeAt(k); return a; }
  async function open(code,quiet){

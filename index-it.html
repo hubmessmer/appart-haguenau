@@ -163,9 +163,11 @@
       border-top-color: var(--white);
     }
 
-    .stat:hover .stat-popup,
-    .stat-popup:hover {
-      display: block;
+    @media (hover: hover) {
+      .stat:hover .stat-popup,
+      .stat-popup:hover {
+        display: block;
+      }
     }
 
     .stat-popup img {
@@ -1283,9 +1285,15 @@ body{overflow-x:clip}
       e.stopPropagation();
     });
   });
-  document.addEventListener('click', function () {
+  function closeStats() {
     document.querySelectorAll('.stat.open').forEach(function (o) { o.classList.remove('open'); });
-  });
+  }
+  document.addEventListener('click', closeStats);
+  // iPhone : un toucher hors de la fiche, ou un défilement de la page, la referme
+  document.addEventListener('touchstart', function (e) {
+    if (!e.target.closest('.stat')) closeStats();
+  }, { passive: true });
+  window.addEventListener('scroll', closeStats, { passive: true });
 </script>
 
 <div id="lb" role="dialog" aria-modal="true" aria-label="Foto">
