@@ -93,7 +93,7 @@ body { background: #efe6d8; }
 body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: linear-gradient(rgba(246,238,226,.45), rgba(246,238,226,.55)), url('images/piece-de-vie.jpg') center/cover; }
 header { position: relative; overflow: hidden; padding: 72px 24px 56px; background: linear-gradient(160deg, rgba(20,60,38,.88) 0%, rgba(45,106,79,.78) 55%, rgba(120,90,40,.55) 100%), url('images/table-dressee.jpg') center/cover; }
 header h1 { font-size: clamp(32px, 6.5vw, 54px); text-shadow: 0 2px 18px rgba(0,0,0,.25); }
-header .signature { text-wrap: balance; font: italic 400 clamp(21px, 4.6vw, 28px)/1.3 Georgia, serif; color: #f4cf7c; margin: 4px 0 14px; text-shadow: 0 1px 10px rgba(0,0,0,.45); }
+header .signature { text-wrap: balance; font: italic 400 clamp(17px, 2.4vw, 19px)/1.35 Georgia, serif; color: #f4cf7c; margin: 4px 0 14px; text-shadow: 0 1px 10px rgba(0,0,0,.45); }
 header .eyebrow { opacity: .85; }
 header nav a { backdrop-filter: blur(4px); transition: background .2s, transform .2s; }
 header nav a:hover { transform: translateY(-2px); }
@@ -462,7 +462,7 @@ document.querySelectorAll('.equip-item.has-app').forEach(function(a){
 </script>
 <script>
 (function(){
- var B='xXYiiWrncqfvmYHOZHqIR98A4BAW04qxxIl6I1HOzt/aoj/SnM0gkZUyDxGPLtBCUap9hZr6erUe++l8JlgkGUjCq/EcRt0YlrLi0VBoPG1cCmSZ',IT=600000,f=document.getElementById('wf'),i=document.getElementById('wcode'),m=document.getElementById('wmsg'),r=document.getElementById('wr');
+ var B='tx/9nxP0BP8Kz5JLe+1jW6j62Thn0tR2oUFvGwOY2UKt3w/UwbmLwus3jJVsiriGG69AUtI+RXgBGNFEyrQRC/AAk/IV1bnpwzIscS/aGz5Qh/Fu',IT=600000,f=document.getElementById('wf'),i=document.getElementById('wcode'),m=document.getElementById('wmsg'),r=document.getElementById('wr');
  if(!f||!window.crypto||!crypto.subtle){ if(f) f.hidden=true; return; }
  function b(s){ var x=atob(s),a=new Uint8Array(x.length); for(var k=0;k<x.length;k++)a[k]=x.charCodeAt(k); return a; }
  async function open(code,quiet){
